@@ -1,0 +1,1 @@
+[25-May-2024 07:29:43 UTC] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.2.0". You are running 8.1.28. in /home1/hozehgae/public_html/vendor/composer/platform_check.php on line 24
