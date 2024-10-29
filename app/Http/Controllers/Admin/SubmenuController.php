@@ -81,9 +81,10 @@ class SubmenuController extends Controller
         $menupanels     = Menu_panel::whereStatus(4)->get();
         $submenupanels  = Submenu_panel::whereStatus(4)->get();
         $menus          = Menu::whereSubmenu_route(1)->whereStatus(4)->orderBy('priority')->get();
+        $submenus          = Submenu::whereStatus(4)->where('mega_manu' ,1)->get();
 
         return view('Admin.submenus.create')
-            ->with(compact(['menupanels' , 'submenupanels', 'menus' , 'thispage']));
+            ->with(compact(['menupanels' , 'submenupanels','submenus' , 'menus' , 'thispage']));
 
     }
 
@@ -95,6 +96,7 @@ class SubmenuController extends Controller
 
             $submenus->title            = $request->input('title');
             $submenus->menu_id          = $request->input('menu_id');
+            $submenus->mega_manu        = $request->input('submenu_id');
             $submenus->class            = $request->input('classcontroller');
             $submenus->tab_title        = $request->input('tab_title');
             $submenus->page_title       = $request->input('page_title');

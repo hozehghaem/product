@@ -65,7 +65,29 @@
 
                 <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                     <ul class="navbar-nav">
-
+                        @if(request()->segment(1) == 'حوزه-علمیه-خواهران')
+                            @foreach($submenus as $submenu)
+                                @if($submenu->mega_manu == 1)
+                                    <li class="nav-item">
+                                        <a href="{{url($submenu->slug)}}" class="nav-link">{{$submenu->title}}</a>
+                                    </li>
+                                @elseif($submenu->mega_manu == 2)
+                                    <li class="nav-item">
+                                        <a href="{{url($submenu->slug)}}" class="nav-link">{{$submenu->title}}
+                                            <i class='bx bx-chevron-down'></i></a>
+                                        <ul class="dropdown-menu">
+                                            @foreach($submenus as $megamenu)
+                                                @if($submenu->id == $megamenu->megamenu_id)
+                                                    <li class="nav-item">
+                                                        <a href="{{url($megamenu->slug)}}" class="nav-link">{{$megamenu->title}}</a>
+                                                    </li>
+                                                @endif
+                                            @endforeach
+                                        </ul>
+                                    </li>
+                                @endif
+                            @endforeach
+                        @else
                         @foreach($menus as $menu)
                             @if($menu->submenu == 0)
                                 <li class="nav-item">
@@ -77,15 +99,17 @@
                                         <i class='bx bx-chevron-down'></i></a>
                                     <ul class="dropdown-menu">
                                         @foreach($submenus as $submenu)
-                                        <li class="nav-item">
-                                            <a href="{{url($submenu->slug)}}" class="nav-link">{{$submenu->title}}</a>
-                                        </li>
+                                            @if($menu->id == $submenu->menu_id)
+                                                <li class="nav-item">
+                                                    <a href="{{url($submenu->slug)}}" class="nav-link">{{$submenu->title}}</a>
+                                                </li>
+                                            @endif
                                         @endforeach
                                     </ul>
                                 </li>
                             @endif
                         @endforeach
-
+                        @endif
                     </ul>
                     @if(!Auth::check())
 

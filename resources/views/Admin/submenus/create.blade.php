@@ -49,6 +49,17 @@
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
+                                                <p class="mg-b-10">انتخاب زیرمنو</p>
+                                                <select name="submenu_id" id="submenu_id" class="form-control select-lg select2">
+                                                    <option value="">انتخاب زیرمنو</option>
+                                                    @foreach($submenus as $submenu)
+                                                        <option value="{{$submenu->id}}">{{$submenu->title}}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
                                                 <p class="mg-b-10">عنوان تب منو سایت</p>
                                                 <input type="text" name="tab_title" id="tab_title" data-required="1" placeholder="عنوان تب سایت را وارد کنید" class="form-control" />
                                             </div>
@@ -148,6 +159,7 @@
                 let    _token           = jQuery('input[name="_token"]').val();
                 let    title            = jQuery('#title').val();
                 let    menu_id          = jQuery('#menu_id').val();
+                let    submenu_id       = jQuery('#submenu_id').val();
                 let    tab_title        = jQuery('#tab_title').val();
                 let    page_title       = jQuery('#page_title').val();
                 let    classcontroller  = jQuery('#classcontroller').val();
@@ -161,6 +173,7 @@
                 let formData = new FormData();
                 formData.append('title'             , title);
                 formData.append('menu_id'           , menu_id);
+                formData.append('submenu_id'        , submenu_id);
                 formData.append('tab_title'         , tab_title);
                 formData.append('classcontroller'   , classcontroller);
                 formData.append('page_title'        , page_title);

@@ -127,19 +127,21 @@
                 let text = CKEDITOR.instances.editor.getData();
 
 
-                let    _token       = jQuery('input[name="_token"]').val();
-                let    name         = jQuery('#name').val();
-                let    status       = jQuery('#status').val();
-                let    home_show    = jQuery('#home_show').val();
-                let    file_link    = jQuery('#file_link')[0].files[0];
+                let    _token           = jQuery('input[name="_token"]').val();
+                let    name             = jQuery('#name').val();
+                let    status           = jQuery('#status').val();
+                let    customertype     = jQuery('#customertype').val();
+                let    home_show        = jQuery('#home_show').val();
+                let    file_link        = jQuery('#file_link')[0].files[0];
 
                 let formData = new FormData();
-                formData.append('name'    , name);
-                formData.append('status'    , status);
-                formData.append('text'      , text);
-                formData.append('home_show' , home_show);
-                formData.append('file_link' , file_link);
-                formData.append('_token'    , _token);
+                formData.append('name'          , name);
+                formData.append('status'        , status);
+                formData.append('customertype'  , customertype);
+                formData.append('text'          , text);
+                formData.append('home_show'     , home_show);
+                formData.append('file_link'     , file_link);
+                formData.append('_token'        , _token);
 
                 swal({
                         title: "Are you sure to delete this  of ?",

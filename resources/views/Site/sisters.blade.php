@@ -1,4 +1,4 @@
-@extends('sisters-master')
+@extends('master')
 @section('style')
 @endsection
 @section('main')
@@ -31,23 +31,12 @@
                 transform: translateX(100%);
             }
         }
-        .carousel {
-            margin-top: 6%;
-            margin-left:4%;
-            margin-right:4%;
+        .container .row .col-md-3 img {
+            transition: transform 0.4s ease-in-out;
         }
-
-         .carousel-item img {
-             background-position: top center;
-             background-size: cover;
-             background-repeat: no-repeat;
-             border-radius: 20px;
-         }
-        .carousel-control-prev-icon,
-        .carousel-control-next-icon {
-            height: 2em;
-            width: 2em;
-            border-radius: 50%;
+        .container .row .col-md-3 img:hover {
+            transform: scale(1.1);
+            transition: transform 0.4s ease-in-out;
         }
     </style>
 

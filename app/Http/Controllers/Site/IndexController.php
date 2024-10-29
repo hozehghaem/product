@@ -95,7 +95,7 @@ class IndexController extends Controller
             $thispage = Menu::select('id', 'title', 'slug', 'tab_title', 'page_title', 'keyword', 'page_description')->MenuSite()->whereSlug('/')->first();
         }
 
-        $submenus = Submenu::select('id', 'title', 'slug', 'menu_id', 'megamenu_id')->whereStatus(4)->get();
+        $submenus = Submenu::select('id', 'title', 'slug', 'menu_id', 'mega_manu' , 'megamenu_id')->whereStatus(4)->get();
 
         $companies      = Company::first();
         $slides         = Slide::select('id' , 'title1' , 'text', 'file_link')->whereMenu_id($thispage['id'])->whereStatus(4)->first();

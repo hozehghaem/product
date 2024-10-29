@@ -98,6 +98,8 @@ class CustomerController extends Controller
 
     public function store(Request $request)
     {
+
+
         $priority = Customer::OrderBy('priority' , 'DESC')->first('priority');
 
         if ($priority === null)
@@ -114,8 +116,10 @@ class CustomerController extends Controller
             $customers->description = $request->input('text');
             $customers->status      = $request->input('status');
             $customers->home_show   = $request->input('home_show');
-            $customers->priority    = $priority;
+            $customers->priority    = $priority['priority'] + 1;
             $customers->user_id     = Auth::user()->id;
+            dd($customers);
+
             if($request->hasfile('file_link')) {
                 $file = $request->file('file_link');
                 $imagePath  =public_path("customers");
@@ -126,6 +130,7 @@ class CustomerController extends Controller
                 $customers->image = $imagelink . '/' . $filename;
                 $newImage->save($imagePath . '/' . $filename);
             }
+
             $result = $customers->save();
 
 //            $file               = $request->file('file_link');

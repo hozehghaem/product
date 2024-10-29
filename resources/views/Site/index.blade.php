@@ -300,10 +300,13 @@
             </div>
             <div class="col-lg-12 col-md-12 wow fadeInUp" data-wow-delay=".6s">
                 <div class="services-btn-box">
+                    @foreach($akhbars as $akhbar)
+                        {{$akhbar->title}}
                     <a href="{{url('/news')}}" class="default-btn">
                         مشاهده همه
                         <i class="bx bx-chevron-right"></i>
                     </a>
+                    @endforeach
                 </div>
             </div>
         </div>
