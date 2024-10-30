@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Dashboard\Menu_panel;
 use App\Models\Dashboard\Post;
 use App\Models\Dashboard\Submenu_panel;
+use App\Models\Post_type;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -83,9 +84,10 @@ class PostController extends Controller
         ];
         $menupanels         =   Menu_panel::whereStatus(4)->get();
         $submenupanels      =   Submenu_panel::whereStatus(4)->get();
+        $posttypes      =   Post_type::whereStatus(4)->get();
 
         return view('Admin.posts.create')
-            ->with(compact(['menupanels' , 'submenupanels' , 'thispage']));
+            ->with(compact(['menupanels' , 'submenupanels','posttypes' , 'thispage']));
     }
 
     public function store(Request $request)

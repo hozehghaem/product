@@ -38,6 +38,18 @@
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
+                                                <p class="mg-b-10">نوع پست</p>
+                                                <select name="posttype" id="posttype" class="form-control select-lg select2">
+                                                    <option value="" > انتخاب کنید </option>
+                                                    @foreach($posttypes as $posttype)
+                                                        <option value="{{$posttype->id}}" >{{$posttype->title}}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-3">
+                                            <div class="form-group">
                                                 <p class="mg-b-10">نمایش/عدم نمایش</p>
                                                 <select name="status" id="status" class="form-control select-lg select2">
                                                     <option value="4" >فعال</option>
@@ -54,16 +66,17 @@
                                                 </select>
                                             </div>
                                         </div>
-                                        <div class="col-md-3">
-                                            <div class="form-group" style="position: absolute;">
-                                                <p class="mg-b-10">تصویر </p>
-                                                <input type="file" name="image" id="image" class="dropify" data-height="200">
-                                            </div>
-                                        </div>
+
                                         <div class="col-md-9">
                                             <div class="form-group">
                                                 <p class="mg-b-10">کلمات کلیدی</p>
                                                 <input type="text" name="keyword" id="keyword" data-required="1" placeholder="کلمات کلیدی را اینگونه وارد کنید. کلمه1،کلمه2،کلمه3،کلمه4و..." class="form-control" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group" style="position: absolute;">
+                                                <p class="mg-b-10">تصویر </p>
+                                                <input type="file" name="image" id="image" class="dropify" data-height="200">
                                             </div>
                                         </div>
                                         <div class="col-md-9">
@@ -78,6 +91,7 @@
                                                 <input type="file" name="file" id="file" data-required="1" class="form-control" />
                                             </div>
                                         </div>
+
                                         <div class="col-md-12" style="margin-top: 20px;">
                                             <div class="form-group" >
                                                 <p class="mg-b-10">توضیحات</p>
