@@ -98,10 +98,12 @@
                                         <i class='bx bx-chevron-down'></i></a>
                                     <ul class="dropdown-menu">
                                         @foreach($submenus as $submenu)
-                                            @if($menu->id == $submenu->menu_id)
-                                                <li class="nav-item">
-                                                    <a href="{{url($submenu->slug)}}" class="nav-link">{{$submenu->title}}</a>
-                                                </li>
+                                            @if($submenu->megamenu_id == null)
+                                                @if($menu->id == $submenu->menu_id)
+                                                    <li class="nav-item">
+                                                        <a href="{{url($submenu->slug)}}" class="nav-link">{{$submenu->title}}</a>
+                                                    </li>
+                                                @endif
                                             @endif
                                         @endforeach
                                     </ul>

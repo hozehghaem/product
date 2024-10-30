@@ -463,16 +463,16 @@
     <section class="blog-area pt-70">
         <div class="container pb-5">
             <div id="blog-slides" class="blog-slides owl-carousel">
-
+                @foreach($akhbars as $akhbar)
                 <div class="single-blog-post-item">
                     <div class="post-image">
                         <a href="#" class="d-block">
-                            <img src="{{asset('site/img/blog-image/2.jpg')}}" alt="image">
+                            <img src="{{asset($akhbar->image)}}" alt="image">
                         </a>
                     </div>
                     <div class="post-content">
                         <a href="#" class="category">خانواده</a>
-                        <h3><a href="#">دوره تفسیر قرآن کریم</a></h3>
+                        <h3><a href="#">{{$akhbar->title}}</a></h3>
                         <ul class="post-content-footer d-flex justify-content-between align-items-center">
                             <li>
                                 <div class="post-author d-flex align-items-center">
@@ -480,11 +480,12 @@
                                 </div>
                             </li>
                             <li>
-                                <i class='bx bx-calendar'></i> 18/12/1378
+                                <i class='bx bx-calendar'></i> {{jdate($akhbar->update_at)->format('Y/m/d')}}
                             </li>
                         </ul>
                     </div>
                 </div>
+                @endforeach
 
             </div>
             <div class="col-lg-12 col-md-12 wow fadeInUp" data-wow-delay=".6s">
