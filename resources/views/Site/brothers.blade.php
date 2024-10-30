@@ -31,31 +31,129 @@
                 transform: translateX(100%);
             }
         }
+
+        .container .row .col-md-3 img {
+            transition: transform 0.4s ease-in-out;
+        }
+
+        .container .row .col-md-3 img:hover {
+            transform: scale(1.1);
+            transition: transform 0.4s ease-in-out;
+        }
+
+        .index-banner {
+            padding-top: 235px;
+            padding-bottom: 235px;
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-color: #f0f0f0;
+            background-image: url('{{ asset('/site/img/banner-slider/banner-hozeh.jpg') }}');
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh; /* ارتفاع کامل صفحه */
+        }
+
+        .index-banner-content {
+            text-align: center; /* متن‌ها را وسط چین می‌کند */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* محتوا را به مرکز محور عمودی قرار می‌دهد */
+            align-items: center; /* محتوا را به مرکز محور افقی قرار می‌دهد */
+            height: 100%; /* در صورت نیاز برای استفاده از فضای کامل بخش */
+        }
+
+        .index-banner-content p {
+            color: #f0f0f9;
+            max-width: 500px;
+        }
+        .index-banner-content h1 {
+            font-size: 50px;
+            color: #f0f0f9;
+            max-width: 500px;
+        }
+
     </style>
 
 
     <!-- Start Digital Agency Banner -->
-    <section class="digital-agency-banner" data-bg-desktop="{{asset('/site/img/marketing-agency/banner-bg.jpg')}}" data-bg-mobile="{{asset('/site/img/marketing-agency/banner-bg-mobile2.jpg')}}">
-        <div class="container">
-            <div class="digital-agency-banner-content">
-                <h1 style="font-family: 'IranNastaliq',serif;">حوزه علمیه برادران حضرت قائم (عج) </h1>
-                <p class="text-justify">
-                    حوزه علمیه حضرت قائم (عج) چیذر از سال ۱۳۴۶ در دو بخش برادران و خواهران آغاز به کار نمود.
-                    از سال ۱۳۹۳ واحد خواهران با نظارت مرکز مدیریت حوزه های علمیه فعالیت خود را در سه رشته کلام
-                    با گرایش امامت، تفسیر و علوم قرآنی و مشاوره خانواده در قالب موسسه آموزش عالی حوزوی ادامه داد.
-                    این مؤسسه متشکل از سه معاونت آموزش آموزش ،پژوهش و فرهنگی می باشد .
-                </p>
+    <div id="indexBannerCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#indexBannerCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#indexBannerCarousel" data-slide-to="1"></li>
+            <li data-target="#indexBannerCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Carousel items -->
+        <div class="carousel-inner">
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+                <section class="index-banner" style="background-color: #f5f5f5;">
+                    <div class="index-banner-content">
+                        <h1 style="font-family: 'IranNastaliq', serif;">حوزه علمیه حضرت قائم (عج)</h1>
+                        <p>
+                            حوزه علمیه حضرت قائم (عج) چیذر از سال ۱۳۴۶ در دو بخش برادران و خواهران آغاز به کار نمود. از
+                            سال ۱۳۹۳ واحد خواهران با نظارت مرکز مدیریت حوزه های علمیه فعالیت خود را در سه رشته کلام با
+                            گرایش امامت، تفسیر و علوم قرآنی و مشاوره خانواده در قالب موسسه آموزش عالی حوزوی ادامه داد.
+                            این مؤسسه متشکل از سه معاونت آموزش آموزش ،پژوهش و فرهنگی می باشد .
+
+                        </p>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+                <section class="index-banner" style="background-color: #f5f5f5;">
+                    <div class="index-banner-content">
+                        <h1 style="font-family: 'IranNastaliq', serif;">حوزه علمیه حضرت قائم (عج)</h1>
+                        <p>
+                            حوزه علمیه حضرت قائم (عج) چیذر از سال ۱۳۴۶ در دو بخش برادران و خواهران آغاز به کار نمود. از
+                            سال ۱۳۹۳ واحد خواهران با نظارت مرکز مدیریت حوزه های علمیه فعالیت خود را در سه رشته کلام با
+                            گرایش امامت، تفسیر و علوم قرآنی و مشاوره خانواده در قالب موسسه آموزش عالی حوزوی ادامه داد.
+                            این مؤسسه متشکل از سه معاونت آموزش آموزش ،پژوهش و فرهنگی می باشد .
+
+                        </p>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="carousel-item">
+                <section class="index-banner" style="background-color: #f5f5f5;">
+                    <div class="index-banner-content">
+                        <h1 style="font-family: 'IranNastaliq', serif;">حوزه علمیه حضرت قائم (عج)</h1>
+                        <p>
+                            حوزه علمیه حضرت قائم (عج) چیذر از سال ۱۳۴۶ در دو بخش برادران و خواهران آغاز به کار نمود. از
+                            سال ۱۳۹۳ واحد خواهران با نظارت مرکز مدیریت حوزه های علمیه فعالیت خود را در سه رشته کلام با
+                            گرایش امامت، تفسیر و علوم قرآنی و مشاوره خانواده در قالب موسسه آموزش عالی حوزوی ادامه داد.
+                            این مؤسسه متشکل از سه معاونت آموزش آموزش ،پژوهش و فرهنگی می باشد .
+                        </p>
+                    </div>
+                </section>
             </div>
         </div>
-    </section>
+
+        <!-- Controls -->
+        <a class="carousel-control-prev" href="#indexBannerCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#indexBannerCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
     <!-- End Digital Agency Banner -->
 
 
     {{--   Start line   --}}
-    <div class="container-fluid" style="background-color: #f0f0f9; display: flex; height: 50px;">
-        <div class="container col-12 col-md-6" style="margin: 0 auto;display: flex;">
-            <div>
-                <img src="{{asset('site/img/navaar-right.webp')}}" style="padding-top: 8px;max-height: 100%;" loading="lazy"
+    <div class="container-fluid py-2" style="background-color: #f0f0f9; display: flex;">
+        <div class="container col-12 col-md-8" style="margin: 0 auto;display: flex;">
+            <div class="d-flex">
+                <img src="{{asset('site/img/navaar-right.webp')}}" style="max-height: 50px;" loading="lazy"
                      alt="">
             </div>
             <div class="marquee">
@@ -69,13 +167,14 @@
                     الکافی ۱/۳۵/۶
                 </span>
             </div>
-            <div>
-                <img src="{{asset('site/img/navaar-left.webp')}}" style="padding-top: 8px;max-height: 100%;" loading="lazy"
+            <div class="d-flex">
+                <img src="{{asset('site/img/navaar-left.webp')}}" style="max-height: 50px;" loading="lazy"
                      alt="">
             </div>
         </div>
     </div>
     {{--   End line   --}}
+
     <!-- Start section cards -->
     <div class="features-card-section pt-100 pb-70 bg-f8fbfa">
         <div class="container">
@@ -189,28 +288,91 @@
 
     <!-- Start Services Area -->
     <section class="services-area mt-3 mb-3">
-        <div class="container">
-            <div class="section-title text-left">
+        <div class="container ">
+            <div class="section-title text-left flex-row d-flex align-items-center">
+                <img src="{{asset('/site/img/logo-without-text.png')}}" class="title-icon" alt="">
                 <h2>سلسله نشست های دوره ای حوزه</h2>
             </div>
-
             <div class="row">
-
-                <div id="brothers-meetings-container" class="row"></div>
-                <script src="{{asset('/site/js/components.js')}}"></script>
-                <script>
-                    document.addEventListener("DOMContentLoaded", function() {
-                        renderMeetings('brothers-meetings-container');
-                    });
-                </script>
-
-                <div class="col-lg-12 col-md-12 wow fadeInUp" data-wow-delay=".6s">
-                    <div class="services-btn-box">
-                        <a href="{{url('/meeting')}}" class="default-btn">
-                            مشاهده همه
-                            <i class="bx bx-chevron-right"></i>
-                        </a>
+                <div class="single-services-box col-lg-6 col-md-12">
+                    <div class="row m-0">
+                        <div class="col-lg-6 col-md-12 p-0">
+                            <div class="content">
+                                <h3><a href="{{route('/')}}">نشست خانواده و تربیت</a></h3>
+                                <p>لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال
+                                    استاندارد صنعت بوده است.</p>
+                                <a href="{{route('/')}}" class="read-more-btn">ادامه مطلب <i
+                                        class='bx bx-left-arrow-alt'></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-12 p-0">
+                            <div class="image bg-1">
+                                <img src="{{asset("site/img/marketing-agency/services-img1.jpg")}}" alt="image">
+                            </div>
+                        </div>
                     </div>
+                </div>
+                <div class="single-services-box col-lg-6 col-md-12">
+                    <div class="row m-0">
+                        <div class="col-lg-6 col-md-12 p-0">
+                            <div class="content">
+                                <h3><a href="{{route('/')}}">نشست خانواده و تربیت</a></h3>
+                                <p>لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال
+                                    استاندارد صنعت بوده است.</p>
+                                <a href="{{route('/')}}" class="read-more-btn">ادامه مطلب <i
+                                        class='bx bx-left-arrow-alt'></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-12 p-0">
+                            <div class="image bg-1">
+                                <img src="{{asset("site/img/marketing-agency/services-img1.jpg")}}" alt="image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="single-services-box col-lg-6 col-md-12">
+                    <div class="row m-0">
+                        <div class="col-lg-6 col-md-12 p-0">
+                            <div class="content">
+                                <h3><a href="{{route('/')}}">نشست خانواده و تربیت</a></h3>
+                                <p>لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال
+                                    استاندارد صنعت بوده است.</p>
+                                <a href="{{route('/')}}" class="read-more-btn">ادامه مطلب <i
+                                        class='bx bx-left-arrow-alt'></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-12 p-0">
+                            <div class="image bg-1">
+                                <img src="{{asset("site/img/marketing-agency/services-img1.jpg")}}" alt="image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="single-services-box col-lg-6 col-md-12">
+                    <div class="row m-0">
+                        <div class="col-lg-6 col-md-12 p-0">
+                            <div class="content">
+                                <h3><a href="{{route('/')}}">نشست خانواده و تربیت</a></h3>
+                                <p>لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال
+                                    استاندارد صنعت بوده است.</p>
+                                <a href="{{route('/')}}" class="read-more-btn">ادامه مطلب <i
+                                        class='bx bx-left-arrow-alt'></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-12 p-0">
+                            <div class="image bg-1">
+                                <img src="{{asset("site/img/marketing-agency/services-img1.jpg")}}" alt="image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-12 wow fadeInUp" data-wow-delay=".6s">
+                <div class="services-btn-box">
+                    <a href="{{url('/meeting')}}" class="default-btn">
+                        مشاهده همه
+                        <i class="bx bx-chevron-right"></i>
+                    </a>
                 </div>
             </div>
         </div>
@@ -221,21 +383,18 @@
     <section class="case-studies-area pt-70 pb-20">
         <div class="container">
             <div id="case-studies-slides" class="case-studies-slides owl-carousel">
-                <!-- محتوای داینامیک به اینجا اضافه خواهد شد -->
+                <div class="single-case-studies-item">
+                    <a href="#" class="image d-block">
+                        <img src="{{asset("site/img/case-studies/case-studies-img1.jpg")}}" alt="image">
+                    </a>
+                    <div class="content">
+                        <h3><a href="#">سخنرانی و درس اخلاق آیت الله هاشمی اولیا</a></h3>
+                        <a href="#" class="link-btn"><i class='bx bx-left-arrow-alt'></i></a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-    <!-- مسیر صحیح فایل components.js -->
-    <script src="{{ asset('js/components.js') }}"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            if (typeof renderCaseStudies === "function") {
-                renderCaseStudies('case-studies-slides');
-            } else {
-                console.error("تابع renderCaseStudies تعریف نشده است.");
-            }
-        });
-    </script>
     <!-- End Case Studies Area -->
 
     <section class="services-area bg-right-shape mt-4 mb-4">
@@ -299,34 +458,68 @@
     <!-- Start Partner Area -->
     <section class="partner-area-two ptb-70 bg-f9f9f9">
         <div class="container">
-            <div id="partner-row" class="row align-items-center">
-                <!-- محتوای داینامیک به اینجا اضافه خواهد شد -->
+            <div id="partner-row" class="d-flex justify-content-center row align-items-center">
+                <div class="col-lg-2 col-6 col-sm-3 col-md-4 wow fadeInUp">
+                    <div class="single-partner-box">
+                        <img src="{{asset('site/img/partner-image/1.png')}}" alt="image">
+                    </div>
+                </div>
+                <div class="col-lg-2 col-6 col-sm-3 col-md-4 wow fadeInUp">
+                    <div class="single-partner-box">
+                        <img src="{{asset('site/img/partner-image/1.png')}}" alt="image">
+                    </div>
+                </div>
+                <div class="col-lg-2 col-6 col-sm-3 col-md-4 wow fadeInUp">
+                    <div class="single-partner-box">
+                        <img src="{{asset('site/img/partner-image/1.png')}}" alt="image">
+                    </div>
+                </div>
+                <div class="col-lg-2 col-6 col-sm-3 col-md-4 wow fadeInUp">
+                    <div class="single-partner-box">
+                        <img src="{{asset('site/img/partner-image/1.png')}}" alt="image">
+                    </div>
+                </div>
+                <div class="col-lg-2 col-6 col-sm-3 col-md-4 wow fadeInUp">
+                    <div class="single-partner-box">
+                        <img src="{{asset('site/img/partner-image/1.png')}}" alt="image">
+                    </div>
+                </div>
             </div>
         </div>
     </section>
     <!-- End Partner Area -->
 
-    <!-- مسیر صحیح فایل components.js -->
-    <script src="{{ asset('js/components.js') }}"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            if (typeof renderPartners === "function") {
-                renderPartners('partner-row');
-            } else {
-                console.error("تابع renderPartners تعریف نشده است.");
-            }
-        });
-    </script>
-
     <!-- Start Blog Area -->
     <section class="blog-area pt-70">
         <div class="container pb-5">
             <div id="blog-slides" class="blog-slides owl-carousel">
-                <!-- محتوای داینامیک به اینجا اضافه خواهد شد -->
+
+                <div class="single-blog-post-item">
+                    <div class="post-image">
+                        <a href="#" class="d-block">
+                            <img src="{{asset('site/img/blog-image/2.jpg')}}" alt="image">
+                        </a>
+                    </div>
+                    <div class="post-content">
+                        <a href="#" class="category">خانواده</a>
+                        <h3><a href="#">دوره تفسیر قرآن کریم</a></h3>
+                        <ul class="post-content-footer d-flex justify-content-between align-items-center">
+                            <li>
+                                <div class="post-author d-flex align-items-center">
+                                    <!-- Author information can be added here -->
+                                </div>
+                            </li>
+                            <li>
+                                <i class='bx bx-calendar'></i> 18/12/1378
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
             </div>
             <div class="col-lg-12 col-md-12 wow fadeInUp" data-wow-delay=".6s">
                 <div class="services-btn-box">
-                    <a href="{{url('/news')}}" class="default-btn">
+                    <a href="{{url('#')}}" class="default-btn">
                         مشاهده همه
                         <i class="bx bx-chevron-right"></i>
                     </a>
@@ -336,17 +529,6 @@
     </section>
     <!-- End Blog Area -->
 
-    <!-- مسیر صحیح فایل components.js -->
-    <script src="{{ asset('js/components.js') }}"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            if (typeof renderBlogPosts === "function") {
-                renderBlogPosts('blog-slides');
-            } else {
-                console.error("تابع renderBlogPosts تعریف نشده است.");
-            }
-        });
-    </script>
     <!-- Start Let's Talk Area -->
     <section class="lets-talk-area ptb-100 bg-f8fbfa">
         <div class="container justify-content-center">
@@ -368,27 +550,3 @@
     <!-- End Let's Talk Area -->
 
 @endsection
-
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        let lazyBackgrounds = [].slice.call(document.querySelectorAll(".digital-agency-banner"));
-
-        if ("IntersectionObserver" in window) {
-            let lazyBackgroundObserver = new IntersectionObserver(function(entries, observer) {
-                entries.forEach(function(entry) {
-                    if (entry.isIntersecting) {
-                        let lazyBackground = entry.target;
-                        let bgUrl = window.innerWidth <= 600 ? lazyBackground.getAttribute('data-bg-mobile') : lazyBackground.getAttribute('data-bg-desktop');
-                        lazyBackground.style.backgroundImage = 'url(' + bgUrl + ')';
-                        lazyBackground.classList.add("lazy-bg");
-                        lazyBackgroundObserver.unobserve(lazyBackground);
-                    }
-                });
-            });
-
-            lazyBackgrounds.forEach(function(lazyBackground) {
-                lazyBackgroundObserver.observe(lazyBackground);
-            });
-        }
-    });
-</script>

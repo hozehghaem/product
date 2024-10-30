@@ -85,7 +85,8 @@
                         </li>
                         <li class="nav-item">
                             <a href="{{url('/education')}}" class="nav-link">معاونت پژوهش<i
-                                    class='bx bx-chevron-down'></i></a>
+                                    class='bx bx-chevron-down'></i>
+                            </a>
                             <ul class="dropdown-menu">
                                 <li class="nav-item">
                                     <a href="{{url('/meeting')}}" class="nav-link">کرسی ها</a>

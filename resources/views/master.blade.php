@@ -6,7 +6,6 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
-
     <link rel="stylesheet" href="{{asset('site/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('site/css/animate.min.css')}}">
     <link rel="stylesheet" href="{{asset('site/css/boxicons.min.css')}}">

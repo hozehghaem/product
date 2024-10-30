@@ -61,6 +61,7 @@ a {
     text-decoration: none;
     outline: 0 !important;
 }
+
 span {
     text-align: justify;
 }
@@ -179,7 +180,6 @@ p:last-child {
     margin-bottom: 60px;
     margin-right: auto;
 }
-
 
 
 .section-title h2 {
@@ -764,7 +764,7 @@ Navbar Area CSS
 }
 
 .navbar-area {
-    position: absolute;
+    /*position: absolute;*/
     top: 0;
     left: 0;
     width: 100%;
@@ -3124,7 +3124,8 @@ Features Area CSS
     position: relative;
     margin-bottom: 30px;
 }
-.single-features-card img{
+
+.single-features-card img {
     width: 48px;
     height: 48px;
     margin-bottom: 40px;
@@ -5324,8 +5325,8 @@ Page Title Area CSS
     background-color: #215c54;
     position: relative;
     z-index: 1;
-    padding-top: 160px;
-    padding-bottom: 64px;
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
 
 .page-title-area::before {
@@ -5358,9 +5359,10 @@ Page Title Area CSS
 }
 
 .page-title-content h2 {
+    font-weight: 200;
     color: #ffffff;
     margin-bottom: 0;
-    font-size: 40px;
+    font-size: 24px;
 
 }
 
@@ -7803,11 +7805,13 @@ Digital Agency Banner Area CSS
     background-repeat: no-repeat;
     background-color: #f0f0f0; /* یک رنگ پس‌زمینه جایگزین */
 }
+
 @media (max-width: 600px) {
-    .sisters-banner{
+    .sisters-banner {
         margin-top: 0;
     }
 }
+
 .sisters-lazy-bg {
     background-image: url('/public/site/img/banner-slider/sisters-banner.jpg');
 }
@@ -7934,6 +7938,7 @@ Services Area CSS
     overflow: hidden;
     background-color: #f9f9f9;
 }
+
 /*.single-services-box:hover {*/
 /*    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); !* سایه هنگام هاور *!*/
 /*    transform: translateY(-5px); !* انتقال کارت به بالا هنگام هاور *!*/
@@ -7981,10 +7986,12 @@ Services Area CSS
     background-repeat: no-repeat;
     transition-duration: 1s;
 }
+
 .single-services-box:hover .image {
     transition-duration: 0.5s;
     transform: scale(1.2); /* بزرگ‌نمایی تصویر هنگام هاور */
 }
+
 .single-services-box .image.bg-1 {
     background-image: url(../../site/img/marketing-agency/services-img1.jpg);
 }
