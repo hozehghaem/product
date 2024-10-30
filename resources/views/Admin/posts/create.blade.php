@@ -32,8 +32,8 @@
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <p class="mg-b-10">عنوان پست</p>
-                                                <input type="text" name="title" id="title" placeholder="عنوان پست" class="form-control" />
+                                                <p class="mg-b-10">عنوان </p>
+                                                <input type="text" name="title" id="title" placeholder="عنوان " class="form-control" />
                                             </div>
                                         </div>
                                         <div class="col-md-3">
@@ -56,7 +56,7 @@
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group" style="position: absolute;">
-                                                <p class="mg-b-10">تصویر پست</p>
+                                                <p class="mg-b-10">تصویر </p>
                                                 <input type="file" name="image" id="image" class="dropify" data-height="200">
                                             </div>
                                         </div>

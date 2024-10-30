@@ -68,17 +68,17 @@
                             @foreach($submenus as $submenu)
                                 @if($submenu->mega_manu == 1)
                                     <li class="nav-item">
-                                        <a href="{{url($submenu->slug)}}" class="nav-link">{{$submenu->title}}</a>
+                                        <a href="{{url('حوزه-علمیه-خواهران'.'/'.$submenu->slug)}}" class="nav-link">{{$submenu->title}}</a>
                                     </li>
                                 @elseif($submenu->mega_manu == 2)
                                     <li class="nav-item">
-                                        <a href="{{url($submenu->slug)}}" class="nav-link">{{$submenu->title}}
+                                        <a href="{{url('حوزه-علمیه-خواهران'.'/'.$submenu->slug)}}" class="nav-link">{{$submenu->title}}
                                             <i class='bx bx-chevron-down'></i></a>
                                         <ul class="dropdown-menu">
                                             @foreach($submenus as $megamenu)
                                                 @if($submenu->id == $megamenu->megamenu_id)
                                                     <li class="nav-item">
-                                                        <a href="{{url($megamenu->slug)}}" class="nav-link">{{$megamenu->title}}</a>
+                                                        <a href="{{url('حوزه-علمیه-خواهران'.'/'.$submenu->slug.'/'.$megamenu->slug)}}" class="nav-link">{{$megamenu->title}}</a>
                                                     </li>
                                                 @endif
                                             @endforeach
@@ -101,7 +101,7 @@
                                             @if($submenu->megamenu_id == null)
                                                 @if($menu->id == $submenu->menu_id)
                                                     <li class="nav-item">
-                                                        <a href="{{url($submenu->slug)}}" class="nav-link">{{$submenu->title}}</a>
+                                                        <a href="{{url($menu->slug.'/'.$submenu->slug)}}" class="nav-link">{{$submenu->title}}</a>
                                                     </li>
                                                 @endif
                                             @endif

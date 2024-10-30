@@ -178,11 +178,11 @@
     <div class="container">
         <div class="row" style="justify-content: center; text-align: center">
             <div class="col-md-3 p-4">
-                <a href="{{url('/brothers')}}">
+                <a href="{{url('حوزه-علمیه-برادران')}}">
                     <img src="{{ asset('/site/img/برادران.png') }}" loading="lazy" alt="Image 1">
                 </a></div>
             <div class="col-md-3 p-4">
-                <a href="{{url('/sisters')}}">
+                <a href="{{url('حوزه-علمیه-خواهران')}}">
                     <img src="{{ asset('/site/img/خواهران.png') }}" loading="lazy" alt="Image 2">
                 </a>
             </div>
@@ -198,7 +198,7 @@
                     <div class="single-features-card tx-center d-flex justify-content-center">
                         <img src="{{asset('/site/img/icon/male.png')}}" class="mx-auto" alt="">
                         <h3>
-                            <a href="{{url('/brothers')}}" class="card-title">حوزه علمیه برادران</a>
+                            <a href="{{url('حوزه-علمیه-برادران')}}" class="card-title">حوزه علمیه برادران</a>
                         </h3>
                         <p>حوزه علمیه ویژه طلاب بخش برادران</p>
                     </div>
@@ -208,7 +208,7 @@
                     <div class="single-features-card tx-center d-flex justify-content-center">
                         <img src="{{asset('/site/img/icon/hijab.png')}}" class="mx-auto" alt="">
                         <h3>
-                            <a href="{{url('/sisters')}}" class="card-title">حوزه علمیه خواهران</a>
+                            <a href="{{url('حوزه-علمیه-خواهران')}}" class="card-title">حوزه علمیه خواهران</a>
                         </h3>
                         <p>حوزه علمیه ویژه طلاب بخش خواهران</p>
                     </div>
@@ -264,78 +264,24 @@
                 <h2>سلسله نشست های دوره ای حوزه</h2>
             </div>
             <div class="row">
+                @foreach($posts as $post)
                 <div class="single-services-box col-lg-6 col-md-12">
                     <div class="row m-0">
                         <div class="col-lg-6 col-md-12 p-0">
                             <div class="content">
-                                <h3><a href="{{route('/')}}">نشست خانواده و تربیت</a></h3>
-                                <p>لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال
-                                    استاندارد صنعت بوده است.</p>
-                                <a href="{{route('/')}}" class="read-more-btn">ادامه مطلب <i
-                                        class='bx bx-left-arrow-alt'></i></a>
+                                <h3><a href="{{route('/')}}">{{$post->title}}</a></h3>
+                                {!! $post->description !!}
+                                <a href="{{url('نشست/'.$post->id)}}" class="read-more-btn">ادامه مطلب <i class='bx bx-left-arrow-alt'></i></a>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-12 p-0">
                             <div class="image bg-1">
-                                <img src="{{asset("site/img/marketing-agency/services-img1.jpg")}}" alt="image">
+                                <img src="{{asset($post->image)}}" alt="{{$post->title}}">
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="single-services-box col-lg-6 col-md-12">
-                    <div class="row m-0">
-                        <div class="col-lg-6 col-md-12 p-0">
-                            <div class="content">
-                                <h3><a href="{{route('/')}}">نشست خانواده و تربیت</a></h3>
-                                <p>لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال
-                                    استاندارد صنعت بوده است.</p>
-                                <a href="{{route('/')}}" class="read-more-btn">ادامه مطلب <i
-                                        class='bx bx-left-arrow-alt'></i></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-12 p-0">
-                            <div class="image bg-1">
-                                <img src="{{asset("site/img/marketing-agency/services-img1.jpg")}}" alt="image">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="single-services-box col-lg-6 col-md-12">
-                    <div class="row m-0">
-                        <div class="col-lg-6 col-md-12 p-0">
-                            <div class="content">
-                                <h3><a href="{{route('/')}}">نشست خانواده و تربیت</a></h3>
-                                <p>لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال
-                                    استاندارد صنعت بوده است.</p>
-                                <a href="{{route('/')}}" class="read-more-btn">ادامه مطلب <i
-                                        class='bx bx-left-arrow-alt'></i></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-12 p-0">
-                            <div class="image bg-1">
-                                <img src="{{asset("site/img/marketing-agency/services-img1.jpg")}}" alt="image">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="single-services-box col-lg-6 col-md-12">
-                    <div class="row m-0">
-                        <div class="col-lg-6 col-md-12 p-0">
-                            <div class="content">
-                                <h3><a href="{{route('/')}}">نشست خانواده و تربیت</a></h3>
-                                <p>لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال
-                                    استاندارد صنعت بوده است.</p>
-                                <a href="{{route('/')}}" class="read-more-btn">ادامه مطلب <i
-                                        class='bx bx-left-arrow-alt'></i></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-12 p-0">
-                            <div class="image bg-1">
-                                <img src="{{asset("site/img/marketing-agency/services-img1.jpg")}}" alt="image">
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
             <div class="col-lg-12 col-md-12 wow fadeInUp" data-wow-delay=".6s">
                 <div class="services-btn-box">
@@ -506,70 +452,20 @@
                 <div class="col-lg-12 col-md-12">
                     <div class="faq-accordion">
                         <ul class="accordion">
-                            <li class="accordion-item">
-                                <a class="accordion-title active" href="javascript:void(0)">
-                                    <i class="bx bx-plus"></i>
-                                    سوالات متداول 1؟
-                                </a>
 
-                                <p class="accordion-content show">
-                                    لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال
-                                    استاندارد صنعت بوده است. لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد.
-                                    لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است.
-                                </p>
-                            </li>
-
+                            @foreach($questions as $question)
                             <li class="accordion-item">
                                 <a class="accordion-title" href="javascript:void(0)">
                                     <i class="bx bx-plus"></i>
-                                    سوالات متداول 2؟
+                                    {{$question->question}}
                                 </a>
 
                                 <p class="accordion-content">
-                                    لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال
-                                    استاندارد صنعت بوده است. لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد.
-                                    لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است.
+                                    {{$question->answer}}
                                 </p>
                             </li>
+                            @endforeach
 
-                            <li class="accordion-item">
-                                <a class="accordion-title" href="javascript:void(0)">
-                                    <i class="bx bx-plus"></i>
-                                    سوالات متداول 3؟
-                                </a>
-
-                                <p class="accordion-content">
-                                    لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال
-                                    استاندارد صنعت بوده است. لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد.
-                                    لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است.
-                                </p>
-                            </li>
-
-                            <li class="accordion-item">
-                                <a class="accordion-title" href="javascript:void(0)">
-                                    <i class="bx bx-plus"></i>
-                                    سوالات متداول 4؟
-                                </a>
-
-                                <p class="accordion-content">
-                                    لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال
-                                    استاندارد صنعت بوده است. لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد.
-                                    لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است.
-                                </p>
-                            </li>
-
-                            <li class="accordion-item">
-                                <a class="accordion-title" href="javascript:void(0)">
-                                    <i class="bx bx-plus"></i>
-                                    سوالات متداول 5؟
-                                </a>
-
-                                <p class="accordion-content">
-                                    لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال
-                                    استاندارد صنعت بوده است. لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد.
-                                    لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است.
-                                </p>
-                            </li>
                         </ul>
                     </div>
                 </div>

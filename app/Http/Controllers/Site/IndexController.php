@@ -51,10 +51,11 @@ class IndexController extends Controller
         $slides         = Slide::select('id' , 'title1' , 'text', 'file_link')->whereMenu_id($thispage['id'])->whereStatus(4)->first();
         $customers      = Customer::select('name', 'image')->whereStatus(4)->whereHome_show(1)->get();
         $posts          = Post::whereStatus(4)->whereHome_show(1)->orderBy('id' , 'DESC')->limit(6)->get();
+        $questions          = Questionlist::whereStatus(4)->orderBy('id' , 'DESC')->limit(6)->get();
         $akhbars        = Akhbar::leftjoin('users', 'akhbars.user_id', '=', 'users.id')->
         select('akhbars.title', 'akhbars.slug', 'akhbars.image', 'akhbars.description', 'users.name as username', 'akhbars.matn as matn', 'akhbars.updated_at')->where('akhbars.status', 4)->where('akhbars.home_show', 1)->get();
 
-        return view('Site.index')->with(compact('menus', 'thispage', 'companies', 'slides', 'customers', 'submenus', 'posts', 'akhbars'));
+        return view('Site.index')->with(compact('menus', 'thispage','questions' , 'companies', 'slides', 'customers', 'submenus', 'posts', 'akhbars'));
 
     }
 
@@ -635,6 +636,7 @@ class IndexController extends Controller
 
     public function research(Request $request)
     {
+        dd('saa');
         $url = $request->segments();
         $menus = Menu::select('id', 'title', 'slug', 'submenu', 'priority', 'mega_menu')->MenuSite()->orderBy('priority')->get();
         if (count($url) == 1) {
