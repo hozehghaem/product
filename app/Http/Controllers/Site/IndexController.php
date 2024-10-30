@@ -636,7 +636,6 @@ class IndexController extends Controller
 
     public function research(Request $request)
     {
-        dd('saa');
         $url = $request->segments();
         $menus = Menu::select('id', 'title', 'slug', 'submenu', 'priority', 'mega_menu')->MenuSite()->orderBy('priority')->get();
         if (count($url) == 1) {
