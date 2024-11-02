@@ -22,17 +22,6 @@ use Illuminate\Support\Facades\Artisan;
 
 class IndexController extends Controller
 {
-    public function sendmail(){
-
-        $data = ['name' => 'John Doe'];
-
-        Mail::to('hosseindbk@yahoo.com')->send(new sendmail($data));
-
-        return 'Email sent successfully!';
-        // Artisan::call('storage:link');
-         //return view('Demo.index');
-    }
-
     public function index(Request $request)
     {
         $url = $request->segments();
@@ -48,7 +37,7 @@ class IndexController extends Controller
         $submenus = Submenu::select('id', 'title', 'slug', 'menu_id', 'megamenu_id')->whereStatus(4)->get();
 
         $companies      = Company::first();
-        $slides         = Slide::select('id' , 'title1' , 'text', 'file_link')->whereMenu_id($thispage['id'])->whereStatus(4)->first();
+        $slides         = Slide::select('id' , 'title1' , 'text', 'file_link')->whereMenu_id($thispage['id'])->whereStatus(4)->get();
         $customers      = Customer::select('name', 'image')->whereStatus(4)->whereHome_show(1)->get();
         $posts          = Post::whereStatus(4)->whereHome_show(1)->orderBy('id' , 'DESC')->limit(6)->get();
         $questions          = Questionlist::whereStatus(4)->orderBy('id' , 'DESC')->limit(6)->get();

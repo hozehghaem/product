@@ -49,7 +49,6 @@
             background-size: cover;
             background-repeat: no-repeat;
             background-color: #f0f0f0;
-            background-image: url('{{ asset('/site/img/banner-slider/banner-hozeh.jpg') }}');
             display: flex;
             justify-content: center;
             align-items: center;
@@ -81,59 +80,24 @@
     <div id="indexBannerCarousel" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
-            <li data-target="#indexBannerCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#indexBannerCarousel" data-slide-to="1"></li>
-            <li data-target="#indexBannerCarousel" data-slide-to="2"></li>
+            @foreach($slides as $slide)
+            <li data-target="#indexBannerCarousel" data-slide-to="{{$slide->id}}" class="@if($slides->min('id') == $slide->id) active @endif"></li>
+            @endforeach
         </ol>
 
         <!-- Carousel items -->
         <div class="carousel-inner">
-            <!-- Slide 1 -->
-            <div class="carousel-item active">
-                <section class="index-banner" style="background-color: #f5f5f5;">
-                    <div class="index-banner-content">
-                        <h1 style="font-family: 'IranNastaliq', serif;">حوزه علمیه حضرت قائم (عج)</h1>
-                        <p>
-                            حوزه علمیه حضرت قائم (عج) چیذر از سال ۱۳۴۶ در دو بخش برادران و خواهران آغاز به کار نمود. از
-                            سال ۱۳۹۳ واحد خواهران با نظارت مرکز مدیریت حوزه های علمیه فعالیت خود را در سه رشته کلام با
-                            گرایش امامت، تفسیر و علوم قرآنی و مشاوره خانواده در قالب موسسه آموزش عالی حوزوی ادامه داد.
-                            این مؤسسه متشکل از سه معاونت آموزش آموزش ،پژوهش و فرهنگی می باشد .
-
-                        </p>
-                    </div>
-                </section>
-            </div>
-
-            <!-- Slide 2 -->
-            <div class="carousel-item">
-                <section class="index-banner" style="background-color: #f5f5f5;">
-                    <div class="index-banner-content">
-                        <h1 style="font-family: 'IranNastaliq', serif;">حوزه علمیه حضرت قائم (عج)</h1>
-                        <p>
-                            حوزه علمیه حضرت قائم (عج) چیذر از سال ۱۳۴۶ در دو بخش برادران و خواهران آغاز به کار نمود. از
-                            سال ۱۳۹۳ واحد خواهران با نظارت مرکز مدیریت حوزه های علمیه فعالیت خود را در سه رشته کلام با
-                            گرایش امامت، تفسیر و علوم قرآنی و مشاوره خانواده در قالب موسسه آموزش عالی حوزوی ادامه داد.
-                            این مؤسسه متشکل از سه معاونت آموزش آموزش ،پژوهش و فرهنگی می باشد .
-
-                        </p>
-                    </div>
-                </section>
-            </div>
-
-            <!-- Slide 3 -->
-            <div class="carousel-item">
-                <section class="index-banner" style="background-color: #f5f5f5;">
-                    <div class="index-banner-content">
-                        <h1 style="font-family: 'IranNastaliq', serif;">حوزه علمیه حضرت قائم (عج)</h1>
-                        <p>
-                            حوزه علمیه حضرت قائم (عج) چیذر از سال ۱۳۴۶ در دو بخش برادران و خواهران آغاز به کار نمود. از
-                            سال ۱۳۹۳ واحد خواهران با نظارت مرکز مدیریت حوزه های علمیه فعالیت خود را در سه رشته کلام با
-                            گرایش امامت، تفسیر و علوم قرآنی و مشاوره خانواده در قالب موسسه آموزش عالی حوزوی ادامه داد.
-                            این مؤسسه متشکل از سه معاونت آموزش آموزش ،پژوهش و فرهنگی می باشد .
-                        </p>
-                    </div>
-                </section>
-            </div>
+            @foreach($slides as $slide)
+                <div class="carousel-item @if($slides->min('id') == $slide->id) active @endif ">
+                    <section class="index-banner" style="background-color: #f5f5f5; background-image: url('{{ asset('storage/'.$slide->file_link) }}');">
+                        <div class="index-banner-content">
+                            img
+                            <h1 style="font-family: 'IranNastaliq', serif;">{{$slide->title}}</h1>
+                            <p>{!! $slide->text !!}</p>
+                        </div>
+                    </section>
+                </div>
+            @endforeach
         </div>
 
         <!-- Controls -->

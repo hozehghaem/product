@@ -193,14 +193,13 @@ class SlideController extends Controller
             }
             $slide->status      = $request->input('status');
 
-            if ($request->hasfile('file_link')) {
-                $file             = $request->file('file_link');
-                $imagePath        ="public/slides";
-                $imageName        = Str::random(30).".".$file->clientExtension();
+            if ($request->file('file_link')) {
+                $file       = $request->file('file_link');
+                $imagePath  ="public/slides";
+                $imageName  = Str::random(30).".".$file->clientExtension();
                 $slide->file_link = 'slides/'.$imageName;
                 $file->storeAs($imagePath, $imageName);
             }
-
             $result = $slide->save();
 
             if ($result == true) {
