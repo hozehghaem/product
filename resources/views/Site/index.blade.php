@@ -225,22 +225,24 @@
             </div>
             <div class="row">
                 @foreach($posts as $post)
-                <div class="single-services-box col-lg-6 col-md-12">
-                    <div class="row m-0">
-                        <div class="col-lg-6 col-md-12 p-0">
-                            <div class="content">
-                                <h3><a href="{{route('/')}}">{{$post->title}}</a></h3>
-                                {!! $post->description !!}
-                                <a href="{{url('نشست/'.$post->id)}}" class="read-more-btn">ادامه مطلب <i class='bx bx-left-arrow-alt'></i></a>
+                    @if($post->posttype == 2)
+                        <div class="single-services-box col-lg-6 col-md-12">
+                            <div class="row m-0">
+                                <div class="col-lg-6 col-md-12 p-0">
+                                    <div class="content">
+                                        <h3><a href="{{route('/')}}">{{$post->title}}</a></h3>
+                                        {!! $post->description !!}
+                                        <a href="{{url('نشست/'.$post->id)}}" class="read-more-btn">ادامه مطلب <i class='bx bx-left-arrow-alt'></i></a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-12 p-0">
+                                    <div class="image bg-1">
+                                        <img src="{{asset($post->image)}}" alt="{{$post->title}}">
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-lg-6 col-md-12 p-0">
-                            <div class="image bg-1">
-                                <img src="{{asset($post->image)}}" alt="{{$post->title}}">
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    @endif
                 @endforeach
             </div>
             <div class="col-lg-12 col-md-12 wow fadeInUp" data-wow-delay=".6s">
@@ -259,15 +261,19 @@
     <section class="case-studies-area pt-70 pb-20">
         <div class="container">
             <div id="case-studies-slides" class="case-studies-slides owl-carousel">
-                <div class="single-case-studies-item">
-                    <a href="#" class="image d-block">
-                        <img src="{{asset("site/img/case-studies/case-studies-img1.jpg")}}" alt="image">
-                    </a>
-                    <div class="content">
-                        <h3><a href="#">سخنرانی و درس اخلاق آیت الله هاشمی اولیا</a></h3>
-                        <a href="#" class="link-btn"><i class='bx bx-left-arrow-alt'></i></a>
-                    </div>
-                </div>
+                @foreach($posts as $post)
+                    @if($post->posttype == 5)
+                        <div class="single-case-studies-item">
+                            <a href="#" class="image d-block">
+                                <img src="{{asset($post->image)}}" alt="image">
+                            </a>
+                            <div class="content">
+                                <h3><a href="#">{{$post->title}}</a></h3>
+                                <a href="#" class="link-btn"><i class='bx bx-left-arrow-alt'></i></a>
+                            </div>
+                        </div>
+                    @endif
+                @endforeach
             </div>
         </div>
     </section>
@@ -351,28 +357,30 @@
     <section class="blog-area pt-70">
         <div class="container pb-5">
             <div id="blog-slides" class="blog-slides owl-carousel">
-                @foreach($akhbars as $akhbar)
-                <div class="single-blog-post-item">
-                    <div class="post-image">
-                        <a href="#" class="d-block">
-                            <img src="{{asset($akhbar->image)}}" alt="image">
-                        </a>
-                    </div>
-                    <div class="post-content">
-                        <a href="#" class="category">خانواده</a>
-                        <h3><a href="#">{{$akhbar->title}}</a></h3>
-                        <ul class="post-content-footer d-flex justify-content-between align-items-center">
-                            <li>
-                                <div class="post-author d-flex align-items-center">
-                                    <!-- Author information can be added here -->
-                                </div>
-                            </li>
-                            <li>
-                                <i class='bx bx-calendar'></i> {{jdate($akhbar->update_at)->format('Y/m/d')}}
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                @foreach($posts as $post)
+                    @if($post->posttype == 3)
+                        <div class="single-blog-post-item">
+                            <div class="post-image">
+                                <a href="#" class="d-block">
+                                    <img src="{{asset($post->image)}}" alt="{{$post->title}}">
+                                </a>
+                            </div>
+                            <div class="post-content">
+                                <a href="#" class="category">خانواده</a>
+                                <h3><a href="#">{{$post->title}}</a></h3>
+                                <ul class="post-content-footer d-flex justify-content-between align-items-center">
+                                    <li>
+                                        <div class="post-author d-flex align-items-center">
+                                            <!-- Author information can be added here -->
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <i class='bx bx-calendar'></i> {{jdate($post->update_at)->format('Y/m/d')}}
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    @endif
                 @endforeach
 
             </div>

@@ -21,12 +21,12 @@ class PostController extends Controller
     public function index(Request $request)
     {
         $thispage       = [
-            'title'         => 'مدیریت پست ها',
-            'list_title'    => 'لیست پست ها',
-            'add_title'     => 'افزودن پست ها',
-            'create_title'  => 'ایجاد پست ها',
-            'enter_title'   => 'ورود اطلاعات پست ها',
-            'edit_title'    => 'ویرایش اطلاعات پست ها',
+            'title'         => 'مدیریت مدیا',
+            'list_title'    => 'لیست مدیا',
+            'add_title'     => 'افزودن مدیا',
+            'create_title'  => 'ایجاد مدیا',
+            'enter_title'   => 'ورود اطلاعات مدیا',
+            'edit_title'    => 'ویرایش اطلاعات مدیا',
         ];
         $posts        =   Post::all();
         $menupanels     =   Menu_panel::whereStatus(4)->get();
@@ -75,16 +75,16 @@ class PostController extends Controller
     public function create()
     {
         $thispage       = [
-            'title'         => 'مدیریت پست ها',
-            'list_title'    => 'لیست پست ها',
-            'add_title'     => 'افزودن پست ها',
-            'create_title'  => 'ایجاد پست ها',
-            'enter_title'   => 'ورود اطلاعات پست ها',
-            'edit_title'    => 'ویرایش اطلاعات پست ها',
+            'title'         => 'مدیریت مدیا',
+            'list_title'    => 'لیست مدیا',
+            'add_title'     => 'افزودن مدیا',
+            'create_title'  => 'ایجاد مدیا',
+            'enter_title'   => 'ورود اطلاعات مدیا',
+            'edit_title'    => 'ویرایش اطلاعات مدیا',
         ];
         $menupanels         =   Menu_panel::whereStatus(4)->get();
         $submenupanels      =   Submenu_panel::whereStatus(4)->get();
-        $posttypes      =   Post_type::whereStatus(4)->get();
+        $posttypes          =   Post_type::whereStatus(4)->get();
 
         return view('Admin.posts.create')
             ->with(compact(['menupanels' , 'submenupanels','posttypes' , 'thispage']));
@@ -99,6 +99,7 @@ class PostController extends Controller
             $post->title       = $request->input('title');
             $post->description = $request->input('description');
             $post->aparat      = $request->input('aparat');
+            $post->posttype    = $request->input('posttype');
             $post->status      = $request->input('status');
             $post->home_show   = $request->input('home_show');
             $post->user_id     = Auth::user()->id;
@@ -152,12 +153,12 @@ class PostController extends Controller
     public function edit($id)
     {
         $thispage       = [
-            'title'         => 'مدیریت پست ها',
-            'list_title'    => 'لیست پست ها',
-            'add_title'     => 'افزودن پست ها',
-            'create_title'  => 'ایجاد پست ها',
-            'enter_title'   => 'ورود اطلاعات پست ها',
-            'edit_title'    => 'ویرایش اطلاعات پست ها',
+            'title'         => 'مدیریت مدیا',
+            'list_title'    => 'لیست مدیا',
+            'add_title'     => 'افزودن مدیا',
+            'create_title'  => 'ایجاد مدیا',
+            'enter_title'   => 'ورود اطلاعات مدیا',
+            'edit_title'    => 'ویرایش اطلاعات مدیا',
         ];
         $posts            =   Post::whereId($id)->first();
         $menupanels         =   Menu_panel::whereStatus(4)->get();

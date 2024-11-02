@@ -40,7 +40,6 @@
                                             <div class="form-group">
                                                 <p class="mg-b-10">نوع پست</p>
                                                 <select name="posttype" id="posttype" class="form-control select-lg select2">
-                                                    <option value="" > انتخاب کنید </option>
                                                     @foreach($posttypes as $posttype)
                                                         <option value="{{$posttype->id}}" >{{$posttype->title}}</option>
                                                     @endforeach
@@ -150,6 +149,7 @@
 
                 let    _token       = jQuery('input[name="_token"]').val();
                 let    title        = jQuery('#title').val();
+                let    posttype     = jQuery('#posttype').val();
                 let    status       = jQuery('#status').val();
                 let    aparat       = jQuery('#aparat').val();
                 let    home_show    = jQuery('#home_show').val();
@@ -162,6 +162,7 @@
                 formData.append('description'   , description);
                 formData.append('home_show'     , home_show);
                 formData.append('aparat'        , aparat);
+                formData.append('posttype'      , posttype);
                 formData.append('image'         , image);
                 formData.append('file'          , file);
                 formData.append('_token'        , _token);
