@@ -53,7 +53,7 @@
                 <img src="{{asset('admin/assets/img/brand/icon.png')}}" class="header-brand-img icon-logo theme-logo" alt="بستا">
             </a>
         </div>
-        <div class="main-sidebar-body">
+        <div class="main-sidebar-body scroll-container">
             <ul class="nav">
                     @foreach($menupanels as $menupanel)
                         @if($menupanel->submenu == 0)

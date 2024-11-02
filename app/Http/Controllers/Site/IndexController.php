@@ -11,6 +11,7 @@ use App\Models\Dashboard\Customer;
 use App\Models\Dashboard\Questionlist;
 use App\Models\Dashboard\Slide;
 use App\Models\Emploee;
+use App\Models\Flowtext;
 use App\Models\mega_menu;
 use App\Models\Menu;
 use App\Models\Dashboard\Post;
@@ -41,10 +42,11 @@ class IndexController extends Controller
         $customers      = Customer::select('name', 'image')->whereStatus(4)->whereHome_show(1)->get();
         $posts          = Post::whereStatus(4)->whereHome_show(1)->orderBy('id' , 'DESC')->limit(6)->get();
         $questions          = Questionlist::whereStatus(4)->orderBy('id' , 'DESC')->limit(6)->get();
+        $flowtexts      = Flowtext::whereStatus(4)->limit(6)->get();
         $akhbars        = Akhbar::leftjoin('users', 'akhbars.user_id', '=', 'users.id')->
         select('akhbars.title', 'akhbars.slug', 'akhbars.image', 'akhbars.description', 'users.name as username', 'akhbars.matn as matn', 'akhbars.updated_at')->where('akhbars.status', 4)->where('akhbars.home_show', 1)->get();
 
-        return view('Site.index')->with(compact('menus', 'thispage','questions' , 'companies', 'slides', 'customers', 'submenus', 'posts', 'akhbars'));
+        return view('Site.index')->with(compact('menus', 'thispage','questions', 'flowtexts', 'companies', 'slides', 'customers', 'submenus', 'posts', 'akhbars'));
 
     }
 

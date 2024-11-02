@@ -66,7 +66,7 @@ class FlowtextController extends Controller
         $submenupanels  = Submenu_panel::whereStatus(4)->get();
 
 
-        return view('Admin.menus.create')
+        return view('Admin.flowtexts.create')
             ->with(compact(['menupanels' , 'submenupanels' , 'thispage' , 'typeusers']));
     }
 
@@ -74,32 +74,16 @@ class FlowtextController extends Controller
     {
 //dd(json_encode($request->input('userlevel')));
         try{
-            $menucount = Menu::orderBy('priority' , 'DESC')->first('priority');
+            $flowtextcount = Flowtext::orderBy('priority' , 'DESC')->first('priority');
 
-            $menu = new Menu();
+            $flowtext = new Flowtext();
 
-            $menu->title            = $request->input('title');
-            $menu->tab_title        = $request->input('tab_title');
-            $menu->page_title       = $request->input('page_title');
-            if (strlen($request->input('keyword')) > 0) {
-                $menu->keyword = json_encode(explode("،", $request->input('keyword')));
-            }
-            $menu->page_description = $request->input('page_description');
-            $menu->submenu          = $request->input('submenu');
-            $menu->class            = $request->input('classcontroller');
-            $menu->mega_menu        = $request->input('mega_menu');
-            //$menu->userlevel        = explode("،", $request->input('userlevel'));
-            $menu->mega_title1      = $request->input('mega_title1');
-            $menu->mega_title2      = $request->input('mega_title2');
-            $menu->mega_title3      = $request->input('mega_title3');
-            $menu->mega_title4      = $request->input('mega_title4');
-            $menu->submenu_route    = $request->input('submenu');
-            $menu->status           = 4;
-            $menu->priority         = $menucount['priority'] + 1;
-            $menu->level            = $request->input('level');
-            $menu->user_id          = Auth::user()->id;
+            $flowtext->matn            = $request->input('matn');
+            $flowtext->status           = 4;
+            $flowtext->priority         = $flowtextcount['priority'] + 1;
+            $flowtext->user_id          = Auth::user()->id;
 
-            $result = $menu->save();
+            $result = $flowtext->save();
             if ($result == true) {
                 $success = true;
                 $flag    = 'success';
