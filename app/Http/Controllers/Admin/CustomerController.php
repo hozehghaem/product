@@ -99,26 +99,17 @@ class CustomerController extends Controller
     public function store(Request $request)
     {
 
-
-        $priority = Customer::OrderBy('priority' , 'DESC')->first('priority');
-
-        if ($priority === null)
-        {
-            $priority = 1;
-        }else{
-            $priority = $priority->priority + 1;
-        }
+        //$priority = Customer::OrderBy('priority' , 'DESC')->first('priority');
 
         try{
-
             $customers = new Customer();
             $customers->name        = $request->input('name');
-            $customers->description = $request->input('text');
             $customers->status      = $request->input('status');
+            $customers->customertype= $request->input('customertype');
+            $customers->description = $request->input('text');
             $customers->home_show   = $request->input('home_show');
-            $customers->priority    = $priority['priority'] + 1;
+            $customers->priority    = 1; //$priority['priority'] + 1;
             $customers->user_id     = Auth::user()->id;
-            dd($customers);
 
             if($request->hasfile('file_link')) {
                 $file = $request->file('file_link');
@@ -132,6 +123,7 @@ class CustomerController extends Controller
             }
 
             $result = $customers->save();
+
 
 //            $file               = $request->file('file_link');
 //            $imagePath          = 'customers/images';

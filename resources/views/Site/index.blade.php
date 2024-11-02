@@ -335,31 +335,13 @@
     <section class="partner-area-two ptb-70 bg-f9f9f9">
         <div class="container">
             <div id="partner-row" class="d-flex justify-content-center row align-items-center">
-                <div class="col-lg-2 col-6 col-sm-3 col-md-4 wow fadeInUp">
-                    <div class="single-partner-box">
-                        <img src="{{asset('site/img/partner-image/1.png')}}" alt="image">
+                @foreach($customers as $customer)
+                    <div class="col-lg-2 col-6 col-sm-3 col-md-4 wow fadeInUp">
+                        <div class="single-partner-box">
+                            <img src="{{asset($customer->image)}}" alt="{{$customer->name}}">
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-2 col-6 col-sm-3 col-md-4 wow fadeInUp">
-                    <div class="single-partner-box">
-                        <img src="{{asset('site/img/partner-image/1.png')}}" alt="image">
-                    </div>
-                </div>
-                <div class="col-lg-2 col-6 col-sm-3 col-md-4 wow fadeInUp">
-                    <div class="single-partner-box">
-                        <img src="{{asset('site/img/partner-image/1.png')}}" alt="image">
-                    </div>
-                </div>
-                <div class="col-lg-2 col-6 col-sm-3 col-md-4 wow fadeInUp">
-                    <div class="single-partner-box">
-                        <img src="{{asset('site/img/partner-image/1.png')}}" alt="image">
-                    </div>
-                </div>
-                <div class="col-lg-2 col-6 col-sm-3 col-md-4 wow fadeInUp">
-                    <div class="single-partner-box">
-                        <img src="{{asset('site/img/partner-image/1.png')}}" alt="image">
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
