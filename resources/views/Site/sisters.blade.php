@@ -84,26 +84,21 @@
     <!-- End Digital Agency Banner -->
 
     {{--   Start line   --}}
-    <div class="container-fluid mt-3 py-3" style="display: flex; ">
-        <div class="container col-12 col-md-8" style="margin: 0 auto;display: flex;">
-            <div class="d-flex">
-                <img src="{{asset('site/img/navaar-right.webp')}}" style="max-height: 50px;" loading="lazy"
-                     alt="">
+    <div class="container-fluid py-2 bg-light d-flex justify-content-center align-items-center">
+        <div class="container col-12 col-md-8 d-flex align-items-center justify-content-center">
+            <div class="d-md-flex align-items-center">
+                <img class="line" src="{{ asset('site/img/navaar-right.webp') }}" loading="lazy" alt="">
             </div>
-            <div class="marquee">
-                <span>
-                    مقام معظم رهبری (مدظله العالی) پدیده خواهران طلبه پدیده عظیم و مبارکی است. هزاران عالم ،
-                    پژوهشگر ، فقیه و فیلسوف در حوزه‌های علمی خواهران تربیت شوند این حرکت عظیمی خواهد بود.ٍ    |
-                    الإمامُ الصّادقُ عليه السلام :مَن تَعَلَّمَ للّهِِ و عَمِلَ للّهِِ و عَلَّمَ للّهِِ دُعِيَ في مَلَكوتِ
-                    السَّماواتِ عَظيما، فقيلَ : تَعَلَّمَ للّهِِ ، و عَمِلَ للّهِِ ، و عَلَّمَ للّهِِ !    |
-                    امام صادق علیه السلام هر که برای خدا علم بیاموزد و به آن عمل کند و به دیگران آموزش دهد
-                    در ملکوت آسمان‌ها به بزرگی یاد شود و گفته آید برای خدا آموخت برای خدا عمل کرد و برای خدا آموزش داد.    |
-                    الکافی ۱/۳۵/۶
-                </span>
+            <div class="marquee px-2">
+            <span>
+                مقام معظم رهبری (مدظله العالی) پدیده خواهران طلبه پدیده عظیم و مبارکی است. هزاران عالم ، پژوهشگر ، فقیه و فیلسوف در حوزه‌های علمی خواهران تربیت شوند این حرکت عظیمی خواهد بود.ٍ |
+                الإمامُ الصّادقُ عليه السلام :مَن تَعَلَّمَ للّهِِ و عَمِلَ للّهِِ و عَلَّمَ للّهِِ دُعِيَ في مَلَكوتِ السَّماواتِ عَظيما، فقيلَ : تَعَلَّمَ للّهِِ ، و عَمِلَ للّهِِ ، و عَلَّمَ للّهِِ ! |
+                امام صادق علیه السلام هر که برای خدا علم بیاموزد و به آن عمل کند و به دیگران آموزش دهد در ملکوت آسمان‌ها به بزرگی یاد شود و گفته آید برای خدا آموخت برای خدا عمل کرد و برای خدا آموزش داد. |
+                الکافی ۱/۳۵/۶
+            </span>
             </div>
-            <div class="d-flex">
-                <img src="{{asset('site/img/navaar-left.webp')}}" style="max-height: 50px;" loading="lazy"
-                     alt="">
+            <div class="d-md-flex align-items-center">
+                <img class="line" src="{{ asset('site/img/navaar-left.webp') }}" loading="lazy" alt="">
             </div>
         </div>
     </div>

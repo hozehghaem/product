@@ -129,6 +129,12 @@ img {
 .pb-70 {
     padding-bottom: 70px;
 }
+.pt-50px {
+    padding-top: 50px !important;
+}
+.pt-50px {
+    padding-top: 50px !important;
+}
 
 .overflow-x-hide {
     overflow-x: hidden;
@@ -226,6 +232,328 @@ p:last-child {
 .headerLogo {
     width: 200px;
     height: auto;
+}
+
+.generic-list-item li {
+    color: #1E2E45;
+    line-height: 24px;
+    margin-bottom: 10px;
+}
+
+.generic-list-item li a {
+    color: #333;
+    display: block;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.generic-list-item li a:hover {
+    color: #cea54a;
+}
+
+.generic-list-item-bullet li {
+    padding-right: 16px;
+}
+
+.generic-list-item-bullet li::after {
+    position: absolute;
+    content: "";
+    top: 10px;
+    right: 0;
+    width: 5px;
+    height: 5px;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    background-color: rgb(128 137 150 / 0.6);
+}
+
+.generic-list-item--bullet li {
+    padding-left: 14px;
+}
+
+.generic-list-item--bullet li:first-child {
+    padding-right: 0;
+}
+
+.generic-list-item--bullet li:first-child::after {
+    display: none;
+}
+
+.generic-list-item-white li {
+    color: rgb(255 255 255 / 0.8);
+}
+
+.generic-list-item-white li a {
+    color: rgb(255 255 255 / 0.8);
+}
+
+.generic-list-item-white li a:hover {
+    color: #cea54a;
+}
+
+.generic-list-item-arrow li {
+    position: relative;
+    padding-right: 12px;
+    margin-right: 12px;
+}
+
+.generic-list-item-arrow li:first-child {
+    padding-right: 0;
+    margin-right: 0;
+}
+
+.generic-list-item-arrow li:first-child::after {
+    display: none;
+}
+
+.generic-list-item-arrow li::after {
+    position: absolute;
+    content: "\f104";
+    top: 1px;
+    right: -7px;
+    font-family: "Line Awesome Free";
+    font-weight: 900;
+    font-size: 14px;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .breadcrumb-content .section__title {
+        padding-bottom: 5px;
+    }
+}
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    .breadcrumb-content .section__title {
+        padding-bottom: 5px;
+    }
+}
+@media only screen and (min-width: 320px) and (max-width: 479px) {
+    .breadcrumb-content .section__title {
+        font-size: 30px !important;
+        line-height: 40px !important;
+        padding-bottom: 5px;
+    }
+}
+@media only screen and (min-width: 320px) and (max-width: 479px) {
+    .breadcrumb-content .section__title.fs-30 {
+        font-size: 22px !important;
+        line-height: 30px !important;
+        padding-bottom: 0;
+    }
+}
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    .breadcrumb-content .section__desc {
+        font-size: 16px;
+        line-height: 24px !important;
+    }
+}
+@media only screen and (min-width: 320px) and (max-width: 479px) {
+    .breadcrumb-content .section__desc {
+        font-size: 16px;
+        line-height: 24px !important;
+    }
+}
+@media (max-width: 375px) {
+    .breadcrumb-content .media-card {
+        flex-direction: column;
+    }
+}
+@media (max-width: 375px) {
+    .breadcrumb-content .media-card .media-img {
+        margin-left: auto;
+        margin-bottom: 15px;
+    }
+}
+@media (max-width: 375px) {
+    .breadcrumb-content .media-card .media-body {
+        width: 100%;
+    }
+}
+@media only screen and (min-width: 320px) and (max-width: 479px) {
+    .breadcrumb-content .file-upload-wrap {
+        margin-top: 20px;
+    }
+}
+.breadcrumb-content .video-box {
+    position: relative;
+    bottom: -100px;
+}
+.generic-list-item li {
+    color: #7f8897;
+    line-height: 24px;
+    margin-bottom: 10px;
+}
+.generic-list-item li a {
+    color: #7f8897;
+    display: block;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.generic-list-item li a:hover {
+    color: #ec5252;
+}
+.generic-list-item-bullet li {
+    position: relative;
+    padding-right: 16px;
+}
+.generic-list-item-bullet li::after {
+    position: absolute;
+    content: "";
+    top: 10px;
+    right: 0;
+    width: 5px;
+    height: 5px;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    background-color: rgba(128, 137, 150, 0.6);
+}
+.generic-list-item--bullet li {
+    padding-left: 14px;
+}
+.generic-list-item--bullet li:first-child {
+    padding-right: 0;
+}
+.generic-list-item--bullet li:first-child::after {
+    display: none;
+}
+.generic-list-item-white li {
+    color: rgba(255, 255, 255, 0.8);
+}
+.generic-list-item-white li a {
+    color: rgba(255, 255, 255, 0.8);
+}
+.generic-list-item-white li a:hover {
+    color: #ec5252;
+}
+.generic-list-item-arrow li {
+    position: relative;
+    padding-right: 12px;
+    margin-right: 12px;
+}
+.generic-list-item-arrow li:first-child {
+    padding-right: 0;
+    margin-right: 0;
+}
+.generic-list-item-arrow li:first-child::after {
+    display: none;
+}
+.generic-list-item-arrow li::after {
+    position: absolute;
+    content: "\f104";
+    top: 1px;
+    right: -7px;
+    font-family: "Line Awesome Free";
+    font-weight: 900;
+    font-size: 14px;
+}
+.generic-list-item-boxed li {
+    border: 1px solid rgba(128, 137, 150, 0.2);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.generic-list-item-boxed li a {
+    padding: 8px 18px;
+}
+.generic-list-item-boxed li:hover {
+    border-color: #ec5252;
+}
+.generic-list-item-flash li {
+    border-bottom: 1px solid rgba(128, 137, 150, 0.1);
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+.generic-list-item-flash li:last-child {
+    border-bottom: 0;
+    margin-bottom: 0;
+}
+.pattern-bg {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    z-index: 2;
+}
+
+.section-heading {
+    position: relative;
+    z-index: 1;
+}
+
+.section__title {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.section__desc {
+    line-height: 32px;
+    font-size: 18px;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .section__desc br,
+    .section__title br {
+        display: none;
+    }
+}
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    .section__desc br,
+    .section__title br {
+        display: none;
+    }
+}
+@media only screen and (min-width: 320px) and (max-width: 479px) {
+    .section__desc br,
+    .section__title br {
+        display: none;
+    }
+}
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    .breadcrumb-content .section__desc {
+        font-size: 16px;
+        line-height: 24px !important;
+    }
+}
+@media only screen and (min-width: 320px) and (max-width: 479px) {
+    .breadcrumb-content .section__desc {
+        font-size: 16px;
+        line-height: 24px !important;
+    }
+}
+
+.ribbon {
+    display: inline-block;
+    padding-left: 8px;
+    padding-right: 8px;
+    line-height: 22px;
+    background-color: rgba(246, 138, 3, 0.1);
+    color: #f68a03;
+    font-size: 11px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+.ribbon-white {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+.ribbon-lg {
+    font-size: 16px;
+    padding-left: 12px;
+    padding-right: 12px;
+    line-height: 28px;
+}
+.ribbon-blue-bg {
+    background: rgba(53, 143, 247, 0.1) !important;
+    color: #358ff7 !important;
 }
 
 .brothers-btn {
@@ -2141,7 +2469,9 @@ Partner Area CSS
 }
 
 .single-partner-box {
-    margin-bottom: 30px;
+    width: 80px;
+    margin-top: 16px;
+    margin-bottom: 16px;
     text-align: center;
 }
 
@@ -7734,6 +8064,39 @@ SaaS Home Page CSS
     font-size: 14px;
 
 }
+.marquee {
+    direction: rtl;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    font-size: large;
+}
+
+.marquee span {
+    margin-bottom: 12px;
+    margin-top: 12px;
+    display: inline-block;
+    animation: marquee 40s linear infinite;
+}
+.line {
+    max-height: 50px;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(-20%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+@media (max-width: 768px) {
+    .line{
+        max-width: 30px;
+    }
+
+}
 
 .service-details-content .service-details-info .single-info-box .default-btn:hover {
     background-color: #ffffff;
@@ -7933,34 +8296,48 @@ Featured Area CSS
 /*================================================
 Services Area CSS
 =================================================*/
-.single-services-box {
-    margin-bottom: 30px;
-    overflow: hidden;
-    background-color: #f9f9f9;
+.services-area {
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
-/*.single-services-box:hover {*/
-/*    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); !* سایه هنگام هاور *!*/
-/*    transform: translateY(-5px); !* انتقال کارت به بالا هنگام هاور *!*/
-/*    transition-duration: 1s;*/
-/*}*/
+.single-services-box {
+    display: flex;
+    align-items: center;
+    background-color: #f9f9f9;
+    overflow: hidden;
+    transition: box-shadow 0.5s, transform 0.5s;
+}
+
+.single-services-box:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
 .single-services-box .content {
-    padding: 30px 0 30px 25px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    padding: 30px 25px;
+
 }
 
 .single-services-box .content h3 {
-    line-height: 1.4;
-
     font-size: 22px;
     margin-bottom: 10px;
-    margin-right: -20px;
+    line-height: 1.4;
 }
 
 .single-services-box .content .read-more-btn {
-
     padding-right: 22px;
     position: relative;
     display: inline-block;
+    transition: padding-right 0.3s;
+}
+
+.single-services-box .content .read-more-btn:hover {
+    padding-right: 28px;
 }
 
 .single-services-box .content .read-more-btn i {
@@ -7969,62 +8346,27 @@ Services Area CSS
     top: 0;
     font-size: 21px;
     color: #58A399;
-    -webkit-transition: 0.5s;
-    transition: 0.5s;
-}
-
-.single-services-box .content .read-more-btn:hover {
-    padding-right: 28px;
+    transition: color 0.3s;
 }
 
 .single-services-box .image {
     height: 100%;
-    -webkit-clip-path: polygon(20% 0, 100% 0%, 100% 100%, 0% 100%);
-    clip-path: polygon(20% 0, 100% 0%, 100% 100%, 0% 100%);
-    background-position: center center;
+    clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%);
+    background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    transition-duration: 1s;
+    transition: transform 0.5s;
 }
 
 .single-services-box:hover .image {
-    transition-duration: 0.5s;
-    transform: scale(1.2); /* بزرگ‌نمایی تصویر هنگام هاور */
-}
-
-.single-services-box .image.bg-1 {
-    background-image: url(../../site/img/marketing-agency/services-img1.jpg);
-}
-
-.single-services-box .image.bg-2 {
-    background-image: url(../../site/img/marketing-agency/services-img2.jpg);
-}
-
-.single-services-box .image.bg-3 {
-    background-image: url(../../site/img/marketing-agency/services-img3.jpg);
-}
-
-.single-services-box .image.bg-4 {
-    background-image: url(../../site/img/marketing-agency/services-img4.jpg);
-}
-
-.single-services-box .image img {
-    display: none;
-}
-
-.services-btn-box {
-    text-align: center;
-    margin-top: 10px;
+    transform: scale(1.2);
 }
 
 .services-btn-box .default-btn {
     background-color: transparent;
     border: 1px solid #496989;
     color: #496989;
-}
-
-.services-btn-box .default-btn i {
-    color: #496989;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
 }
 
 .services-btn-box .default-btn:hover {
@@ -8033,8 +8375,9 @@ Services Area CSS
     color: #ffffff;
 }
 
-.services-btn-box .default-btn:hover i {
-    color: #ffffff;
+.services-btn-box .default-btn i {
+    color: inherit;
+    transition: color 0.3s;
 }
 
 /*================================================
