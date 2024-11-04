@@ -34,9 +34,13 @@ Route::group(['namespace' => 'App\Http\Controllers' ,'prefix' => '/'] , function
             } else {
                 Route::get($menu->slug, 'Site\IndexController@' . $menu->class)->name($menu->slug);
                 foreach ($submenus as $submenu) {
-                    if ($menu->submenu_route == 1) {
-                        if ($submenu->menu_id == $menu->id) {
-                            Route::get($menu->slug . '/' . $submenu->slug, 'Site\IndexController@' . $submenu->class);
+                    if($menu->slug == 'حوزه-علمیه-خواهران'){
+                        if($menu->id == $submenu->menu_id) {
+                            Route::get($menu->slug .'/'.'{slug}', 'Site\IndexController@' . 'subpage');
+                        }
+                    }else{
+                        if($menu->id == $submenu->menu_id) {
+                            Route::get($menu->slug . '/' . $submenu->slug, 'Site\IndexController@' . 'singlemeeting');
                         }
                     }
                 }
@@ -100,11 +104,12 @@ Route::group(['namespace' => 'App\Http\Controllers' ,'prefix' => '/'] , function
 //    Route::post('/Consultationrequest'      , [App\Http\Controllers\Site\IndexController::class, 'Consultationrequest'])->name('Consultationrequest');
 //    Route::get('شرایط-ضوابط'                , [App\Http\Controllers\Site\IndexController::class, 'terms'])              ->name('شرایط-ضوابط');
 //    Route::get('اخبار'.'/'.'{slug}'         , [App\Http\Controllers\Site\IndexController::class, 'singleakhbar']);
-    Route::get('نشست'.'/'.'{slug}'         , [App\Http\Controllers\Site\IndexController::class, 'singlemeeting']);
-    Route::get('نشست'                       , [App\Http\Controllers\Site\IndexController::class, 'meeting']);
-//    Route::get('تیم-ما'.'/'.'رزومه'.'/'.'{slug}'  , [App\Http\Controllers\Site\IndexController::class, 'emploeeresume']);
-//    Route::get('محتوای-آموزشی'.'/'.'{slug}' , [App\Http\Controllers\Site\IndexController::class, 'singlepost']);
-//    Route::get('دوره-آموزشی'.'/'.'{slug}'   , [App\Http\Controllers\Site\IndexController::class, 'singleworkshop']);
+Route::get('نشست'.'/'.'{slug}'         , [App\Http\Controllers\Site\IndexController::class, 'singlemeeting']);
+Route::get('نشست'                       , [App\Http\Controllers\Site\IndexController::class, 'meeting']);
+Route::get('حوزه-علمیه-خواهران'.'/'.'معاونت-آموزش'.'/'.'{slug}'         , [App\Http\Controllers\Site\IndexController::class, 'singlemeeting']);
+Route::get('حوزه-علمیه-خواهران'.'/'.'معاونت-پژوهش'.'/'.'{slug}'         , [App\Http\Controllers\Site\IndexController::class, 'singlemeeting']);
+Route::get('حوزه-علمیه-خواهران'.'/'.'معاونت-فرهنگی'.'/'.'{slug}'        , [App\Http\Controllers\Site\IndexController::class, 'singlemeeting']);
+
 //    Route::get('/reload-captcha'            , [App\Http\Controllers\Site\IndexController::class, 'reloadCaptcha']);
 
 
