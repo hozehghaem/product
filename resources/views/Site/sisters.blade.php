@@ -42,30 +42,24 @@
 
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            @foreach($slides as $slide)
+                <li data-target="#indexBannerCarousel" data-slide-to="{{$slide->id}}" class="@if($slides->min('id') == $slide->id) active @endif"></li>
+            @endforeach
         </ol>
+
+        <!-- Carousel items -->
         <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="{{asset('/site/img/banner-slider/sistersbanner.webp')}}" class="d-block w-100"  alt="">
-            </div>
-            <div class="carousel-item">
-                <img src="{{asset('/site/img/banner-slider/sistersbanner.webp')}}" class="d-block w-100" alt="تصویر دوم">
-            </div>
-            <div class="carousel-item">
-                <img src="{{asset('/site/img/banner-slider/sistersbanner.webp')}}" class="d-block w-100" alt="تصویر سوم">
-            </div>
+            @foreach($slides as $slide)
+                <div class="carousel-item @if($slides->min('id') == $slide->id) active @endif ">
+                    <section class="index-banner" style="background-color: #f5f5f5; background-image: url('{{ asset('storage/'.$slide->file_link) }}');">
+                        <div class="index-banner-content">
+                            <h1 style="font-family: 'IranNastaliq', serif;">{{$slide->title1}}</h1>
+                            <p>{!! $slide->text !!}</p>
+                        </div>
+                    </section>
+                </div>
+            @endforeach
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">قبلی</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">بعدی</span>
-        </a>
-    </div>
 
     <!-- Start Digital Agency Banner -->
 {{--    <section class="sisters-banner" data-bg-desktop={{asset('/site/img/banner-slider/sisters-banner.jpg')}} data-bg-mobile={{asset('/site/img/banner-slider/sisters-banner-mobile.jpg')}}>--}}
