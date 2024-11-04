@@ -43,8 +43,8 @@
     <div class="page-title-area">
         <div class="container">
             <div class="page-title-content">
-                <h2>نشست خانواده</h2>
-                <p>جزئیات نشست</p>
+                <h2>{{$posts->title}}</h2>
+                <p>{!! $posts->description !!}</p>
             </div>
         </div>
     </div>

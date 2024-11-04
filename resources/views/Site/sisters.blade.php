@@ -2,6 +2,7 @@
 @section('style')
 @endsection
 @section('main')
+
     <style>
         .card-title {
             font-size: 20px;
@@ -31,16 +32,53 @@
                 transform: translateX(100%);
             }
         }
+
         .container .row .col-md-3 img {
             transition: transform 0.4s ease-in-out;
         }
+
         .container .row .col-md-3 img:hover {
             transform: scale(1.1);
             transition: transform 0.4s ease-in-out;
         }
+
+        .index-banner {
+            padding-top: 235px;
+            padding-bottom: 235px;
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh; /* ارتفاع کامل صفحه */
+        }
+
+        .index-banner-content {
+            text-align: center; /* متن‌ها را وسط چین می‌کند */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* محتوا را به مرکز محور عمودی قرار می‌دهد */
+            align-items: center; /* محتوا را به مرکز محور افقی قرار می‌دهد */
+            height: 100%; /* در صورت نیاز برای استفاده از فضای کامل بخش */
+        }
+
+        .index-banner-content p {
+            color: #f0f0f9;
+            max-width: 500px;
+        }
+        .index-banner-content h1 {
+            font-size: 50px;
+            color: #f0f0f9;
+            max-width: 500px;
+        }
+
     </style>
 
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <!-- Start Digital Agency Banner -->
+    <div id="indexBannerCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
         <ol class="carousel-indicators">
             @foreach($slides as $slide)
                 <li data-target="#indexBannerCarousel" data-slide-to="{{$slide->id}}" class="@if($slides->min('id') == $slide->id) active @endif"></li>
@@ -61,43 +99,39 @@
             @endforeach
         </div>
 
-    <!-- Start Digital Agency Banner -->
-{{--    <section class="sisters-banner" data-bg-desktop={{asset('/site/img/banner-slider/sisters-banner.jpg')}} data-bg-mobile={{asset('/site/img/banner-slider/sisters-banner-mobile.jpg')}}>--}}
-{{--        <div class="container">--}}
-{{--            <div class="sisters-banner-content">--}}
-{{--                <h1 class="wow fadeInUp" style="font-family: 'IranNastaliq',serif;">حوزه علمیه خواهران حضرت قائم (عج) </h1>--}}
-{{--                <p class="wow fadeInUp text-justify">--}}
-{{--                    حوزه علمیه حضرت قائم (عج) چیذر از سال ۱۳۴۶ در دو بخش برادران و خواهران آغاز به کار نمود.--}}
-{{--                    از سال ۱۳۹۳ واحد خواهران با نظارت مرکز مدیریت حوزه های علمیه فعالیت خود را در سه رشته کلام--}}
-{{--                    با گرایش امامت، تفسیر و علوم قرآنی و مشاوره خانواده در قالب موسسه آموزش عالی حوزوی ادامه داد.--}}
-{{--                    این مؤسسه متشکل از سه معاونت آموزش آموزش ،پژوهش و فرهنگی می باشد .--}}
-{{--                </p>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </section>--}}
+        <!-- Controls -->
+        <a class="carousel-control-prev" href="#indexBannerCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#indexBannerCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
     <!-- End Digital Agency Banner -->
 
     {{--   Start line   --}}
-    <div class="container-fluid py-2 bg-light d-flex justify-content-center align-items-center">
-        <div class="container col-12 col-md-8 d-flex align-items-center justify-content-center">
-            <div class="d-md-flex align-items-center">
-                <img class="line" src="{{ asset('site/img/navaar-right.webp') }}" loading="lazy" alt="">
+    <div class="container-fluid py-2" style="background-color: #f0f0f9; display: flex;">
+        <div class="container col-12 col-md-8" style="margin: 0 auto;display: flex;">
+            <div class="d-flex">
+                <img src="{{asset('site/img/navaar-right.webp')}}" style="max-height: 50px;" loading="lazy"
+                     alt="">
             </div>
-            <div class="marquee px-2">
-            <span>
-                مقام معظم رهبری (مدظله العالی) پدیده خواهران طلبه پدیده عظیم و مبارکی است. هزاران عالم ، پژوهشگر ، فقیه و فیلسوف در حوزه‌های علمی خواهران تربیت شوند این حرکت عظیمی خواهد بود.ٍ |
-                الإمامُ الصّادقُ عليه السلام :مَن تَعَلَّمَ للّهِِ و عَمِلَ للّهِِ و عَلَّمَ للّهِِ دُعِيَ في مَلَكوتِ السَّماواتِ عَظيما، فقيلَ : تَعَلَّمَ للّهِِ ، و عَمِلَ للّهِِ ، و عَلَّمَ للّهِِ ! |
-                امام صادق علیه السلام هر که برای خدا علم بیاموزد و به آن عمل کند و به دیگران آموزش دهد در ملکوت آسمان‌ها به بزرگی یاد شود و گفته آید برای خدا آموخت برای خدا عمل کرد و برای خدا آموزش داد. |
-                الکافی ۱/۳۵/۶
-            </span>
+            <div class="marquee">
+                <span>
+                    @foreach($flowtexts as $flowtext)
+                        {{$flowtext->matn}} |
+                    @endforeach
+                </span>
             </div>
-            <div class="d-md-flex align-items-center">
-                <img class="line" src="{{ asset('site/img/navaar-left.webp') }}" loading="lazy" alt="">
+            <div class="d-flex">
+                <img src="{{asset('site/img/navaar-left.webp')}}" style="max-height: 50px;" loading="lazy"
+                     alt="">
             </div>
         </div>
     </div>
     {{--   End line   --}}
-
     <!-- Start section cards -->
     <div class="features-card-section pt-100 pb-70 bg-f8fbfa">
         <div class="container">
@@ -196,8 +230,6 @@
         </div>
     </div>
     <!-- End section cards -->
-
-    <!-- Start Services Area -->
     <section class="services-area mt-3 mb-3">
         <div class="container ">
             <div class="section-title text-left flex-row d-flex align-items-center">
@@ -205,82 +237,30 @@
                 <h2>سلسله نشست های دوره ای حوزه</h2>
             </div>
             <div class="row">
-                <div class="single-services-box col-lg-6 col-md-12">
-                    <div class="row m-0">
-                        <div class="col-lg-6 col-md-12 p-0">
-                            <div class="content">
-                                <h3><a href="{{route('/')}}">نشست خانواده و تربیت</a></h3>
-                                <p>لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال
-                                    استاندارد صنعت بوده است.</p>
-                                <a href="{{route('/')}}" class="read-more-btn">ادامه مطلب <i
-                                        class='bx bx-left-arrow-alt'></i></a>
+                @foreach($posts as $post)
+                    @if($post->posttype == 2)
+                        <div class="single-services-box col-lg-6 col-md-12">
+                            <div class="row m-0">
+                                <div class="col-lg-6 col-md-12 p-0">
+                                    <div class="content">
+                                        <h3><a href="{{route('/')}}">{{$post->title}}</a></h3>
+                                        {!! $post->description !!}
+                                        <a href="{{url('نشست/'.$post->slug)}}" class="read-more-btn">ادامه مطلب <i class='bx bx-left-arrow-alt'></i></a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-12 p-0">
+                                    <div class="image bg-1">
+                                        <img src="{{asset($post->image)}}" alt="{{$post->title}}">
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-lg-6 col-md-12 p-0">
-                            <div class="image bg-1">
-                                <img src="{{asset("site/img/marketing-agency/services-img1.jpg")}}" alt="image">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="single-services-box col-lg-6 col-md-12">
-                    <div class="row m-0">
-                        <div class="col-lg-6 col-md-12 p-0">
-                            <div class="content">
-                                <h3><a href="{{route('/')}}">نشست خانواده و تربیت</a></h3>
-                                <p>لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال
-                                    استاندارد صنعت بوده است.</p>
-                                <a href="{{route('/')}}" class="read-more-btn">ادامه مطلب <i
-                                        class='bx bx-left-arrow-alt'></i></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-12 p-0">
-                            <div class="image bg-1">
-                                <img src="{{asset("site/img/marketing-agency/services-img1.jpg")}}" alt="image">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="single-services-box col-lg-6 col-md-12">
-                    <div class="row m-0">
-                        <div class="col-lg-6 col-md-12 p-0">
-                            <div class="content">
-                                <h3><a href="{{route('/')}}">نشست خانواده و تربیت</a></h3>
-                                <p>لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال
-                                    استاندارد صنعت بوده است.</p>
-                                <a href="{{route('/')}}" class="read-more-btn">ادامه مطلب <i
-                                        class='bx bx-left-arrow-alt'></i></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-12 p-0">
-                            <div class="image bg-1">
-                                <img src="{{asset("site/img/marketing-agency/services-img1.jpg")}}" alt="image">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="single-services-box col-lg-6 col-md-12">
-                    <div class="row m-0">
-                        <div class="col-lg-6 col-md-12 p-0">
-                            <div class="content">
-                                <h3><a href="{{route('/')}}">نشست خانواده و تربیت</a></h3>
-                                <p>لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال
-                                    استاندارد صنعت بوده است.</p>
-                                <a href="{{route('/')}}" class="read-more-btn">ادامه مطلب <i
-                                        class='bx bx-left-arrow-alt'></i></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-12 p-0">
-                            <div class="image bg-1">
-                                <img src="{{asset("site/img/marketing-agency/services-img1.jpg")}}" alt="image">
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    @endif
+                @endforeach
             </div>
             <div class="col-lg-12 col-md-12 wow fadeInUp" data-wow-delay=".6s">
                 <div class="services-btn-box">
-                    <a href="{{url('/meeting')}}" class="default-btn">
+                    <a href="{{url('نشست')}}" class="default-btn">
                         مشاهده همه
                         <i class="bx bx-chevron-right"></i>
                     </a>
@@ -294,15 +274,19 @@
     <section class="case-studies-area pt-70 pb-20">
         <div class="container">
             <div id="case-studies-slides" class="case-studies-slides owl-carousel">
-                <div class="single-case-studies-item">
-                    <a href="#" class="image d-block">
-                        <img src="{{asset("site/img/case-studies/case-studies-img1.jpg")}}" alt="image">
-                    </a>
-                    <div class="content">
-                        <h3><a href="#">سخنرانی و درس اخلاق آیت الله هاشمی اولیا</a></h3>
-                        <a href="#" class="link-btn"><i class='bx bx-left-arrow-alt'></i></a>
-                    </div>
-                </div>
+                @foreach($posts as $post)
+                    @if($post->posttype == 5)
+                        <div class="single-case-studies-item">
+                            <a href="#" class="image d-block">
+                                <img src="{{asset($post->image)}}" alt="image">
+                            </a>
+                            <div class="content">
+                                <h3><a href="#">{{$post->title}}</a></h3>
+                                <a href="#" class="link-btn"><i class='bx bx-left-arrow-alt'></i></a>
+                            </div>
+                        </div>
+                    @endif
+                @endforeach
             </div>
         </div>
     </section>
@@ -370,31 +354,13 @@
     <section class="partner-area-two ptb-70 bg-f9f9f9">
         <div class="container">
             <div id="partner-row" class="d-flex justify-content-center row align-items-center">
-                <div class="col-lg-2 col-6 col-sm-3 col-md-4 wow fadeInUp">
-                    <div class="single-partner-box">
-                        <img src="{{asset('site/img/partner-image/1.png')}}" alt="image">
+                @foreach($customers as $customer)
+                    <div class="col-lg-2 col-6 col-sm-3 col-md-4 wow fadeInUp">
+                        <div class="single-partner-box">
+                            <img src="{{asset($customer->image)}}" alt="{{$customer->name}}">
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-2 col-6 col-sm-3 col-md-4 wow fadeInUp">
-                    <div class="single-partner-box">
-                        <img src="{{asset('site/img/partner-image/1.png')}}" alt="image">
-                    </div>
-                </div>
-                <div class="col-lg-2 col-6 col-sm-3 col-md-4 wow fadeInUp">
-                    <div class="single-partner-box">
-                        <img src="{{asset('site/img/partner-image/1.png')}}" alt="image">
-                    </div>
-                </div>
-                <div class="col-lg-2 col-6 col-sm-3 col-md-4 wow fadeInUp">
-                    <div class="single-partner-box">
-                        <img src="{{asset('site/img/partner-image/1.png')}}" alt="image">
-                    </div>
-                </div>
-                <div class="col-lg-2 col-6 col-sm-3 col-md-4 wow fadeInUp">
-                    <div class="single-partner-box">
-                        <img src="{{asset('site/img/partner-image/1.png')}}" alt="image">
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
@@ -404,28 +370,31 @@
     <section class="blog-area pt-70">
         <div class="container pb-5">
             <div id="blog-slides" class="blog-slides owl-carousel">
-
-                <div class="single-blog-post-item">
-                    <div class="post-image">
-                        <a href="#" class="d-block">
-                            <img src="{{asset('site/img/blog-image/2.jpg')}}" alt="image">
-                        </a>
-                    </div>
-                    <div class="post-content">
-                        <a href="#" class="category">خانواده</a>
-                        <h3><a href="#">دوره تفسیر قرآن کریم</a></h3>
-                        <ul class="post-content-footer d-flex justify-content-between align-items-center">
-                            <li>
-                                <div class="post-author d-flex align-items-center">
-                                    <!-- Author information can be added here -->
-                                </div>
-                            </li>
-                            <li>
-                                <i class='bx bx-calendar'></i> 18/12/1378
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                @foreach($posts as $post)
+                    @if($post->posttype == 3)
+                        <div class="single-blog-post-item">
+                            <div class="post-image">
+                                <a href="#" class="d-block">
+                                    <img src="{{asset($post->image)}}" alt="{{$post->title}}">
+                                </a>
+                            </div>
+                            <div class="post-content">
+                                <a href="#" class="category">خانواده</a>
+                                <h3><a href="#">{{$post->title}}</a></h3>
+                                <ul class="post-content-footer d-flex justify-content-between align-items-center">
+                                    <li>
+                                        <div class="post-author d-flex align-items-center">
+                                            <!-- Author information can be added here -->
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <i class='bx bx-calendar'></i> {{jdate($post->update_at)->format('Y/m/d')}}
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    @endif
+                @endforeach
 
             </div>
             <div class="col-lg-12 col-md-12 wow fadeInUp" data-wow-delay=".6s">
@@ -439,18 +408,46 @@
         </div>
     </section>
     <!-- End Blog Area -->
+
+    <section class="faq-area ptb-5 bg-f8fbfa">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12 col-md-12">
+                    <div class="faq-accordion">
+                        <ul class="accordion">
+
+                            @foreach($questions as $question)
+                                <li class="accordion-item">
+                                    <a class="accordion-title" href="javascript:void(0)">
+                                        <i class="bx bx-plus"></i>
+                                        {{$question->question}}
+                                    </a>
+
+                                    <p class="accordion-content">
+                                        {{$question->answer}}
+                                    </p>
+                                </li>
+                            @endforeach
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Start Let's Talk Area -->
-    <section class="lets-talk-area ptb-100 bg-f8fbfa">
+    <section class="lets-talk-area mt-5 mb-5">
         <div class="container">
             <div class="row align-items-center text-center">
                 <div class="col-lg-12 col-md-12">
                     <div class="lets-talk-content">
-                        <h2 class="wow fadeInUp pb-4">درباره حوزه علمیه حضرت قائم (عج) چیذر</h2>
+                        <h2 class="wow fadeInUp pb-5">درباره حوزه علمیه و مدرسه حضرت قائم (عج) چیذر</h2>
                         <p class="wow fadeInUp text-justify">
                             حوزه علمیه حضرت قائم (عج) چیذر از سال ۱۳۴۶ در دو بخش برادران و خواهران آغاز به کار نمود.
-                            از سال ۱۳۹۳ واحد خواهران با نظارت مرکز مدیریت حوزه های علمیه فعالیت خود را در سه رشته کلام با گرایش امامت،
-                            تفسیر و علوم قرآنی و مشاوره خانواده در قالب موسسه آموزش عالی حوزوی ادامه داد.
-                            این مؤسسه متشکل از سه معاونت آموزش آموزش ،پژوهش و فرهنگی می باشد .
+                            از سال ۱۳۹۳ واحد خواهران با نظارت مرکز مدیریت حوزه های علمیه فعالیت خود را در سه رشته کلام
+                            با گرایش امامت، تفسیر و علوم قرآنی و مشاوره خانواده در قالب موسسه آموزش عالی حوزوی ادامه
+                            داد. این مؤسسه متشکل از سه معاونت آموزش آموزش ،پژوهش و فرهنگی می باشد .
                         </p>
                     </div>
                 </div>
@@ -459,29 +456,4 @@
             </div>
         </div>
     </section>
-    <!-- End Let's Talk Area -->
-
 @endsection
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        let lazyBackgrounds = [].slice.call(document.querySelectorAll(".sisters-banner"));
-
-        if ("IntersectionObserver" in window) {
-            let lazyBackgroundObserver = new IntersectionObserver(function(entries, observer) {
-                entries.forEach(function(entry) {
-                    if (entry.isIntersecting) {
-                        let lazyBackground = entry.target;
-                        let bgUrl = window.innerWidth <= 600 ? lazyBackground.getAttribute('data-bg-mobile') : lazyBackground.getAttribute('data-bg-desktop');
-                        lazyBackground.style.backgroundImage = 'url(' + bgUrl + ')';
-                        lazyBackground.classList.add("sisters-lazy-bg");
-                        lazyBackgroundObserver.unobserve(lazyBackground);
-                    }
-                });
-            });
-
-            lazyBackgrounds.forEach(function(lazyBackground) {
-                lazyBackgroundObserver.observe(lazyBackground);
-            });
-        }
-    });
-</script>

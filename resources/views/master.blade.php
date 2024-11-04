@@ -67,6 +67,7 @@
                         @if(request()->segment(1) == 'حوزه-علمیه-خواهران')
                             @foreach($submenus as $submenu)
                                 @if($submenu->mega_manu == 1)
+
                                     <li class="nav-item">
                                         <a href="{{url('حوزه-علمیه-خواهران'.'/'.$submenu->slug)}}" class="nav-link">{{$submenu->title}}</a>
                                     </li>

@@ -96,221 +96,43 @@
                 </div>
                 <div class="col-lg-8 col-md-12">
                     <div class="row">
+                        @foreach($posts as $post)
+                            @if($post->posttype == 2)
                         <div class="col-lg-6 col-md-6">
                             <div class="single-blog-post">
                                 <div class="post-image">
-                                    <a href="{{url('/single-meeting')}}"><img src="{{url('/site/img/blog-image/1.jpg')}}" alt="image"></a>
+                                    <a href="{{url('نشست/'.$post->slug)}}"><img src="{{asset($post->image)}}" alt="image"></a>
 
-                                    <div class="date"><i class='bx bx-calendar'></i> 01 دی 1398</div>
+                                    <div class="date"><i class='bx bx-calendar'></i>{{jdate($post->update_at)->format('y/m/d')}}</div>
                                 </div>
 
                                 <div class="post-content">
-                                    <h3><a href="{{url('/single-meeting')}}">نشست خانواده و تربیت</a></h3>
+                                    <h3><a href="{{url('نشست/'.$post->slug)}}">{{$post->title}}</a></h3>
 
                                     <div class="post-info">
                                         <div class="post-by">
-                                            <img src="{{url('/site/img/author-image/1.jpg')}}" alt="image">
+                                            <img src="{{asset($post->image)}}" alt="{{$post->title}}">
 
                                             <h6>فاطمه محمدی</h6>
                                         </div>
 
                                         <div class="details-btn">
-                                            <a href="{{url('/single-meeting')}}"><i class="bx bx-left-arrow-alt"></i></a>
+                                            <a href="{{url('نشست/'.$post->slug)}}"><i class="bx bx-left-arrow-alt"></i></a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="col-lg-6 col-md-6">
-                            <div class="single-blog-post">
-                                <div class="post-image">
-                                    <a href="{{url('/single-meeting')}}"><img src="{{url('/site/img/blog-image/1.jpg')}}" alt="image"></a>
-
-                                    <div class="date"><i class='bx bx-calendar'></i> 01 دی 1398</div>
-                                </div>
-
-                                <div class="post-content">
-                                    <h3><a href="{{url('/single-meeting')}}">نشست خانواده و تربیت</a></h3>
-
-                                    <div class="post-info">
-                                        <div class="post-by">
-                                            <img src="{{url('/site/img/author-image/1.jpg')}}" alt="image">
-
-                                            <h6>فاطمه محمدی</h6>
-                                        </div>
-
-                                        <div class="details-btn">
-                                            <a href="{{url('/single-meeting')}}"><i class="bx bx-left-arrow-alt"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-6 col-md-6">
-                            <div class="single-blog-post">
-                                <div class="post-image">
-                                    <a href="{{url('/single-meeting')}}"><img src="{{url('/site/img/blog-image/1.jpg')}}" alt="image"></a>
-
-                                    <div class="date"><i class='bx bx-calendar'></i> 01 دی 1398</div>
-                                </div>
-
-                                <div class="post-content">
-                                    <h3><a href="{{url('/single-meeting')}}">نشست خانواده و تربیت</a></h3>
-
-                                    <div class="post-info">
-                                        <div class="post-by">
-                                            <img src="{{url('/site/img/author-image/1.jpg')}}" alt="image">
-
-                                            <h6>فاطمه محمدی</h6>
-                                        </div>
-
-                                        <div class="details-btn">
-                                            <a href="{{url('/single-meeting')}}"><i class="bx bx-left-arrow-alt"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-6 col-md-6">
-                            <div class="single-blog-post">
-                                <div class="post-image">
-                                    <a href="{{url('/single-meeting')}}"><img src="{{url('/site/img/blog-image/1.jpg')}}" alt="image"></a>
-
-                                    <div class="date"><i class='bx bx-calendar'></i> 01 دی 1398</div>
-                                </div>
-
-                                <div class="post-content">
-                                    <h3><a href="{{url('/single-meeting')}}">نشست خانواده و تربیت</a></h3>
-
-                                    <div class="post-info">
-                                        <div class="post-by">
-                                            <img src="{{url('/site/img/author-image/1.jpg')}}" alt="image">
-
-                                            <h6>فاطمه محمدی</h6>
-                                        </div>
-
-                                        <div class="details-btn">
-                                            <a href="{{url('/single-meeting')}}"><i class="bx bx-left-arrow-alt"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-6 col-md-6">
-                            <div class="single-blog-post">
-                                <div class="post-image">
-                                    <a href="{{url('/single-meeting')}}"><img src="{{url('/site/img/blog-image/1.jpg')}}" alt="image"></a>
-
-                                    <div class="date"><i class='bx bx-calendar'></i> 01 دی 1398</div>
-                                </div>
-
-                                <div class="post-content">
-                                    <h3><a href="{{url('/single-meeting')}}">نشست خانواده و تربیت</a></h3>
-
-                                    <div class="post-info">
-                                        <div class="post-by">
-                                            <img src="{{url('/site/img/author-image/1.jpg')}}" alt="image">
-
-                                            <h6>فاطمه محمدی</h6>
-                                        </div>
-
-                                        <div class="details-btn">
-                                            <a href="{{url('/single-meeting')}}"><i class="bx bx-left-arrow-alt"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-6 col-md-6">
-                            <div class="single-blog-post">
-                                <div class="post-image">
-                                    <a href="{{url('/single-meeting')}}"><img src="{{url('/site/img/blog-image/1.jpg')}}" alt="image"></a>
-
-                                    <div class="date"><i class='bx bx-calendar'></i> 01 دی 1398</div>
-                                </div>
-
-                                <div class="post-content">
-                                    <h3><a href="{{url('/single-meeting')}}">نشست خانواده و تربیت</a></h3>
-
-                                    <div class="post-info">
-                                        <div class="post-by">
-                                            <img src="{{url('/site/img/author-image/1.jpg')}}" alt="image">
-
-                                            <h6>فاطمه محمدی</h6>
-                                        </div>
-
-                                        <div class="details-btn">
-                                            <a href="{{url('/single-meeting')}}"><i class="bx bx-left-arrow-alt"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-6 col-md-6">
-                            <div class="single-blog-post">
-                                <div class="post-image">
-                                    <a href="{{url('/single-meeting')}}"><img src="{{url('/site/img/blog-image/1.jpg')}}" alt="image"></a>
-
-                                    <div class="date"><i class='bx bx-calendar'></i> 01 دی 1398</div>
-                                </div>
-
-                                <div class="post-content">
-                                    <h3><a href="{{url('/single-meeting')}}">نشست خانواده و تربیت</a></h3>
-
-                                    <div class="post-info">
-                                        <div class="post-by">
-                                            <img src="{{url('/site/img/author-image/1.jpg')}}" alt="image">
-
-                                            <h6>فاطمه محمدی</h6>
-                                        </div>
-
-                                        <div class="details-btn">
-                                            <a href="{{url('/single-meeting')}}"><i class="bx bx-left-arrow-alt"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-6 col-md-6">
-                            <div class="single-blog-post">
-                                <div class="post-image">
-                                    <a href="{{url('/single-meeting')}}"><img src="{{url('/site/img/blog-image/1.jpg')}}" alt="image"></a>
-
-                                    <div class="date"><i class='bx bx-calendar'></i> 01 دی 1398</div>
-                                </div>
-
-                                <div class="post-content">
-                                    <h3><a href="{{url('/single-meeting')}}">نشست خانواده و تربیت</a></h3>
-
-                                    <div class="post-info">
-                                        <div class="post-by">
-                                            <img src="{{url('/site/img/author-image/1.jpg')}}" alt="image">
-
-                                            <h6>فاطمه محمدی</h6>
-                                        </div>
-
-                                        <div class="details-btn">
-                                            <a href="{{url('/single-meeting')}}"><i class="bx bx-left-arrow-alt"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                            @endif
+                        @endforeach
 
                         <div class="col-lg-12 col-md-12">
                             <div class="pagination-area">
-                                <a href="#" class="prev page-numbers"><i class='bx bxs-arrow-to-right'></i></a>
-                                <a href="#" class="page-numbers">1</a>
-                                <span class="page-numbers current" aria-current="page">2</span>
-                                <a href="#" class="page-numbers">3</a>
-                                <a href="#" class="next page-numbers"><i class='bx bxs-arrow-to-left'></i></a>
+{{--                                <a href="#" class="prev page-numbers"><i class='bx bxs-arrow-to-right'></i></a>--}}
+{{--                                <a href="#" class="page-numbers">1</a>--}}
+{{--                                <span class="page-numbers current" aria-current="page">2</span>--}}
+{{--                                <a href="#" class="page-numbers">3</a>--}}
+{{--                                <a href="#" class="next page-numbers"><i class='bx bxs-arrow-to-left'></i></a>--}}
                             </div>
                         </div>
                     </div>
