@@ -7,6 +7,32 @@
         .card-title {
             font-size: 20px;
         }
+
+        .marquee {
+            direction: rtl;
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            box-sizing: border-box;
+            font-size: large;
+        }
+
+        .marquee span {
+            margin-bottom: 12px;
+            margin-top: 12px;
+            display: inline-block;
+            animation: marquee 40s linear infinite;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(-20%);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
         .container .row .col-md-3 img {
             transition: transform 0.4s ease-in-out;
         }
@@ -23,7 +49,6 @@
             background-size: cover;
             background-repeat: no-repeat;
             background-color: #f0f0f0;
-            background-image: url('{{ asset('/site/img/banner-slider/banner-hozeh.jpg') }}');
             display: flex;
             justify-content: center;
             align-items: center;
@@ -49,83 +74,29 @@
             max-width: 500px;
         }
 
-        @media (max-width: 768px) {
-            .index-banner{
-                height: 30vh;
-                padding-top: 40px;
-                padding-bottom: 40px;
-            }
-            .index-banner-content h1 {
-                font-size: 20px;
-                color: #f0f0f9;
-                max-width: 250px;
-            }
-            .index-banner-content p {
-                max-width: 250px;
-                font-size: 7px;
-            }
-        }
-
-
     </style>
 
     <!-- Start Digital Agency Banner -->
     <div id="indexBannerCarousel" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
-            <li data-target="#indexBannerCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#indexBannerCarousel" data-slide-to="1"></li>
-            <li data-target="#indexBannerCarousel" data-slide-to="2"></li>
+            @foreach($slides as $slide)
+                <li data-target="#indexBannerCarousel" data-slide-to="{{$slide->id}}" class="@if($slides->min('id') == $slide->id) active @endif"></li>
+            @endforeach
         </ol>
 
         <!-- Carousel items -->
         <div class="carousel-inner">
-            <!-- Slide 1 -->
-            <div class="carousel-item active">
-                <section class="index-banner" style="background-color: #f5f5f5;">
-                    <div class="index-banner-content">
-                        <h1 style="font-family: 'IranNastaliq', serif;">حوزه علمیه حضرت قائم (عج)</h1>
-                        <p>
-                            حوزه علمیه حضرت قائم (عج) چیذر از سال ۱۳۴۶ در دو بخش برادران و خواهران آغاز به کار نمود. از
-                            سال ۱۳۹۳ واحد خواهران با نظارت مرکز مدیریت حوزه های علمیه فعالیت خود را در سه رشته کلام با
-                            گرایش امامت، تفسیر و علوم قرآنی و مشاوره خانواده در قالب موسسه آموزش عالی حوزوی ادامه داد.
-                            این مؤسسه متشکل از سه معاونت آموزش آموزش ،پژوهش و فرهنگی می باشد .
-
-                        </p>
-                    </div>
-                </section>
-            </div>
-
-            <!-- Slide 2 -->
-            <div class="carousel-item">
-                <section class="index-banner" style="background-color: #f5f5f5;">
-                    <div class="index-banner-content">
-                        <h1 style="font-family: 'IranNastaliq', serif;">حوزه علمیه حضرت قائم (عج)</h1>
-                        <p>
-                            حوزه علمیه حضرت قائم (عج) چیذر از سال ۱۳۴۶ در دو بخش برادران و خواهران آغاز به کار نمود. از
-                            سال ۱۳۹۳ واحد خواهران با نظارت مرکز مدیریت حوزه های علمیه فعالیت خود را در سه رشته کلام با
-                            گرایش امامت، تفسیر و علوم قرآنی و مشاوره خانواده در قالب موسسه آموزش عالی حوزوی ادامه داد.
-                            این مؤسسه متشکل از سه معاونت آموزش آموزش ،پژوهش و فرهنگی می باشد .
-
-                        </p>
-                    </div>
-                </section>
-            </div>
-
-            <!-- Slide 3 -->
-            <div class="carousel-item">
-                <section class="index-banner" style="background-color: #f5f5f5;">
-                    <div class="index-banner-content">
-                        <h1 style="font-family: 'IranNastaliq', serif;">حوزه علمیه حضرت قائم (عج)</h1>
-                        <p>
-                            حوزه علمیه حضرت قائم (عج) چیذر از سال ۱۳۴۶ در دو بخش برادران و خواهران آغاز به کار نمود. از
-                            سال ۱۳۹۳ واحد خواهران با نظارت مرکز مدیریت حوزه های علمیه فعالیت خود را در سه رشته کلام با
-                            گرایش امامت، تفسیر و علوم قرآنی و مشاوره خانواده در قالب موسسه آموزش عالی حوزوی ادامه داد.
-                            این مؤسسه متشکل از سه معاونت آموزش آموزش ،پژوهش و فرهنگی می باشد .
-                        </p>
-                    </div>
-                </section>
-            </div>
+            @foreach($slides as $slide)
+                <div class="carousel-item @if($slides->min('id') == $slide->id) active @endif ">
+                    <section class="index-banner" style="background-color: #f5f5f5; background-image: url('{{ asset('storage/'.$slide->file_link) }}');">
+                        <div class="index-banner-content">
+                            <h1 style="font-family: 'IranNastaliq', serif;">{{$slide->title}}</h1>
+                            <p>{!! $slide->text !!}</p>
+                        </div>
+                    </section>
+                </div>
+            @endforeach
         </div>
 
         <!-- Controls -->
@@ -141,30 +112,30 @@
     <!-- End Digital Agency Banner -->
 
     {{--   Start line   --}}
-    <div class="container-fluid py-2 bg-light d-flex justify-content-center align-items-center">
-        <div class="container col-12 col-md-8 d-flex align-items-center justify-content-center">
-            <div class="d-md-flex align-items-center">
-                <img class="line" src="{{ asset('site/img/navaar-right.webp') }}" loading="lazy" alt="">
+    <div class="container-fluid py-2" style="background-color: #f0f0f9; display: flex;">
+        <div class="container col-12 col-md-8" style="margin: 0 auto;display: flex;">
+            <div class="d-flex">
+                <img src="{{asset('site/img/navaar-right.webp')}}" style="max-height: 50px;" loading="lazy"
+                     alt="">
             </div>
-            <div class="marquee px-2">
-            <span>
-                مقام معظم رهبری (مدظله العالی) پدیده خواهران طلبه پدیده عظیم و مبارکی است. هزاران عالم ، پژوهشگر ، فقیه و فیلسوف در حوزه‌های علمی خواهران تربیت شوند این حرکت عظیمی خواهد بود.ٍ |
-                الإمامُ الصّادقُ عليه السلام :مَن تَعَلَّمَ للّهِِ و عَمِلَ للّهِِ و عَلَّمَ للّهِِ دُعِيَ في مَلَكوتِ السَّماواتِ عَظيما، فقيلَ : تَعَلَّمَ للّهِِ ، و عَمِلَ للّهِِ ، و عَلَّمَ للّهِِ ! |
-                امام صادق علیه السلام هر که برای خدا علم بیاموزد و به آن عمل کند و به دیگران آموزش دهد در ملکوت آسمان‌ها به بزرگی یاد شود و گفته آید برای خدا آموخت برای خدا عمل کرد و برای خدا آموزش داد. |
-                الکافی ۱/۳۵/۶
-            </span>
+            <div class="marquee">
+                <span>
+                    @foreach($flowtexts as $flowtext)
+                        {{$flowtext->matn}} |
+                    @endforeach
+                </span>
             </div>
-            <div class="d-md-flex align-items-center">
-                <img class="line" src="{{ asset('site/img/navaar-left.webp') }}" loading="lazy" alt="">
+            <div class="d-flex">
+                <img src="{{asset('site/img/navaar-left.webp')}}" style="max-height: 50px;" loading="lazy"
+                     alt="">
             </div>
         </div>
     </div>
     {{--   End line   --}}
 
-
     {{--  Start brothers and sisters section  --}}
     <div class="container">
-        <div class="d-flex flex-row" style="justify-content: center; text-align: center">
+        <div class="row" style="justify-content: center; text-align: center">
             <div class="col-md-3 p-4">
                 <a href="{{url('حوزه-علمیه-برادران')}}">
                     <img src="{{ asset('/site/img/برادران.png') }}" loading="lazy" alt="Image 1">
@@ -246,42 +217,40 @@
 
     <!-- Start Services Area -->
     <section class="services-area mt-3 mb-3">
-        <div class="container">
-            <div class="section-title text-left d-flex align-items-center">
-                <img src="{{ asset('/site/img/logo-without-text.png') }}" class="title-icon" alt="Logo">
-                <h2>سلسله نشست‌های دوره‌ای حوزه</h2>
+        <div class="container ">
+            <div class="section-title text-left flex-row d-flex align-items-center">
+                <img src="{{asset('/site/img/logo-without-text.png')}}" class="title-icon" alt="">
+                <h2>سلسله نشست های دوره ای حوزه</h2>
             </div>
             <div class="row">
                 @foreach($posts as $post)
                     @if($post->posttype == 2)
-                    <div class="col-lg-6 col-md-12 mb-4 d-flex">
-                        <div class="single-services-box">
+                        <div class="single-services-box col-lg-6 col-md-12">
                             <div class="row m-0">
-                                <div class="col-lg-6 col-md-12 p-0 d-flex align-items-center">
+                                <div class="col-lg-6 col-md-12 p-0">
                                     <div class="content">
-                                        <h3><a href="{{ route('/') }}">{{ $post->title }}</a></h3>
+                                        <h3><a href="{{route('/')}}">{{$post->title}}</a></h3>
                                         {!! $post->description !!}
-                                        <a href="{{ url('نشست/' . $post->id) }}" class="read-more-btn">
-                                            ادامه مطلب <i class='bx bx-left-arrow-alt'></i>
-                                        </a>
+                                        <a href="{{url('نشست/'.$post->id)}}" class="read-more-btn">ادامه مطلب <i class='bx bx-left-arrow-alt'></i></a>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-12 p-0">
-                                    <div class="image" style="background-image: url('{{ asset($post->image) }}');">
-                                        <img src="{{ asset($post->image) }}" alt="{{ $post->title }}">
+                                    <div class="image bg-1">
+                                        <img src="{{asset($post->image)}}" alt="{{$post->title}}">
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                     @endif
                 @endforeach
             </div>
-            <div class="text-center mt-4">
-                <a href="{{ url('/meeting') }}" class="default-btn">
-                    مشاهده همه
-                    <i class="bx bx-chevron-right"></i>
-                </a>
+            <div class="col-lg-12 col-md-12 wow fadeInUp" data-wow-delay=".6s">
+                <div class="services-btn-box">
+                    <a href="{{url('/meeting')}}" class="default-btn">
+                        مشاهده همه
+                        <i class="bx bx-chevron-right"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -290,9 +259,9 @@
     <!-- Start Case Studies Area -->
     <section class="case-studies-area pt-70 pb-20">
         <div class="container">
-            @foreach($posts as $post)
-                @if($post->posttype == 5)
-                    <div id="case-studies-slides" class="case-studies-slides owl-carousel">
+            <div id="case-studies-slides" class="case-studies-slides owl-carousel">
+                @foreach($posts as $post)
+                    @if($post->posttype == 5)
                         <div class="single-case-studies-item">
                             <a href="#" class="image d-block">
                                 <img src="{{asset($post->image)}}" alt="image">
@@ -302,9 +271,9 @@
                                 <a href="#" class="link-btn"><i class='bx bx-left-arrow-alt'></i></a>
                             </div>
                         </div>
-                    </div>
-                @endif
-            @endforeach
+                    @endif
+                @endforeach
+            </div>
         </div>
     </section>
     <!-- End Case Studies Area -->
@@ -368,7 +337,7 @@
     </section>
 
     <!-- Start Partner Area -->
-    <section class="partner-area-two bg-f9f9f9">
+    <section class="partner-area-two ptb-70 bg-f9f9f9">
         <div class="container">
             <div id="partner-row" class="d-flex justify-content-center row align-items-center">
                 @foreach($customers as $customer)
@@ -388,11 +357,11 @@
         <div class="container pb-5">
             <div id="blog-slides" class="blog-slides owl-carousel">
                 @foreach($posts as $post)
-                    @if($post->posttype == 1)
+                    @if($post->posttype == 3)
                         <div class="single-blog-post-item">
                             <div class="post-image">
                                 <a href="#" class="d-block">
-                                    <img src="{{asset($post->image)}}" alt="image">
+                                    <img src="{{asset($post->image)}}" alt="{{$post->title}}">
                                 </a>
                             </div>
                             <div class="post-content">
@@ -434,16 +403,16 @@
                         <ul class="accordion">
 
                             @foreach($questions as $question)
-                            <li class="accordion-item">
-                                <a class="accordion-title" href="javascript:void(0)">
-                                    <i class="bx bx-plus"></i>
-                                    {{$question->question}}
-                                </a>
+                                <li class="accordion-item">
+                                    <a class="accordion-title" href="javascript:void(0)">
+                                        <i class="bx bx-plus"></i>
+                                        {{$question->question}}
+                                    </a>
 
-                                <p class="accordion-content">
-                                    {{$question->answer}}
-                                </p>
-                            </li>
+                                    <p class="accordion-content">
+                                        {{$question->answer}}
+                                    </p>
+                                </li>
                             @endforeach
 
                         </ul>
@@ -458,9 +427,9 @@
         <div class="container">
             <div class="row align-items-center text-center">
                 <div class="col-lg-12 col-md-12">
-                    <div class="lets-talk-content d-flex flex-column align-items-center">
-                        <h3 class="wow fadeInUp pb-5">درباره حوزه علمیه و مدرسه حضرت قائم (عج) چیذر</h3>
-                        <p class="wow fadeInUp text-justify d-flex col-md-6">
+                    <div class="lets-talk-content">
+                        <h2 class="wow fadeInUp pb-5">درباره حوزه علمیه و مدرسه حضرت قائم (عج) چیذر</h2>
+                        <p class="wow fadeInUp text-justify">
                             حوزه علمیه حضرت قائم (عج) چیذر از سال ۱۳۴۶ در دو بخش برادران و خواهران آغاز به کار نمود.
                             از سال ۱۳۹۳ واحد خواهران با نظارت مرکز مدیریت حوزه های علمیه فعالیت خود را در سه رشته کلام
                             با گرایش امامت، تفسیر و علوم قرآنی و مشاوره خانواده در قالب موسسه آموزش عالی حوزوی ادامه
