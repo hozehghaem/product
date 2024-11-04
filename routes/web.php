@@ -19,15 +19,15 @@ Route::group(['namespace' => 'App\Http\Controllers' ,'prefix' => '/'] , function
     $sitemenus= Menu::select('slug', 'class', 'submenu_route', 'submenu')->whereLevel('site')->get();
     $submenus = Submenu::select('id', 'slug', 'class')->get();
 
-    $userAgent = request()->header('User-Agent');
-    $deviceDetector = new DeviceDetector($userAgent);
-    $deviceDetector->parse();
-    if ($deviceDetector->isMobile()) {
-        Session::put('device', 'mobile');
-    } else {
-        Session::put('device', 'desktop');
-    }
-    if (Session::get('device') == 'desktop') {
+//    $userAgent = request()->header('User-Agent');
+//    $deviceDetector = new DeviceDetector($userAgent);
+//    $deviceDetector->parse();
+//    if ($deviceDetector->isMobile()) {
+//        Session::put('device', 'mobile');
+//    } else {
+//        Session::put('device', 'desktop');
+//    }
+//    if (Session::get('device') == 'desktop') {
         foreach ($sitemenus as $menu) {
             if ($menu->submenu == 0) {
                 Route::get($menu->slug, 'Site\IndexController@' . $menu->class)->name($menu->slug);
@@ -42,22 +42,23 @@ Route::group(['namespace' => 'App\Http\Controllers' ,'prefix' => '/'] , function
                 }
             }
         }
-    }elseif (Session::get('device') == 'mobile'){
-
-        foreach ($sitemenus as $menu) {
-            if ($menu->submenu == 0) {
-                Route::get($menu->slug, 'Mobile\IndexController@' . $menu->class)->name($menu->slug);
-            } else {
-                foreach ($submenus as $submenu) {
-                    if ($menu->submenu_route == 1) {
-                        if ($submenu->menu_id == $menu->id) {
-                            Route::get($menu->slug . '/' . $submenu->slug, 'Mobile\IndexController@' . $submenu->class);
-                        }
-                    }
-                }
-            }
-        }
-    }
+//    }
+//    elseif (Session::get('device') == 'mobile'){
+//
+//        foreach ($sitemenus as $menu) {
+//            if ($menu->submenu == 0) {
+//                Route::get($menu->slug, 'Mobile\IndexController@' . $menu->class)->name($menu->slug);
+//            } else {
+//                foreach ($submenus as $submenu) {
+//                    if ($menu->submenu_route == 1) {
+//                        if ($submenu->menu_id == $menu->id) {
+//                            Route::get($menu->slug . '/' . $submenu->slug, 'Mobile\IndexController@' . $submenu->class);
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//    }
 });
 
 //    Route::group(['namespace' => 'App\Http\Controllers\Site' , 'middleware' => 'checkClint'] , function (){
