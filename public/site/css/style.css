@@ -2469,9 +2469,10 @@ Partner Area CSS
 }
 
 .single-partner-box {
-    width: 80px;
-    margin-top: 16px;
-    margin-bottom: 16px;
+    width: auto;
+    max-width: 100px; /* حداکثر عرض برای جلوگیری از بزرگ شدن */
+    margin-top: 8px;
+    margin-bottom: 8px;
     text-align: center;
 }
 
@@ -3065,6 +3066,14 @@ FunFacts Area CSS
     line-height: initial;
     margin-top: 6px;
     margin-bottom: 0;
+}
+.btn-primary{
+    border-color: #58A399;
+    background-color: #58A399;
+}
+.btn-primary:hover{
+    border-color: #58A399;
+    background-color: #479187;
 }
 
 .contact-cta-box .default-btn {

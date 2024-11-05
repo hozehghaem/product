@@ -235,7 +235,6 @@
 <script src="{{asset('site/js/coustom-particles.js')}}"></script>
 <script src="{{asset('site/js/main.js')}}"></script>
 
-
 @yield('script')
 </body>
 </html>

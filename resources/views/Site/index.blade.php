@@ -337,7 +337,7 @@
     </section>
 
     <!-- Start Partner Area -->
-    <section class="partner-area-two ptb-70 bg-f9f9f9">
+    <section class="partner-area-two bg-f9f9f9">
         <div class="container">
             <div id="partner-row" class="d-flex justify-content-center row align-items-center">
                 @foreach($customers as $customer)
@@ -384,7 +384,7 @@
 
             </div>
             <div class="col-lg-12 col-md-12 wow fadeInUp" data-wow-delay=".6s">
-                <div class="services-btn-box">
+                <div class="services-btn-box text-center">
                     <a href="{{url('#')}}" class="default-btn">
                         مشاهده همه
                         <i class="bx bx-chevron-right"></i>
@@ -395,7 +395,7 @@
     </section>
     <!-- End Blog Area -->
 
-    <section class="faq-area ptb-5 bg-f8fbfa">
+    <section class="faq-area p-3 bg-f8fbfa">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-12 col-md-12">
@@ -423,8 +423,8 @@
     </section>
 
     <!-- Start Let's Talk Area -->
-    <section class="lets-talk-area mt-5 mb-5">
-        <div class="container">
+    <section class="lets-talk-area d-flex col-12 mt-5 mb-5">
+        <div class="container col-md-4 justify-content-center">
             <div class="row align-items-center text-center">
                 <div class="col-lg-12 col-md-12">
                     <div class="lets-talk-content">
