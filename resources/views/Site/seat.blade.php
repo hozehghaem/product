@@ -97,7 +97,7 @@
                 <div class="col-lg-8 col-md-12">
                     <div class="row">
                         @foreach($posts as $post)
-                            @if($post->posttype == 2)
+                            @if($post->posttype == 6)
                                 <div class="col-lg-6 col-md-6">
                                     <div class="single-blog-post">
                                         <div class="post-image">

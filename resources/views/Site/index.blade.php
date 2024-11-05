@@ -177,7 +177,7 @@
                     <div class="single-features-card tx-center d-flex justify-content-center">
                         <img src="{{asset('/site/img/icon/books-stack.png')}}" class="mx-auto" alt="">
                         <h3>
-                            <a href="{{url('publishing-center')}}" class="card-title">مرکز نشر</a>
+                            <a href="{{url('مرکز-نشر')}}" class="card-title">مرکز نشر</a>
                         </h3>
                         <p>مرکز نشر کتب و مقالات اساتید و طلاب برجسته حوزه</p>
                     </div>
@@ -186,7 +186,7 @@
                     <div class="single-features-card tx-center d-flex justify-content-center">
                         <img src="{{asset('/site/img/icon/hands.png')}}" class="mx-auto" alt="">
                         <h3>
-                            <a href="{{url('/charity')}}" class="card-title">موسسه خیریه</a>
+                            <a href="{{url('موسسه-خیریه')}}" class="card-title">موسسه خیریه</a>
                         </h3>
                         <p>موسسه خیریه وابسته به حوزه جهت کمک به طلاب</p>
                     </div>
@@ -195,7 +195,7 @@
                     <div class="single-features-card tx-center d-flex justify-content-center">
                         <img src="{{asset('/site/img/icon/speaking.png')}}" class="mx-auto" alt="">
                         <h3>
-                            <a href="{{url('/mahdia')}}" class="card-title">مرکز مشاوره</a>
+                            <a href="{{url('حوزه-علمیه-خواهران/مرکز-مشاوره-مهدیا')}}" class="card-title">مرکز مشاوره</a>
                         </h3>
                         <p>مرکز مشاوره با بهره گیری از متخصصین حوزه و دانشگاه</p>
                     </div>
@@ -204,7 +204,7 @@
                     <div class="single-features-card tx-center d-flex justify-content-center">
                         <img src="{{asset('/site/img/icon/kid.png')}}" class="mx-auto" alt="">
                         <h3>
-                            <a href="{{url('/kindergarten')}}" class="card-title">مهد کودک</a>
+                            <a href="{{url('حوزه-علمیه-خواهران/مهد-کودک')}}" class="card-title">مهد کودک</a>
                         </h3>
                         <p>مهدکودک در زمینه آموزش مفاهیم قرآنی برای خردسالان</p>
                     </div>

@@ -65,9 +65,15 @@
                 <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                     <ul class="navbar-nav">
                         @if(request()->segment(1) == 'حوزه-علمیه-خواهران')
+                            @foreach($menus as $menu)
+                                @if($menu->id == 2)
+                                    <li class="nav-item">
+                                        <a href="{{url($menu->slug)}}" class="nav-link">{{$menu->title}}</a>
+                                    </li>
+                                @endif
+                            @endforeach
                             @foreach($submenus as $submenu)
                                 @if($submenu->mega_manu == 1)
-
                                     <li class="nav-item">
                                         <a href="{{url('حوزه-علمیه-خواهران'.'/'.$submenu->slug)}}" class="nav-link">{{$submenu->title}}</a>
                                     </li>
