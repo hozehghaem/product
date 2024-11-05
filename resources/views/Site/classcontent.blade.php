@@ -5,7 +5,7 @@
     <div class="page-title-area">
         <div class="container">
             <div class="page-title-content">
-                <h2 class="text-center display-4 mb-4">محتوای درسی</h2>
+                <h2 class="text-center display-4">محتوای درسی</h2>
             </div>
         </div>
     </div>

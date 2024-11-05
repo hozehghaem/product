@@ -59,7 +59,7 @@
         <div class="container">
             <nav class="navbar navbar-expand-md navbar-light">
                 <a class="navbar-brand headerLogo" href={{url('/')}}>
-                    <img src="{{asset('site/img/logo.png')}}" style="max-width:30%" alt="logo">
+                    <img src="{{asset('site/img/logo.png')}}" style="max-width:40%" alt="logo">
                 </a>
 
                 <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
