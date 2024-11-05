@@ -16,9 +16,7 @@
     <link rel="stylesheet" href="{{asset('site/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('site/css/rtl.css')}}">
     <link rel="stylesheet" href="{{asset('site/css/responsive.css')}}">
-
     <title>حوزه علمیه حضرت قائم (عج)</title>
-
     <link rel="apple-touch-icon" sizes="180x180" href="{{asset('site/img/favicon/apple-touch-icon.png')}}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{asset('site/img/favicon/favicon-32x32.png')}}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('site/img/favicon/favicon-16x16.png')}}">
@@ -33,10 +31,9 @@
 <div class="preloader-area">
     <div class="loading-message">
         <p>
-            <span class="dot-1" style="font-size: 80px;font-family:IranNastaliq,serif !important;"> حوزه علمیه </span>
-            <span class="dot-2" style="font-size: 80px;font-family:IranNastaliq,serif !important;"> </span>
-            <span class="dot-3"
-                  style="font-size: 80px;font-family:IranNastaliq,serif !important;"> حضرت قائم (عج) </span>
+            <span class="dot dot-1">حوزه علمیه</span>
+            <span class="dot dot-2"></span>
+            <span class="dot dot-3">حضرت قائم (عج)</span>
         </p>
     </div>
 </div>
@@ -59,7 +56,7 @@
         <div class="container">
             <nav class="navbar navbar-expand-md navbar-light">
                 <a class="navbar-brand headerLogo" href={{url('/')}}>
-                    <img src="{{asset('site/img/logo.png')}}" style="max-width:40%" alt="logo">
+                    <img src="{{asset('site/img/logo.png')}}" style="max-width:30%" alt="logo">
                 </a>
 
                 <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
