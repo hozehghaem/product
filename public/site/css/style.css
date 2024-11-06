@@ -352,7 +352,41 @@ p:last-child {
 .dot-1 { animation-delay: 0s; }
 .dot-2 { animation-delay: 0.5s; }
 .dot-3 { animation-delay: 1s; }
+.custom-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    color: #ffffff;
+    background-color: #215c54;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
 
+.custom-btn i {
+    margin-right: 8px; /* فاصله بین متن و آیکون */
+    transition: transform 0.3s ease;
+}
+
+.custom-btn:hover {
+    color: #ffffff;
+    background-color: #1f514a; /* رنگ پس‌زمینه هاور */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.custom-btn:hover i {
+    transform: translateX(-4px); /* جابجایی آیکون هنگام هاور */
+}
+
+/* برای موبایل */
+@media (max-width: 576px) {
+    .custom-btn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
 @keyframes fadeInOut {
     0%, 100% { opacity: 0; }
     50% { opacity: 1; }
@@ -3544,6 +3578,7 @@ Features Area CSS
 }
 
 .single-features-card {
+    width: 100%;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -8185,6 +8220,11 @@ SaaS Home Page CSS
     margin-top: 12px;
     display: inline-block;
     animation: marquee 40s linear infinite;
+}
+@media (max-width: 768px) {
+    .marquee span {
+        font-size: 8px;
+    }
 }
 
 .line {

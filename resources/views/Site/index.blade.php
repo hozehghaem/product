@@ -4,6 +4,7 @@
 @section('main')
 
     <style>
+
         .card-title {
             font-size: 20px;
         }
@@ -68,10 +69,41 @@
             color: #f0f0f9;
             max-width: 500px;
         }
+
         .index-banner-content h1 {
             font-size: 50px;
             color: #f0f0f9;
             max-width: 500px;
+        }
+        .khat img{
+            max-height: 50px;
+        }
+
+        @media (max-width: 768px) {
+            .index-banner {
+                padding-top: 60px;
+                padding-bottom: 60px;
+                height: 30vh;
+            }
+
+            .index-banner-content {
+
+            }
+
+            .index-banner-content h1 {
+                font-size: 24px;
+                color: #f0f0f9;
+                max-width: 500px;
+            }
+
+            .index-banner-content p {
+                font-size: 8px;
+                color: #f0f0f9;
+                max-width: 250px;
+            }
+            .khat img{
+                max-height: 24px;
+            }
         }
 
     </style>
@@ -81,7 +113,8 @@
         <!-- Indicators -->
         <ol class="carousel-indicators">
             @foreach($slides as $slide)
-                <li data-target="#indexBannerCarousel" data-slide-to="{{$slide->id}}" class="@if($slides->min('id') == $slide->id) active @endif"></li>
+                <li data-target="#indexBannerCarousel" data-slide-to="{{$slide->id}}"
+                    class="@if($slides->min('id') == $slide->id) active @endif"></li>
             @endforeach
         </ol>
 
@@ -89,7 +122,8 @@
         <div class="carousel-inner">
             @foreach($slides as $slide)
                 <div class="carousel-item @if($slides->min('id') == $slide->id) active @endif ">
-                    <section class="index-banner" style="background-color: #f5f5f5; background-image: url('{{ asset('storage/'.$slide->file_link) }}');">
+                    <section class="index-banner"
+                             style="background-color: #f5f5f5; background-image: url('{{ asset('storage/'.$slide->file_link) }}');">
                         <div class="index-banner-content">
                             <h1 style="font-family: 'IranNastaliq', serif;">{{$slide->title1}}</h1>
                             <p>{!! $slide->text !!}</p>
@@ -112,10 +146,10 @@
     <!-- End Digital Agency Banner -->
 
     {{--   Start line   --}}
-    <div class="container-fluid py-2" style="background-color: #f0f0f9; display: flex;">
+    <div class="container-fluid py-0 py-lg-2" style="background-color: #f0f0f9; display: flex;">
         <div class="container col-12 col-md-8" style="margin: 0 auto;display: flex;">
-            <div class="d-flex">
-                <img src="{{asset('site/img/navaar-right.webp')}}" style="max-height: 50px;" loading="lazy"
+            <div class="d-flex khat align-items-center">
+                <img src="{{asset('site/img/navaar-right.webp')}}" loading="lazy"
                      alt="">
             </div>
             <div class="marquee">
@@ -125,8 +159,8 @@
                     @endforeach
                 </span>
             </div>
-            <div class="d-flex">
-                <img src="{{asset('site/img/navaar-left.webp')}}" style="max-height: 50px;" loading="lazy"
+            <div class="d-flex khat align-items-center">
+                <img src="{{asset('site/img/navaar-left.webp')}}" loading="lazy"
                      alt="">
             </div>
         </div>
@@ -135,14 +169,15 @@
 
     {{--  Start brothers and sisters section  --}}
     <div class="container">
-        <div class="row" style="justify-content: center; text-align: center">
-            <div class="col-md-3 p-4">
-                <a href="{{url('حوزه-علمیه-برادران')}}">
-                    <img src="{{ asset('/site/img/برادران.png') }}" loading="lazy" alt="Image 1">
-                </a></div>
-            <div class="col-md-3 p-4">
-                <a href="{{url('حوزه-علمیه-خواهران')}}">
-                    <img src="{{ asset('/site/img/خواهران.png') }}" loading="lazy" alt="Image 2">
+        <div class="row justify-content-center text-center">
+            <div class="col-6 col-md-3 p-3">
+                <a href="{{ url('حوزه-علمیه-برادران') }}">
+                    <img src="{{ asset('/site/img/برادران.png') }}" loading="lazy" alt="Image 1" class="img-fluid">
+                </a>
+            </div>
+            <div class="col-6 col-md-3 p-3">
+                <a href="{{ url('حوزه-علمیه-خواهران') }}">
+                    <img src="{{ asset('/site/img/خواهران.png') }}" loading="lazy" alt="Image 2" class="img-fluid">
                 </a>
             </div>
         </div>
@@ -231,7 +266,8 @@
                                     <div class="content">
                                         <h3><a href="{{route('/')}}">{{$post->title}}</a></h3>
                                         {!! $post->description !!}
-                                        <a href="{{url('نشست/'.$post->slug)}}" class="read-more-btn">ادامه مطلب <i class='bx bx-left-arrow-alt'></i></a>
+                                        <a href="{{url('نشست/'.$post->slug)}}" class="read-more-btn">ادامه مطلب <i
+                                                class='bx bx-left-arrow-alt'></i></a>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-12 p-0">
@@ -244,11 +280,11 @@
                     @endif
                 @endforeach
             </div>
-            <div class="col-lg-12 col-md-12 wow fadeInUp" data-wow-delay=".6s">
-                <div class="services-btn-box">
-                    <a href="{{url('نشست')}}" class="default-btn">
+            <div class="col-lg-12 col-md-12 wow fadeInUp d-flex justify-content-center pt-3" data-wow-delay=".6s">
+                <div>
+                    <a href="{{ url('نشست') }}" class="custom-btn">
                         مشاهده همه
-                        <i class="bx bx-chevron-right"></i>
+                        <i class="bx bx-chevron-left"></i>
                     </a>
                 </div>
             </div>

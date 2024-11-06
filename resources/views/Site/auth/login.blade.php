@@ -18,12 +18,12 @@
 
         <!-- Start Login Area -->
         <section class="login-area">
-            <div class="row m-0">
-                <div class="col-lg-6  p-0 order-1 col-md-12 order-md-2">
-                    <div class="login-image">
-                        <img src="{{asset('site/img/login-bg.jpg')}}" alt="image">
-                    </div>
-                </div>
+            <div class="row m-0 justify-content-center align-items-center">
+{{--                <div class="col-lg-6  p-0 order-1 col-md-12 order-md-2">--}}
+{{--                    <div class="login-image">--}}
+{{--                        <img src="{{asset('site/img/login-bg.jpg')}}" alt="image">--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
                 <div class="col-lg-6  p-0 order-2 col-md-12 order-md-1">
                     <div class="login-content">

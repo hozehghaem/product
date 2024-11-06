@@ -73,7 +73,35 @@
             color: #f0f0f9;
             max-width: 500px;
         }
+        .khat img{
+            max-height: 50px;
+        }
+        @media (max-width: 768px) {
+            .index-banner {
+                padding-top: 60px;
+                padding-bottom: 60px;
+                height: 30vh;
+            }
 
+            .index-banner-content {
+
+            }
+
+            .index-banner-content h1 {
+                font-size: 24px;
+                color: #f0f0f9;
+                max-width: 500px;
+            }
+
+            .index-banner-content p {
+                font-size: 8px;
+                color: #f0f0f9;
+                max-width: 250px;
+            }
+            .khat img{
+                max-height: 24px;
+            }
+        }
     </style>
 
     <!-- Start Digital Agency Banner -->
@@ -112,10 +140,10 @@
     <!-- End Digital Agency Banner -->
 
     {{--   Start line   --}}
-    <div class="container-fluid py-2" style="background-color: #f0f0f9; display: flex;">
+    <div class="container-fluid py-0 py-lg-2" style="background-color: #f0f0f9; display: flex;">
         <div class="container col-12 col-md-8" style="margin: 0 auto;display: flex;">
-            <div class="d-flex">
-                <img src="{{asset('site/img/navaar-right.webp')}}" style="max-height: 50px;" loading="lazy"
+            <div class="d-flex khat align-items-center">
+                <img src="{{asset('site/img/navaar-right.webp')}}" loading="lazy"
                      alt="">
             </div>
             <div class="marquee">
@@ -125,8 +153,8 @@
                     @endforeach
                 </span>
             </div>
-            <div class="d-flex">
-                <img src="{{asset('site/img/navaar-left.webp')}}" style="max-height: 50px;" loading="lazy"
+            <div class="d-flex khat align-items-center">
+                <img src="{{asset('site/img/navaar-left.webp')}}" loading="lazy"
                      alt="">
             </div>
         </div>
@@ -136,94 +164,44 @@
     <div class="features-card-section pt-100 pb-70 bg-f8fbfa">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-sm-6 wow fadeInUp d-flex align-items-stretch" data-wow-delay=".2s">
+                <div class="col-lg-4 col-12 wow fadeInUp d-flex align-items-stretch" data-wow-delay=".2s">
                     <div class="single-features-card tx-center">
                         <i class='bx bxs-graduation bx-lg'></i>
                         <h3>
-                            <a href="{{url('/education')}}" class="card-title">
+                            <a href="{{url('/حوزه-علمیه-خواهران/معاونت-آموزش')}}" class="card-title">
                                 معاونت آموزش
                             </a>
                         </h3>
-                        <p class="card-text text-justify">مؤسسه آموزش عالی حوزوی حضرت قائم (عج)
-                            در راستای تحقق رسالت خود مبنی بر ارتقاء سطح علمی بانوان مسلمان متعهد پذ
-                            یرای طلاب خواهر در دو مقطع کارشناسی (سطح ۲) و کارشناسی ارشد (سطح ۳) می باشد.
-                            <a href="#moreText1" data-toggle="collapse">
-                                ادامه مطلب ...
-                            </a>
+                        <p class="card-text text-center pt-2">
+                            <a href="{{url('/حوزه-علمیه-خواهران/معاونت-آموزش')}}" class="btn btn-primary">مشاهده</a>
                         </p>
-                        <div id="moreText1" class="collapse">
-                            <p class="text-justify">
-                                فارغ التحصیلان حوزوی پس از تکمیل دوره آموزشی و مهارتی تبلیغی
-                                جهت فعالیت های علمی و تبلیغی جذب انجمن ها ارگانها و نهادهای ملی و بین المللی میشوند.
-                            </p>
-                        </div>
                         <div class="flex-grow-1"></div>
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-sm-6 wow fadeInUp d-flex align-items-stretch" data-wow-delay=".3s">
+                <div class="col-lg-4 col-12 wow fadeInUp d-flex align-items-stretch" data-wow-delay=".3s">
                     <div class="single-features-card tx-center">
-                        <i class='bx bx-book-reader  bx-lg'></i>
+                        <i class='bx bx-book-reader bx-lg'></i>
                         <h3>
-                            <a href="{{url('/research')}}" class="card-title">معاونت پژوهش</a>
+                            <a href="{{url('/حوزه-علمیه-خواهران/معاونت-پژوهش')}}" class="card-title">معاونت پژوهش</a>
                         </h3>
-                        <p class="card-text text-justify">وادی پژوهش و نویسندگی گسترۀ نقش آفرینی است که با آموزش صحیح
-                            و روشمند و بهره گیری از روشهای پژوهش پر بار می گردد. یکی از اهداف حوزه های علمیه
-                            تربیت طلاب محقق سخنور و نویسنده است. که در تبلور جامعه اسلامی بسیار مهم است.
-                            <br>
-                            <a href="#moreText2" data-toggle="collapse">ادامه مطلب ...</a>
+                        <p class="card-text text-center pt-2">
+                            <a href="{{url('/حوزه-علمیه-خواهران/معاونت-پژوهش')}}" class="btn btn-primary">مشاهده</a>
                         </p>
-                        <div id="moreText2" class="collapse">
-                            <p class="text-justify">از این رو در این موسسه در راستای این هدف مطلوب
-                                فعالیت های پژوهشی گسترده و متعددی در طی سالها و مقارن با دوره آموزش طلاب
-                                برگزار شده است از قبیل: کرسی های علمی ترویجی با هدف ایجاد بستر نظریه
-                                پردازی نشست های علمی تخصصی و علمی پژوهشی با هدف ترویج فرهنگ پژوهش و
-                                آشنایی طلاب با مسائل روز و کاربردی ،جامعه برگزاری کارگاه های پژوهشی
-                                نوین با هدف آشنایی طلاب با شیوه های نوین پژوهش انتشار فصلنامه پژوهشی
-                                با هدف چاپ مقالات علمی طلاب و فعالیت های دیگری که در این مجال نمیگنجد.
-                            </p>
-                        </div>
-                        <div class="flex-grow-1">
-                        </div>
+                        <div class="flex-grow-1"></div>
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-sm-6 wow fadeInUp d-flex align-items-stretch" data-wow-delay=".4s">
+                <div class="col-lg-4 col-12 wow fadeInUp d-flex align-items-stretch" data-wow-delay=".4s">
                     <div class="single-features-card tx-center">
-                        <i class='bx bx-library  bx-lg'></i>
+                        <i class='bx bx-library bx-lg'></i>
                         <h3>
-                            <a href="{{url('/cultural')}}" class="card-title">معاونت فرهنگی</a>
+                            <a href="{{url('/حوزه-علمیه-خواهران/معاونت-فرهنگی')}}" class="card-title">معاونت فرهنگی</a>
                         </h3>
-                        <p class="card-text text-justify">معاونت فرهنگی در کنار رسالت اصلی خود با تشکیل سه کانون
-                            فرهنگی به شرح ذیل اقدام به فعالیتهای تخصصی در حوزه های
-                            گوناگون نموده است.
-                            <a href="#moreText3" data-toggle="collapse">ادامه مطلب ...</a>
+                        <p class="card-text text-center pt-2">
+                            <a href="{{url('/حوزه-علمیه-خواهران/معاونت-فرهنگی')}}" class="btn btn-primary">مشاهده</a>
                         </p>
-                        <div id="moreText3" class="collapse">
-                            <p class="text-justify">كانون نور الثقلين
-                                <br>
-                                کانون نور الثقلین با هدف ایجاد زمینه فعالیت های قرآنی و نوحه خوانی به صورت تخصصی در گرایش های حفظ
-                                و قرائت قرآن کریم تفسیر ر، آموزش مداحی و مقتل خوانی و..... ویژه معلمان و قرآن پژوهان تشکیل شده
-                                است.
-                                <br>
-                                کانون زن و خانواده
-                                <br>
-                                این کانون با زیر مجموعه های تخصصی همیار خانواده و ،مشاوره با هدف پاسخ به نیاز روز جامعه از جمله :
-                                روانشناسی پیش از ،ازدواج ارتباط بین
-                                فردی زوج درمانی روان درمانی اختلالات و روانشناسی اعتیاد و... تاسیس شده است.
-                                <br>
-                                کانون دانش آموختگان
-                                <br>
-                                کانون دانش آموختگان حوزه علمیه حضرت قائم (عج) با هدف بکارگیری استعدادها ،توان تجربه و تخصص
-                                فارغ التحصیلان تاسیس گردیده است. این کانون با هدف ایجاد ارتباط علمی و مهارتی و ایجاد زمینه ارتقاء و تکمیل
-                                دانش اعضا و تشکیل شبکه ملی با امتیاز دریافت کد تبلیغی و اولویت در اعزام جهت تبلیغ علوم
-                                و معارف دینی پایه گذاری شده است تعدادی از سر فصلهای آموزشی علمی و مهارتی مبلغان عبارتند از:
-                                ۱_ تربیت مربی و مبلغ معارف اسلامی با گرایش تبلیغ ،خطيب متخصص مشاوره دینی ، کودک و نوجوان نقد عرفانهای نوظهور نقد بهائیت وهابیت و .....
-                                ۲_تربیت مربی سواد رسانه ای با گرایش نرم افزار و سخت افزار ، جریان شناسی فضای مجازی علوم ارتباطات مجازی برنامه نویسی نویسندگی و...
-                            </p>
-                        </div>
-                        <div class="flex-grow-1">
-                        </div>
+                        <div class="flex-grow-1"></div>
                     </div>
                 </div>
             </div>
@@ -260,9 +238,9 @@
             </div>
             <div class="col-lg-12 col-md-12 wow fadeInUp" data-wow-delay=".6s">
                 <div class="services-btn-box">
-                    <a href="{{url('نشست')}}" class="default-btn">
+                    <a href="{{ url('نشست') }}" class="custom-btn">
                         مشاهده همه
-                        <i class="bx bx-chevron-right"></i>
+                        <i class="bx bx-chevron-left"></i>
                     </a>
                 </div>
             </div>

@@ -29,14 +29,59 @@
 <body>
 
 <div class="preloader-area">
-    <div class="loading-message">
-        <p>
-            <span class="dot dot-1">حوزه علمیه</span>
-            <span class="dot dot-2"></span>
-            <span class="dot dot-3">حضرت قائم (عج)</span>
-        </p>
+    <div class="spinner">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
     </div>
 </div>
+<style>
+    /* Preloader Background */
+    .preloader-area {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+    }
+
+    /* Spinner */
+    .spinner {
+        display: flex;
+        gap: 8px;
+    }
+
+    /* Dots */
+    .spinner .dot {
+        width: 12px;
+        height: 12px;
+        background-color: #333;
+        border-radius: 50%;
+        animation: bounce 0.6s infinite alternate;
+    }
+
+    .spinner .dot:nth-child(1) { animation-delay: 0s; }
+    .spinner .dot:nth-child(2) { animation-delay: 0.2s; }
+    .spinner .dot:nth-child(3) { animation-delay: 0.4s; }
+
+    /* Bounce Animation */
+    @keyframes bounce {
+        from { transform: translateY(0); }
+        to { transform: translateY(-10px); }
+    }
+</style>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        setTimeout(function() {
+            document.querySelector('.preloader-area').style.display = 'none';
+        }, 1000); // مخفی کردن پیش‌بارگذار بعد از 1 ثانیه
+    });
+</script>
 
 <!-- Start Navbar Area -->
 <div class="navbar-area bg-white p-relative">
