@@ -266,7 +266,7 @@
                                     <div class="content">
                                         <h3><a href="{{route('/')}}">{{$post->title}}</a></h3>
                                         {!! $post->description !!}
-                                        <a href="{{url('نشست/'.$post->slug)}}" class="read-more-btn">ادامه مطلب <i
+                                        <a href="{{url('حوزه-علمیه-خواهران/معاونت-پژوهش/نشست-ها/'.$post->slug)}}" class="read-more-btn">ادامه مطلب <i
                                                 class='bx bx-left-arrow-alt'></i></a>
                                     </div>
                                 </div>
@@ -282,7 +282,7 @@
             </div>
             <div class="col-lg-12 col-md-12 wow fadeInUp d-flex justify-content-center pt-3" data-wow-delay=".6s">
                 <div>
-                    <a href="{{ url('نشست') }}" class="custom-btn">
+                    <a href="{{ url('حوزه-علمیه-خواهران/معاونت-پژوهش/نشست-ها') }}" class="custom-btn">
                         مشاهده همه
                         <i class="bx bx-chevron-left"></i>
                     </a>

@@ -150,6 +150,9 @@ class IndexController extends Controller
         }elseif(count($url) == 2){
             $pagename = Submenu::select('class')->whereSlug($url[1])->first();
         }
+        elseif(count($url) == 4){
+            $pagename = Submenu::select('class')->whereSlug($url[1])->first();
+        }
         $companies      = Company::first();
         $customers      = Customer::select('name', 'image')->whereStatus(4)->whereHome_show(1)->get();
         $singleposts    = Post::whereStatus(4)->whereSlug($slug)->first();
