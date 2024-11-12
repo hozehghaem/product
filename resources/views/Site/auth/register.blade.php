@@ -61,16 +61,16 @@
     <!-- End Preloader Area -->
 
     <!-- Start Signup Area -->
-    <section class="signup-area">
+    <section class="login-area">
         <div class="container">
             <div class="row justify-content-center align-items-center">
                 <div class="col-lg-6 order-2 order-lg-1">
-                    <div class="signup-content">
+                    <div class="login-content">
                         <div class="d-table">
                             <div class="d-table-cell">
-                                <div class="signup-form">
+                                <div class="login-form">
                                     <div class="logo text-center mb-4">
-                                        <a href="{{ url('/') }}"><img src="{{ asset('site/img/logo.png') }}" alt="logo"></a>
+                                        <a href="{{ url('/') }}"><img src="{{ asset('site/img/logo/dark-logo.png') }}" alt="logo"></a>
                                     </div>
                                     <h2 class="text-center">ایجاد حساب کاربری در سایت</h2>
                                     <p class="text-center">در صورتی که قبلا حساب کاربری داشته اید <a href="{{ url('login') }}">وارد شوید</a></p>

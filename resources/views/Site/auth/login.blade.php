@@ -31,7 +31,7 @@
                             <div class="d-table-cell">
                                 <div class="login-form">
                                     <div class="logo">
-                                        <a href={{url('/')}}><img src="{{asset('site/img/logo.png')}}" alt="image"></a>
+                                        <a href={{url('/')}}><img src="{{asset('site/img/logo/dark-logo.png')}}" alt="image"></a>
                                     </div>
 
                                     <h3>خوش آمدید</h3>
@@ -40,7 +40,7 @@
                                     <form method="POST" action="{{ route('login-user') }}" class="form-account">
                                         @csrf
                                         <div class="form-group">
-                                            <input type="email" name="email" placeholder="آدرس ایمیل شما" required value=" " class="form-control text-left @error('email') is-invalid @enderror" >
+                                            <input type="email" name="email" placeholder="آدرس ایمیل شما" required value=" " class="form-control @error('email') is-invalid @enderror" >
                                         </div>
 
                                         <div class="form-group">

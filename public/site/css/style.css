@@ -236,6 +236,11 @@ p:last-child {
     height: auto;
 }
 
+.login-area{
+    background-image: url(../../site/img/login-background-min.jpg);
+    background-position: center;
+}
+
 .generic-list-item li {
     color: #1E2E45;
     line-height: 24px;
@@ -6476,6 +6481,9 @@ Login Area CSS
 }
 
 .login-content .login-form {
+    border-radius: 32px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
     text-align: center;
     max-width: 500px;
     margin-left: auto;
@@ -6572,7 +6580,7 @@ Login Area CSS
 
 .login-content .login-form form .forgot-password a {
     display: inline-block;
-    color: #58A399;
+    color: #111;
     text-decoration: underline;
 }
 
@@ -7327,11 +7335,10 @@ Contact Area CSS
 Footer Area CSS
 =================================================*/
 .footer-area {
-    background-color: #58A399;
+    background-color: #215c54;
     position: relative;
     z-index: 1;
     padding-top: 80px;
-    margin-top: 120px;
 }
 
 .footer-area::before {
@@ -7375,7 +7382,7 @@ Footer Area CSS
     mask-image: url("data:image/svg+xml;utf8,%3csvg viewBox='0 0 100 100' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'%3e%3cpath d='M0,0 C16.6666667,66 33.3333333,98 50,98 C66.6666667,98 83.3333333,66 100,0 L100,100 L0,100 L0,0 Z' fill='%23fff'/%3e%3c/svg%3e");
     -webkit-mask-size: 100% 101%;
     mask-size: 100% 101%;
-    background: #58A399;
+    background: #215c54;
     top: -100px;
     left: 0;
     z-index: -1;
