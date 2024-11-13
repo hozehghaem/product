@@ -15,6 +15,7 @@ use App\Models\Flowtext;
 use App\Models\mega_menu;
 use App\Models\Menu;
 use App\Models\Dashboard\Post;
+use App\Models\Post_type;
 use App\Models\Profile\Workshop;
 use App\Models\Submenu;
 use Illuminate\Http\Request;
@@ -161,6 +162,32 @@ class IndexController extends Controller
         select('akhbars.title', 'akhbars.slug', 'akhbars.image', 'akhbars.description', 'users.name as username', 'akhbars.matn as matn', 'akhbars.updated_at')->where('akhbars.status', 4)->where('akhbars.home_show', 1)->get();
 
         return view('Site.'.$pagename->class)->with(compact('menus', 'thispage', 'companies', 'customers', 'submenus', 'posts','singleposts', 'akhbars'));
+
+    }
+
+    public function singlepage(Request $request ,$harchi, $slug)
+    {
+        $url = $request->segments();
+
+        $menus = Menu::select('id', 'title', 'slug', 'submenu', 'priority', 'mega_menu')->MenuSite()->orderBy('priority')->get();
+        if (count($url) == 1) {
+            $thispage = Menu::select('id', 'title', 'slug', 'tab_title', 'page_title', 'keyword', 'page_description')->MenuSite()->whereSlug($url[0])->first();
+        } elseif (count($url) > 1) {
+            $thispage = Submenu::select('id', 'title', 'slug', 'tab_title', 'page_title', 'keyword', 'page_description')->whereSlug($url[1])->first();
+        }elseif (count($url) == 0) {
+            $thispage = Menu::select('id', 'title', 'slug', 'tab_title', 'page_title', 'keyword', 'page_description')->MenuSite()->whereSlug('/')->first();
+        }
+
+        $submenus = Submenu::select('id', 'title', 'slug', 'menu_id','mega_manu' , 'megamenu_id')->whereStatus(4)->get();
+
+        $pagename = Submenu::select('class')->whereSlug($url[2])->first();
+
+        $companies = Company::first();
+        $customers = Customer::select('name', 'image')->whereStatus(4)->whereHome_show(1)->get();
+        $posts     = Post::whereStatus(4)->whereSlug($slug)->first();
+        $typeid    = $posts->posttype;
+        $postpage  = Post_type::whereId($typeid)->first();
+        return view('Site.'.$postpage->class)->with(compact('menus', 'thispage', 'companies', 'customers', 'submenus', 'posts'));
 
     }
 

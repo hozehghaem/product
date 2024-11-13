@@ -101,13 +101,13 @@
                         <div class="col-lg-6 col-md-6">
                             <div class="single-blog-post">
                                 <div class="post-image">
-                                    <a href="{{url('نشست/'.$post->slug)}}"><img src="{{asset($post->image)}}" alt="image"></a>
+                                    <a href="{{url('حوزه-علمیه-خواهران/معاونت-پژوهش/نشست-ها/'.$post->slug)}}"><img src="{{asset($post->image)}}" alt="image"></a>
 
                                     <div class="date"><i class='bx bx-calendar'></i>{{jdate($post->update_at)->format('y/m/d')}}</div>
                                 </div>
 
                                 <div class="post-content">
-                                    <h3><a href="{{url('نشست/'.$post->slug)}}">{{$post->title}}</a></h3>
+                                    <h3><a href="{{url('حوزه-علمیه-خواهران/معاونت-پژوهش/نشست-ها/'.$post->slug)}}">{{$post->title}}</a></h3>
 
                                     <div class="post-info">
                                         <div class="post-by">
@@ -117,7 +117,7 @@
                                         </div>
 
                                         <div class="details-btn">
-                                            <a href="{{url('نشست/'.$post->slug)}}"><i class="bx bx-left-arrow-alt"></i></a>
+                                            <a href="{{url('حوزه-علمیه-خواهران/معاونت-پژوهش/نشست-ها/'.$post->slug)}}"><i class="bx bx-left-arrow-alt"></i></a>
                                         </div>
                                     </div>
                                 </div>

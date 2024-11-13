@@ -109,6 +109,9 @@ Route::get('نشست'                       , [App\Http\Controllers\Site\IndexCo
 Route::get('حوزه-علمیه-خواهران'.'/'.'معاونت-آموزش'.'/'.'{slug}'         , [App\Http\Controllers\Site\IndexController::class, 'singlemeeting']);
 Route::get('حوزه-علمیه-خواهران'.'/'.'معاونت-پژوهش'.'/'.'{slug}'         , [App\Http\Controllers\Site\IndexController::class, 'singlemeeting']);
 Route::get('حوزه-علمیه-خواهران'.'/'.'معاونت-فرهنگی'.'/'.'{slug}'        , [App\Http\Controllers\Site\IndexController::class, 'singlemeeting']);
+Route::get('حوزه-علمیه-خواهران'.'/'.'معاونت-آموزش'.'/'.'{harchi}' .'/'.'{slug}'        , [App\Http\Controllers\Site\IndexController::class, 'singlepage']);
+Route::get('حوزه-علمیه-خواهران'.'/'.'معاونت-پژوهش'.'/'.'{harchi}'.'/'.'{slug}'         , [App\Http\Controllers\Site\IndexController::class, 'singlepage']);
+Route::get('حوزه-علمیه-خواهران'.'/'.'معاونت-فرهنگی'.'/'.'{harchi}'.'/'.'{slug}'        , [App\Http\Controllers\Site\IndexController::class, 'singlepage']);
 
 //    Route::get('/reload-captcha'            , [App\Http\Controllers\Site\IndexController::class, 'reloadCaptcha']);
 
