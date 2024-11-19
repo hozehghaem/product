@@ -4,6 +4,7 @@
 @section('main')
 
     <style>
+
         .card-title {
             font-size: 20px;
         }
@@ -68,6 +69,7 @@
             color: #f0f0f9;
             max-width: 500px;
         }
+
         .index-banner-content h1 {
             font-size: 50px;
             color: #f0f0f9;
@@ -76,6 +78,7 @@
         .khat img{
             max-height: 50px;
         }
+
         @media (max-width: 768px) {
             .index-banner {
                 padding-top: 60px;
@@ -102,6 +105,7 @@
                 max-height: 24px;
             }
         }
+
     </style>
 
     <!-- Start Digital Agency Banner -->
@@ -223,7 +227,8 @@
                                     <div class="content">
                                         <h3><a href="{{route('/')}}">{{$post->title}}</a></h3>
                                         {!! $post->description !!}
-                                        <a href="{{url('نشست/'.$post->slug)}}" class="read-more-btn">ادامه مطلب <i class='bx bx-left-arrow-alt'></i></a>
+                                        <a href="{{url('حوزه-علمیه-خواهران/معاونت-پژوهش/نشست-ها/'.$post->slug)}}" class="read-more-btn">ادامه مطلب <i
+                                                class='bx bx-left-arrow-alt'></i></a>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-12 p-0">

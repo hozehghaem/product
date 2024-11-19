@@ -106,13 +106,16 @@ Route::group(['namespace' => 'App\Http\Controllers' ,'prefix' => '/'] , function
 //    Route::get('اخبار'.'/'.'{slug}'         , [App\Http\Controllers\Site\IndexController::class, 'singleakhbar']);
 Route::get('نشست'.'/'.'{slug}'         , [App\Http\Controllers\Site\IndexController::class, 'singlemeeting']);
 Route::get('نشست'                       , [App\Http\Controllers\Site\IndexController::class, 'meeting']);
-Route::get('حوزه-علمیه-خواهران'.'/'.'معاونت-آموزش'.'/'.'{slug}'         , [App\Http\Controllers\Site\IndexController::class, 'singlemeeting']);
-Route::get('حوزه-علمیه-خواهران'.'/'.'معاونت-پژوهش'.'/'.'{slug}'         , [App\Http\Controllers\Site\IndexController::class, 'singlemeeting']);
-Route::get('حوزه-علمیه-خواهران'.'/'.'معاونت-فرهنگی'.'/'.'{slug}'        , [App\Http\Controllers\Site\IndexController::class, 'singlemeeting']);
-Route::get('حوزه-علمیه-خواهران'.'/'.'معاونت-آموزش'.'/'.'{harchi}' .'/'.'{slug}'        , [App\Http\Controllers\Site\IndexController::class, 'singlepage']);
-Route::get('حوزه-علمیه-خواهران'.'/'.'معاونت-پژوهش'.'/'.'{harchi}'.'/'.'{slug}'         , [App\Http\Controllers\Site\IndexController::class, 'singlepage']);
-Route::get('حوزه-علمیه-خواهران'.'/'.'معاونت-فرهنگی'.'/'.'{harchi}'.'/'.'{slug}'        , [App\Http\Controllers\Site\IndexController::class, 'singlepage']);
 
+    if (substr_count(request()->fullUrl() , '/')-2 == 3){
+        Route::get('حوزه-علمیه-خواهران'.'/'.'معاونت-آموزش'.'/'.'{slug}'         , [App\Http\Controllers\Site\IndexController::class, 'singlemeeting']);
+        Route::get('حوزه-علمیه-خواهران'.'/'.'معاونت-پژوهش'.'/'.'{slug}'         , [App\Http\Controllers\Site\IndexController::class, 'singlemeeting']);
+        Route::get('حوزه-علمیه-خواهران'.'/'.'معاونت-فرهنگی'.'/'.'{slug}'        , [App\Http\Controllers\Site\IndexController::class, 'singlemeeting']);
+    }elseif(substr_count(request()->fullUrl() , '/')-2 == 4){
+        Route::get('حوزه-علمیه-خواهران' . '/' . 'معاونت-آموزش' . '/' . '{harchi}' . '/' . '{slug}', [App\Http\Controllers\Site\IndexController::class, 'singlepage']);
+        Route::get('حوزه-علمیه-خواهران' . '/' . 'معاونت-پژوهش' . '/' . '{harchi}' . '/' . '{slug}', [App\Http\Controllers\Site\IndexController::class, 'singlepage']);
+        Route::get('حوزه-علمیه-خواهران' . '/' . 'معاونت-فرهنگی' . '/' . '{harchi}' . '/' . '{slug}', [App\Http\Controllers\Site\IndexController::class, 'singlepage']);
+    }
 //    Route::get('/reload-captcha'            , [App\Http\Controllers\Site\IndexController::class, 'reloadCaptcha']);
 
 

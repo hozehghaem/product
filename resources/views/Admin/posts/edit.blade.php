@@ -33,41 +33,53 @@
                                             <div class="col-md-12">
 {{--                                                @include('error')--}}
                                             </div>
-                                            <input type="hidden" name="customer_id" id="customer_id" data-required="1" value="{{$posts->id}}" class="form-control" />
+                                            <input type="hidden" name="post_id" id="post_id" data-required="1" value="{{$posts->id}}" class="form-control" />
                                             <div class="col-md-3">
                                                 <div class="form-group">
-                                                    <p class="mg-b-10">عنوان پست</p>
+                                                    <p class="mg-b-10">عنوان </p>
                                                     <input type="text" name="title" id="title" value="{{$posts->title}}"  class="form-control" />
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
-                                                    <p class="mg-b-10"> نمایش در صفحه اصلی</p>
-                                                    <select name="home_show" id="home_show" class="form-control select-lg select2">
-                                                        <option value="0" {{$posts->home_show == 0 ? 'selected' : '' }}>عدم نمایش</option>
-                                                        <option value="1" {{$posts->home_show == 1 ? 'selected' : '' }}>در حال نمایش</option>
+                                                    <p class="mg-b-10">نوع پست</p>
+                                                    <select name="posttype" id="posttype" class="form-control select-lg select2">
+                                                        @foreach($posttypes as $posttype)
+                                                            <option value="{{$posttype->id}}" {{$posts->posttype == $posttype->id ? 'selected' : '' }} >{{$posttype->title}}</option>
+                                                        @endforeach
                                                     </select>
                                                 </div>
                                             </div>
+
                                             <div class="col-md-3">
                                                 <div class="form-group">
-                                                    <p class="mg-b-10">انتخاب وضعیت نمایش</p>
+                                                    <p class="mg-b-10">نمایش/عدم نمایش</p>
                                                     <select name="status" id="status" class="form-control select-lg select2">
                                                         <option value="0" {{$posts->status == 0 ? 'selected' : '' }}>غیر فعال</option>
                                                         <option value="4" {{$posts->status == 4 ? 'selected' : '' }}> فعال</option>
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="col-md-3" >
-                                                <div class="form-group" >
-                                                    <p class="mg-b-10">تصویر پست</p>
-                                                    <input type="file" id="image" name="image" class="dropify" data-default-file="{{asset($posts->image)}}" data-height="200">
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <p class="mg-b-10">نمایش در صفحه اصلی</p>
+                                                    <select name="home_show" id="home_show" class="form-control select-lg select2">
+                                                        <option value="0" {{$posts->home_show == 0 ? 'selected' : '' }}>عدم نمایش</option>
+                                                        <option value="1" {{$posts->home_show == 1 ? 'selected' : '' }}>در حال نمایش</option>
+                                                    </select>
                                                 </div>
                                             </div>
+
                                             <div class="col-md-9">
                                                 <div class="form-group">
                                                     <p class="mg-b-10">کلمات کلیدی</p>
                                                     <input type="text" name="keyword" id="keyword" @if($posts->keyword)value="{{implode("،" , json_decode($posts->keyword))}}" @endif class="form-control" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group" style="position: absolute;">
+                                                    <p class="mg-b-10">تصویر </p>
+                                                    <input type="file" id="image" name="image" class="dropify" data-default-file="{{asset($posts->image)}}" data-height="200">
                                                 </div>
                                             </div>
                                             <div class="col-md-9">
@@ -82,12 +94,14 @@
                                                     <input type="file" name="file" id="file" data-required="1" class="form-control" />
                                                 </div>
                                             </div>
-                                            <div class="col-md-12">
+
+                                            <div class="col-md-12" style="margin-top: 20px;">
                                                 <div class="form-group" >
-                                                    <p class="mg-b-10"> توضیحات</p>
+                                                    <p class="mg-b-10">توضیحات</p>
                                                     <textarea name="description" id="editor" cols="30" rows="5" class="form-control" >{{$posts->description}}</textarea>
                                                 </div>
                                             </div>
+
                                             <div  class="col-lg-12 mg-b-10 text-center">
                                                 <div class="form-group">
                                                     <button type="submit"  class="btn btn-info  btn-lg m-r-20">ذخیره اطلاعات</button>

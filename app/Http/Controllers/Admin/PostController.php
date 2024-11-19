@@ -7,6 +7,7 @@ use App\Models\Dashboard\Menu_panel;
 use App\Models\Dashboard\Post;
 use App\Models\Dashboard\Submenu_panel;
 use App\Models\Post_type;
+use App\Models\Submenu;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -163,9 +164,10 @@ class PostController extends Controller
         $posts            =   Post::whereId($id)->first();
         $menupanels         =   Menu_panel::whereStatus(4)->get();
         $submenupanels      =   Submenu_panel::whereStatus(4)->get();
+        $posttypes          =   Post_type::whereStatus(4)->get();
 
         return view('Admin.posts.edit')
-            ->with(compact(['menupanels' , 'submenupanels'  , 'posts' , 'thispage']));
+            ->with(compact(['menupanels' , 'submenupanels'  ,'posttypes' , 'posts' , 'thispage']));
 
     }
 
@@ -175,6 +177,7 @@ class PostController extends Controller
             $post = Post::whereId($id)->first();
             $post->title       = $request->input('title');
             $post->description = $request->input('description');
+            $post->posttype    = $request->input('posttype');
             $post->aparat      = $request->input('aparat');
             $post->status      = $request->input('status');
             $post->home_show   = $request->input('home_show');

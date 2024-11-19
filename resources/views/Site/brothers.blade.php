@@ -2,7 +2,9 @@
 @section('style')
 @endsection
 @section('main')
+
     <style>
+
         .card-title {
             font-size: 20px;
         }
@@ -48,7 +50,6 @@
             background-size: cover;
             background-repeat: no-repeat;
             background-color: #f0f0f0;
-            background-image: url('{{ asset('/site/img/banner-slider/banner-hozeh.jpg') }}');
             display: flex;
             justify-content: center;
             align-items: center;
@@ -68,10 +69,41 @@
             color: #f0f0f9;
             max-width: 500px;
         }
+
         .index-banner-content h1 {
             font-size: 50px;
             color: #f0f0f9;
             max-width: 500px;
+        }
+        .khat img{
+            max-height: 50px;
+        }
+
+        @media (max-width: 768px) {
+            .index-banner {
+                padding-top: 60px;
+                padding-bottom: 60px;
+                height: 30vh;
+            }
+
+            .index-banner-content {
+
+            }
+
+            .index-banner-content h1 {
+                font-size: 24px;
+                color: #f0f0f9;
+                max-width: 500px;
+            }
+
+            .index-banner-content p {
+                font-size: 8px;
+                color: #f0f0f9;
+                max-width: 250px;
+            }
+            .khat img{
+                max-height: 24px;
+            }
         }
 
     </style>
@@ -81,59 +113,25 @@
     <div id="indexBannerCarousel" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
-            <li data-target="#indexBannerCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#indexBannerCarousel" data-slide-to="1"></li>
-            <li data-target="#indexBannerCarousel" data-slide-to="2"></li>
+            @foreach($slides as $slide)
+                <li data-target="#indexBannerCarousel" data-slide-to="{{$slide->id}}"
+                    class="@if($slides->min('id') == $slide->id) active @endif"></li>
+            @endforeach
         </ol>
 
         <!-- Carousel items -->
         <div class="carousel-inner">
-            <!-- Slide 1 -->
-            <div class="carousel-item active">
-                <section class="index-banner" style="background-color: #f5f5f5;">
-                    <div class="index-banner-content">
-                        <h1 style="font-family: 'IranNastaliq', serif;">حوزه علمیه حضرت قائم (عج)</h1>
-                        <p>
-                            حوزه علمیه حضرت قائم (عج) چیذر از سال ۱۳۴۶ در دو بخش برادران و خواهران آغاز به کار نمود. از
-                            سال ۱۳۹۳ واحد خواهران با نظارت مرکز مدیریت حوزه های علمیه فعالیت خود را در سه رشته کلام با
-                            گرایش امامت، تفسیر و علوم قرآنی و مشاوره خانواده در قالب موسسه آموزش عالی حوزوی ادامه داد.
-                            این مؤسسه متشکل از سه معاونت آموزش آموزش ،پژوهش و فرهنگی می باشد .
-
-                        </p>
-                    </div>
-                </section>
-            </div>
-
-            <!-- Slide 2 -->
-            <div class="carousel-item">
-                <section class="index-banner" style="background-color: #f5f5f5;">
-                    <div class="index-banner-content">
-                        <h1 style="font-family: 'IranNastaliq', serif;">حوزه علمیه حضرت قائم (عج)</h1>
-                        <p>
-                            حوزه علمیه حضرت قائم (عج) چیذر از سال ۱۳۴۶ در دو بخش برادران و خواهران آغاز به کار نمود. از
-                            سال ۱۳۹۳ واحد خواهران با نظارت مرکز مدیریت حوزه های علمیه فعالیت خود را در سه رشته کلام با
-                            گرایش امامت، تفسیر و علوم قرآنی و مشاوره خانواده در قالب موسسه آموزش عالی حوزوی ادامه داد.
-                            این مؤسسه متشکل از سه معاونت آموزش آموزش ،پژوهش و فرهنگی می باشد .
-
-                        </p>
-                    </div>
-                </section>
-            </div>
-
-            <!-- Slide 3 -->
-            <div class="carousel-item">
-                <section class="index-banner" style="background-color: #f5f5f5;">
-                    <div class="index-banner-content">
-                        <h1 style="font-family: 'IranNastaliq', serif;">حوزه علمیه حضرت قائم (عج)</h1>
-                        <p>
-                            حوزه علمیه حضرت قائم (عج) چیذر از سال ۱۳۴۶ در دو بخش برادران و خواهران آغاز به کار نمود. از
-                            سال ۱۳۹۳ واحد خواهران با نظارت مرکز مدیریت حوزه های علمیه فعالیت خود را در سه رشته کلام با
-                            گرایش امامت، تفسیر و علوم قرآنی و مشاوره خانواده در قالب موسسه آموزش عالی حوزوی ادامه داد.
-                            این مؤسسه متشکل از سه معاونت آموزش آموزش ،پژوهش و فرهنگی می باشد .
-                        </p>
-                    </div>
-                </section>
-            </div>
+            @foreach($slides as $slide)
+                <div class="carousel-item @if($slides->min('id') == $slide->id) active @endif ">
+                    <section class="index-banner"
+                             style="background-color: #f5f5f5; background-image: url('{{ asset('storage/'.$slide->file_link) }}');">
+                        <div class="index-banner-content">
+                            <h1 style="font-family: 'IranNastaliq', serif;">{{$slide->title1}}</h1>
+                            <p>{!! $slide->text !!}</p>
+                        </div>
+                    </section>
+                </div>
+            @endforeach
         </div>
 
         <!-- Controls -->
@@ -150,25 +148,21 @@
 
 
     {{--   Start line   --}}
-    <div class="container-fluid py-2" style="background-color: #f0f0f9; display: flex;">
+    <div class="container-fluid py-0 py-lg-2 line-background">
         <div class="container col-12 col-md-8" style="margin: 0 auto;display: flex;">
-            <div class="d-flex">
-                <img src="{{asset('site/img/navaar-right.webp')}}" style="max-height: 50px;" loading="lazy"
+            <div class="d-flex khat align-items-center">
+                <img src="{{asset('site/img/navaar-right.webp')}}" loading="lazy"
                      alt="">
             </div>
             <div class="marquee">
                 <span>
-                    مقام معظم رهبری (مدظله العالی) پدیده خواهران طلبه پدیده عظیم و مبارکی است. هزاران عالم ،
-                    پژوهشگر ، فقیه و فیلسوف در حوزه‌های علمی خواهران تربیت شوند این حرکت عظیمی خواهد بود.ٍ    |
-                    الإمامُ الصّادقُ عليه السلام :مَن تَعَلَّمَ للّهِِ و عَمِلَ للّهِِ و عَلَّمَ للّهِِ دُعِيَ في مَلَكوتِ
-                    السَّماواتِ عَظيما، فقيلَ : تَعَلَّمَ للّهِِ ، و عَمِلَ للّهِِ ، و عَلَّمَ للّهِِ !    |
-                    امام صادق علیه السلام هر که برای خدا علم بیاموزد و به آن عمل کند و به دیگران آموزش دهد
-                    در ملکوت آسمان‌ها به بزرگی یاد شود و گفته آید برای خدا آموخت برای خدا عمل کرد و برای خدا آموزش داد.    |
-                    الکافی ۱/۳۵/۶
+                    @foreach($flowtexts as $flowtext)
+                        {{$flowtext->matn}} |
+                    @endforeach
                 </span>
             </div>
-            <div class="d-flex">
-                <img src="{{asset('site/img/navaar-left.webp')}}" style="max-height: 50px;" loading="lazy"
+            <div class="d-flex khat align-items-center">
+                <img src="{{asset('site/img/navaar-left.webp')}}" loading="lazy"
                      alt="">
             </div>
         </div>
