@@ -237,7 +237,7 @@
                 @endforeach
             </div>
             <div class="col-lg-12 col-md-12 wow fadeInUp" data-wow-delay=".6s">
-                <div class="services-btn-box">
+                <div class="services-btn-box text-center">
                     <a href="{{ url('نشست') }}" class="custom-btn">
                         مشاهده همه
                         <i class="bx bx-chevron-left"></i>
@@ -376,7 +376,7 @@
 
             </div>
             <div class="col-lg-12 col-md-12 wow fadeInUp" data-wow-delay=".6s">
-                <div class="services-btn-box">
+                <div class="services-btn-box text-center">
                     <a href="{{url('#')}}" class="default-btn">
                         مشاهده همه
                         <i class="bx bx-chevron-right"></i>

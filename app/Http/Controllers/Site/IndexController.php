@@ -75,7 +75,6 @@ class IndexController extends Controller
         select('akhbars.title', 'akhbars.slug', 'akhbars.image', 'akhbars.description', 'users.name as username', 'akhbars.matn as matn', 'akhbars.updated_at')->where('akhbars.status', 4)->where('akhbars.home_show', 1)->get();
 
         return view('Site.brothers')->with(compact('menus', 'thispage', 'companies', 'slides', 'customers', 'submenus', 'posts', 'akhbars'));
-
     }
 
     public function sisters(Request $request)
@@ -242,7 +241,6 @@ class IndexController extends Controller
         select('akhbars.title', 'akhbars.slug', 'akhbars.image', 'akhbars.description', 'users.name as username', 'akhbars.matn as matn', 'akhbars.updated_at')->where('akhbars.status', 4)->where('akhbars.home_show', 1)->get();
 
         return view('Site.journal')->with(compact('menus', 'thispage', 'companies', 'slides', 'customers', 'submenus', 'posts', 'akhbars'));
-
     }
 
     public function AcceptandSelect(Request $request)
@@ -323,7 +321,7 @@ class IndexController extends Controller
         $akhbars        = Akhbar::leftjoin('users', 'akhbars.user_id', '=', 'users.id')->
         select('akhbars.title', 'akhbars.slug', 'akhbars.image', 'akhbars.description', 'users.name as username', 'akhbars.matn as matn', 'akhbars.updated_at')->where('akhbars.status', 4)->where('akhbars.home_show', 1)->get();
 
-        return view('Site.journal')->with(compact('menus', 'thispage', 'companies', 'slides', 'customers', 'submenus', 'posts', 'akhbars'));
+        return view('Site.single-meeting')->with(compact('menus', 'thispage', 'companies', 'slides', 'customers', 'submenus', 'posts', 'akhbars'));
 
     }
 
@@ -401,7 +399,7 @@ class IndexController extends Controller
         $akhbars        = Akhbar::leftjoin('users', 'akhbars.user_id', '=', 'users.id')->
         select('akhbars.title', 'akhbars.slug', 'akhbars.image', 'akhbars.description', 'users.name as username', 'akhbars.matn as matn', 'akhbars.updated_at')->where('akhbars.status', 4)->where('akhbars.home_show', 1)->get();
 
-        return view('Site.journal')->with(compact('menus', 'thispage', 'companies', 'slides', 'customers', 'submenus', 'posts', 'akhbars'));
+        return view('Site.meeting')->with(compact('menus', 'thispage', 'companies', 'slides', 'customers', 'submenus', 'posts', 'akhbars'));
 
     }
 

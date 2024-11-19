@@ -25,10 +25,10 @@ font-family: "Vazirmatn RD FD", sans-serif;
   padding-left: auto;
   padding-right: 0;
 }
-.navbar-area {
-  left: auto;
-  right: 0;
-}
+/*.navbar-area {*/
+/*  left: auto;*/
+/*  right: 0;*/
+/*}*/
 .navbar-area.is-sticky {
   left: auto;
   right: 0;
@@ -127,25 +127,23 @@ font-family: "Vazirmatn RD FD", sans-serif;
 }
 
 
-.spacle-nav .navbar .others-options {
-    margin-right: auto;
-    margin-left: 0;
-}
+/*.spacle-nav .navbar .others-options {*/
+/*    margin-right: auto;*/
+/*    margin-left: 0;*/
+/*}*/
 .spacle-nav .navbar .others-options .optional-btn {
     margin-right: 10px;
     margin-left: 0;
 }
 .spacle-nav .navbar .navbar-nav {
-    margin-right: 110px;
-    margin-left: 0;
 }
 .spacle-nav .navbar .navbar-nav .nav-item:first-child a {
     margin-right: 0;
-    margin-left: 13px;
+    margin-left: 12px;
 }
 .spacle-nav .navbar .navbar-nav .nav-item:last-child a {
     margin-left: 0;
-    margin-right: 13px;
+    margin-right: 12px;
 }
 .spacle-nav .navbar .navbar-nav .nav-item .dropdown-menu {
     right: 0;
@@ -299,8 +297,8 @@ font-family: "Vazirmatn RD FD", sans-serif;
     padding-left: 0;
 }
 .default-btn {
-    padding-right: 48px;
-    padding-left: 24px;
+    padding-right: 16px;
+    padding-left: 16px;
 }
 .default-btn i {
     right: 25px;

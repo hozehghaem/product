@@ -146,7 +146,7 @@
     <!-- End Digital Agency Banner -->
 
     {{--   Start line   --}}
-    <div class="container-fluid py-0 py-lg-2" style="background-color: #f0f0f9; display: flex;">
+    <div class="container-fluid py-0 py-lg-2 line-background">
         <div class="container col-12 col-md-8" style="margin: 0 auto;display: flex;">
             <div class="d-flex khat align-items-center">
                 <img src="{{asset('site/img/navaar-right.webp')}}" loading="lazy"

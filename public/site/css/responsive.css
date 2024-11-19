@@ -2566,7 +2566,7 @@
     }
 
     .navbar-area .container {
-        max-width: 960px;
+        max-width: 100%;
     }
 
     .navbar-area.navbar-style-two .container {
@@ -2578,7 +2578,7 @@
     }
 
     .spacle-nav .navbar .others-options {
-        margin-left: 25px;
+        /*margin-left: 25px;*/
     }
 
     .spacle-nav .navbar .others-options .optional-btn {

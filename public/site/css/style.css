@@ -231,10 +231,10 @@ p:last-child {
     padding: 8px 12px 8px 12px;
 }
 
-.headerLogo {
-    width: 200px;
-    height: auto;
-}
+/*.headerLogo {*/
+/*    width: 200px;*/
+/*    height: auto;*/
+/*}*/
 
 .login-area{
     background-image: url(../../site/img/login-background-min.jpg);
@@ -865,57 +865,88 @@ p:last-child {
 
 /* default-btn&optional-btn */
 .default-btn {
-    align-content: space-between;
-    border: none;
     position: relative;
-    display: inline-block;
+    display: inline-flex; /* ترازبندی بهتر */
+    align-items: center; /* تراز وسطی محتوا */
+    justify-content: center;
     text-align: center;
     overflow: hidden;
-    z-index: 1;
     color: #ffffff;
     background-color: #215c54;
-    -webkit-transition: 0.5s;
-    transition: 0.5s;
+    border: none;
     border-radius: 5px;
     font-size: 15px;
-    padding: 12px 24px 12px 48px;
+    padding: 12px 24px;
+    cursor: pointer; /* نشانگر دست هنگام هاور */
+    transition: background-color 0.5s ease, transform 0.3s ease;
+    margin: 5px; /* فاصله برای جلوگیری از چسبندگی دکمه‌ها */
+    flex-shrink: 0; /* جلوگیری از کوچک شدن بیش از حد دکمه */
+}
+
+.default-btn:hover {
+    background-color: #58A399; /* تغییر رنگ پس‌زمینه هنگام هاور */
+    transform: scale(1.05); /* افکت کوچک بزرگ شدن */
 }
 
 .default-btn i {
-    position: absolute;
-    left: 25px;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
+    margin-left: 8px; /* فاصله بین آیکون و متن */
     font-size: 20px;
-    -webkit-transition: 0.5s;
-    transition: 0.5s;
-    color: #080a3c;
+    color: #080a3c; /* رنگ آیکون */
+    transition: color 0.5s ease;
+}
+
+.default-btn:hover i {
+    color: #ffffff; /* تغییر رنگ آیکون هنگام هاور */
 }
 
 .default-btn span {
     position: absolute;
-    display: block;
+    top: 50%;
+    left: 50%;
     width: 0;
     height: 0;
     border-radius: 50%;
-    background-color: #58A399;
-    -webkit-transition: width 0.6s ease-in-out, height 0.5s ease-in-out;
-    transition: width 0.6s ease-in-out, height 0.5s ease-in-out;
-    -webkit-transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.1); /* افکت پس‌زمینه نرم‌تر */
+    transition: width 0.6s ease-in-out, height 0.6s ease-in-out;
     transform: translate(-50%, -50%);
-    z-index: -1;
+    z-index: -1; /* زیر دکمه قرار می‌گیرد */
 }
 
-.default-btn:hover, .default-btn:focus {
-    color: #ffffff;
-    -webkit-box-shadow: 0px 5px 28.5px 1.5px rgba(35, 35, 34, 0.11) !important;
-    box-shadow: 0px 5px 28.5px 1.5px rgba(31, 35, 35, 0.16) !important;
+.default-btn:hover span {
+    width: 300%; /* گسترش دایره هنگام هاور */
+    height: 300%;
 }
 
-.default-btn:hover span, .default-btn:focus span {
-    width: 225%;
-    height: 562.5px;
+/* ریسپانسیو برای دکمه‌ها */
+/*.others-options {*/
+/*    display: flex;*/
+/*    flex-wrap: wrap; !* جلوگیری از چسبیدن دکمه‌ها در صفحه‌های کوچک *!*/
+/*    justify-content: center; !* ترازبندی وسط *!*/
+/*    gap: 10px; !* فاصله بین دکمه‌ها *!*/
+/*    margin: 10px 0; !* فاصله از بالا و پایین *!*/
+/*}*/
+
+/* استایل ریسپانسیو برای سایز‌های خاص */
+@media (max-width: 768px) {
+    .default-btn {
+        padding: 10px 16px; /* کوچک‌تر کردن دکمه‌ها */
+        font-size: 14px; /* کوچک‌تر کردن متن */
+    }
+
+    .default-btn i {
+        font-size: 18px; /* کوچک‌تر کردن آیکون */
+    }
+}
+
+@media (max-width: 480px) {
+    .default-btn {
+        width: 100%; /* دکمه‌ها به عرض کامل در موبایل */
+        justify-content: center;
+    }
+
+    .others-options {
+        flex-direction: column; /* دکمه‌ها زیر هم قرار می‌گیرند */
+    }
 }
 
 .optional-btn {
@@ -1211,10 +1242,12 @@ Navbar Area CSS
 
 .navbar-area {
     /*position: absolute;*/
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    top: 8px;
+    left: 16px;
+    right: 16px;
+    width: auto;
     height: auto;
     z-index: 1040;
     padding-top: 8px;
@@ -1225,23 +1258,24 @@ Navbar Area CSS
 changed from 1290 to 1540
  */
 .navbar-area .container {
-    max-width: 1540px;
+    max-width: 100%;
 }
 
 .navbar-area.is-sticky {
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 6px;
     width: 100%;
     z-index: 999;
-    -webkit-box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.09);
-    box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.09);
-    background-color: #ffffff !important;
-    -webkit-animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
-    animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
-    padding-top: 0;
-    padding-bottom: 0;
+    display: flex;
+    justify-content: center;
+    /*-webkit-box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.09);*/
+    /*box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.09);*/
+    /*background-color: #ffffff !important;*/
+    -webkit-animation: fadeInDown 500ms ease-in-out;
+    animation: fadeInDown 500ms ease-in-out;
+    padding: 4px 8px;
 }
+
 
 .navbar-area.is-sticky .spacle-nav .navbar .others-options .optional-btn {
     color: #080a3c;
@@ -1305,10 +1339,18 @@ changed from 1290 to 1540
 }
 
 .spacle-nav {
-    background-color: transparent;
+    margin: 12px 24px;
+    width: 100%;
+    border-radius: 16px;
+    background-color: white;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    border: 1px solid rgba(17, 17, 17, 0.3);
+
 }
 
 .spacle-nav .navbar {
+    justify-content: space-between;
     background-color: transparent;
     padding: 0;
 }
@@ -1317,6 +1359,7 @@ changed from 1290 to 1540
     padding: 0;
     font-weight: bold;
     font-size: 27px;
+    max-width: 60px;
 }
 
 .spacle-nav .navbar ul {
@@ -1326,7 +1369,6 @@ changed from 1290 to 1540
 }
 
 .spacle-nav .navbar .navbar-nav {
-    margin-left: 110px;
 }
 
 .spacle-nav .navbar .navbar-nav .nav-item {
@@ -1336,12 +1378,12 @@ changed from 1290 to 1540
 }
 
 .spacle-nav .navbar .navbar-nav .nav-item a {
-    font-size: 15px;
+    font-size: 14px;
 
     color: #4a6f8a;
     padding: 30px 0;
-    margin-left: 13px;
-    margin-right: 13px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 a.nav-link a.nav-link:active {
@@ -1617,7 +1659,7 @@ a.nav-link a.nav-link:active {
 }
 
 .spacle-nav .navbar .others-options {
-    margin-left: auto;
+    /*margin-left: auto;*/
 }
 
 .spacle-nav .navbar .others-options .default-btn {
@@ -1733,20 +1775,15 @@ a.nav-link a.nav-link:active {
     }
 
     .navbar-area {
-        background-color: #ffffff;
         position: relative;
-        border-bottom: 1px solid #eeeeee;
+        /*border-bottom: 1px solid #eeeeee;*/
         padding-top: 15px;
         padding-bottom: 15px;
     }
 
     .navbar-area.is-sticky {
-        padding-top: 15px;
-        padding-bottom: 15px;
-    }
-
-    .spacle-nav {
-        display: none;
+        padding-top: 8px;
+        padding-bottom: 8px;
     }
 }
 
@@ -6604,6 +6641,14 @@ Login Area CSS
     border-radius: 2px;
     color: #58A399;
 
+}
+
+.line-background {
+    background-image: url(../../site/img/pattern-background-min.jpg);
+    background-size: contain;
+    background-repeat: repeat;
+    background-color: #f0f0f9;
+    display: flex;
 }
 
 .login-content .login-form form .connect-with-social button i {
