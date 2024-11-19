@@ -1244,9 +1244,9 @@ Navbar Area CSS
     /*position: absolute;*/
     display: flex;
     justify-content: center;
-    top: 8px;
-    left: 16px;
-    right: 16px;
+    /*top: 8px;*/
+    /*left: 16px;*/
+    /*right: 16px;*/
     width: auto;
     height: auto;
     z-index: 1040;
@@ -1339,7 +1339,7 @@ changed from 1290 to 1540
 }
 
 .spacle-nav {
-    margin: 12px 24px;
+    margin: 6px 8px;
     width: 100%;
     border-radius: 16px;
     background-color: white;

@@ -117,7 +117,7 @@
 
                 <!-- Navbar Links -->
                 <div class="collapse navbar-collapse justify-content-between" id="navbarContent">
-                    <ul class="navbar-nav ms-auto">
+                    <ul class="navbar-nav mx-4">
                         @if(request()->segment(1) == 'حوزه-علمیه-خواهران')
                             @foreach($menus as $menu)
                                 @if($menu->id == 2)
@@ -179,7 +179,7 @@
                     </ul>
 
                     <!-- Authentication Links -->
-                    <div class="others-options d-flex">
+                    <div class="others-options d-flex ms-auto">
                         @if(!Auth::check())
                             <a href="{{url('register')}}" class="default-btn me-2">
                                 <i class="bx bxs-user"></i>ثبت نام<span></span>
