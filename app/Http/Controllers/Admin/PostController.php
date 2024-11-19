@@ -22,7 +22,6 @@ class PostController extends Controller
 {
     public function index(Request $request)
     {
-        Artisan::call('storage:link');
         $thispage       = [
             'title'         => 'مدیریت مدیا',
             'list_title'    => 'لیست مدیا',

@@ -182,7 +182,7 @@ class IndexController extends Controller
         $customers = Customer::select('name', 'image')->whereStatus(4)->whereHome_show(1)->get();
         $posts     = Post::whereStatus(4)->whereSlug($slug)->first();
         $postpage  = Post_type::whereId($posts->posttype)->first();
-        return view('Site.'.'single-'.$postpage->class)->with(compact('menus', 'thispage', 'companies', 'customers', 'submenus', 'posts'));
+        return view('Site.'.$postpage->class)->with(compact('menus', 'thispage', 'companies', 'customers', 'submenus', 'posts'));
 
     }
 
