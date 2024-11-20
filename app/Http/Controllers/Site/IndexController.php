@@ -40,7 +40,7 @@ class IndexController extends Controller
         $companies      = Company::first();
         $slides         = Slide::select('id' , 'title1' , 'text', 'file_link')->whereMenu_id($thispage->id)->whereStatus(4)->get();
         $customers      = Customer::select('name', 'image')->whereStatus(4)->whereHome_show(1)->get();
-        $posts          = Post::whereStatus(4)->whereHome_show(1)->orderBy('id' , 'DESC')->limit(6)->get();
+        $posts          = Post::whereStatus(4)->whereHome_show(1)->orderBy('id' , 'DESC')->get();
         $questions      = Questionlist::whereStatus(4)->orderBy('id' , 'DESC')->limit(6)->get();
         $flowtexts      = Flowtext::whereStatus(4)->limit(6)->get();
         $akhbars        = Akhbar::leftjoin('users', 'akhbars.user_id', '=', 'users.id')->
