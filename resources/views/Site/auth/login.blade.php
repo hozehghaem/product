@@ -52,11 +52,10 @@
                                         <div class="forgot-password text-right">
                                             <a href="#">فراموشی رمز عبور؟</a>
                                         </div>
-
-                                        <div class="connect-with-social">
-                                            <button type="submit" class="google"><i class='bx bxl-google'></i> ورود توسط حساب گوگل</button>
-                                        </div>
                                     </form>
+                                    <div class="connect-with-social">
+                                        <button type="submit" class="google"><i class='bx bxl-google'></i> ورود توسط حساب گوگل</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
