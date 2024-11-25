@@ -44,8 +44,8 @@
         }
 
         .index-banner {
-            padding-top: 235px;
-            padding-bottom: 235px;
+            padding-top: 250px;
+            /*padding-bottom: 235px;*/
             background-position: center center;
             background-size: cover;
             background-repeat: no-repeat;
@@ -55,7 +55,16 @@
             align-items: center;
             height: 80vh; /* ارتفاع کامل صفحه */
         }
-
+        .index-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
+            z-index: 1; /* لایه‌بندی زیر متن */
+        }
         .index-banner-content {
             text-align: center; /* متن‌ها را وسط چین می‌کند */
             display: flex;
@@ -63,6 +72,7 @@
             justify-content: center; /* محتوا را به مرکز محور عمودی قرار می‌دهد */
             align-items: center; /* محتوا را به مرکز محور افقی قرار می‌دهد */
             height: 100%; /* در صورت نیاز برای استفاده از فضای کامل بخش */
+            z-index: 2;
         }
 
         .index-banner-content p {

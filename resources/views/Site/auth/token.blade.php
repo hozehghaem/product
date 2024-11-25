@@ -1,59 +1,44 @@
 @extends('layouts.user')
 @section('title')
     <title>تایید شماره موبایل کاربران سایت</title>
-    <link rel="stylesheet" href="{{asset('site/css/responsive.css')}}">
+
 @endsection
 @section('main')
-<div class="container">
-    @include('sweetalert::alert')
-    <div class="row">
-        <div class="col-lg">
-            <section class="page-account-box">
-                <div class="col-lg-6 col-md-6 col-xs-12 mx-auto">
-                    <div class="ds-userlogin text-center">
-                        <div class="account-box">
-                            <div class="Login-to-account mt-4">
-                                <div class="account-box-content">
-                                    <div class="message-light">
-                                        <div class="massege-light-send">
-                                            برای شماره همراه  {{Session::get('phone')}} کد تایید ارسال گردید
-                                            <div class="form-edit-number text-center">
-                                                <a href="{{route('remember')}}" class="edit-number-link">ویرایش شماره</a>
-                                            </div>
-                                        </div>
-                                        <form method="POST" action="{{ route('verify.phone.token') }}" class="form-account">
-                                            @csrf
-                                            <div class="form-account-title">
-                                                <label for="token">کد فعال سازی پیامک شده را وارد کنید</label>
-                                                <input type="text" name="code" id="code_input" required value=" " style="text-align:center" class="form-control" maxlength="7">
-                                            </div>
-                                            <div class="form-row-account">
-                                                <button class="btn btn-primary btn-login" id="sender">تایید کد</button>
-                                            </div>
-                                        </form>
-                                        <div id="countdown"></div>
-{{--                                        <div class="form-account-row">--}}
-{{--                                            <div class="receive-verify-code">--}}
-{{--                                                <p id="countdown-verify-end"><span class="day">0</span><span class="hour">0</span><span>: 2</span><span>59</span>--}}
-{{--                                                    <i class="fa fa-clock-o"></i>--}}
-{{--                                                </p>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-                                    </div>
+    <section class="d-flex vh-100 align-items-center">
+        <div class="container">
+            @include('sweetalert::alert')
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-8 col-sm-12">
+                    <div class="card shadow-lg islamic-card br-16">
+                        <div class="card-header text-center ">
+                            <h3 class="islamic-title">تایید شماره موبایل</h3>
+                        </div>
+                        <div class="card-body">
+                            <p class="text-center">
+                                برای شماره همراه {{ Session::get('phone') }} کد تایید ارسال گردید.
+                            </p>
+                            <div class="text-center mb-3">
+                                <a href="{{ route('remember') }}" class="btn btn-link">ویرایش شماره</a>
+                            </div>
+
+                            <form method="POST" action="{{ route('verify.phone.token') }}">
+                                @csrf
+                                <div class="form-group text-center ">
+                                    <label for="code" class="islamic-label text-center">کد فعال سازی پیامک شده را وارد کنید</label>
+                                    <input type="text" name="code" id="code_input" class="form-control text-center islamic-input" maxlength="7" required>
                                 </div>
+                                <button type="submit" class="btn btn-primary btn-block" id="sender">تایید کد</button>
+                            </form>
+
+                            <div class="mt-3 bg-dark text-center">
+                                <p id="countdown" class="text-warning">زمان باقی مانده: 02:59</p>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
         </div>
-    </div>
-</div>
-<div class="progress-wrap">
-    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
-    </svg>
-</div>
+    </section>
 @php
     $times = \App\Models\ActiveCode::select('expired_at')->whereUser_id(\Illuminate\Support\Facades\Session::get('auth.user_id'))->first();
     $time_now = jdate();

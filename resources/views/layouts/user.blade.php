@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="{{asset('site/css/vendor/bootstrap.css')}}">
 {{--    <link rel="stylesheet" href="{{asset('site/css/vendor/owl.carousel.min.css')}}">--}}
 {{--    <link rel="stylesheet" href="{{asset('site/css/vendor/noUISlider.min.css')}}">--}}
+    <link rel="stylesheet" href="{{asset('site/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('site/css/responsive.css')}}">
+    <link rel="stylesheet" href="{{asset('site/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('site/css/main.css')}}">
     <script src="{{asset('site/js/vendor/jquery-3.2.1.min.js')}}"></script>
     <script src="{{asset('site/js/vendor/bootstrap.js')}}"></script>
