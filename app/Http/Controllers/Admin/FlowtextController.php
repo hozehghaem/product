@@ -33,7 +33,7 @@ class FlowtextController extends Controller
 
             return Datatables::of($data)
                 ->editColumn('matn', function ($data) {
-                    return ($data->title);
+                    return ($data->matn);
                 })
                 ->editColumn('priority', function ($data) {
                     return ($data->priority);
