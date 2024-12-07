@@ -37,9 +37,7 @@
                                         <thead>
                                         <tr>
                                             <th class="wd-10p"> اولویت نمایش </th>
-                                            <th class="wd-10p"> نام صفحه </th>
-                                            <th class="wd-10p"> آدرس صفحه </th>
-                                            <th class="wd-10p"> زیر منو </th>
+                                            <th class="wd-10p"> متن نمایش </th>
                                             <th class="wd-10p"> وضعیت </th>
                                             <th class="wd-10p"> تغییر </th>
                                         </tr>
@@ -92,9 +90,7 @@
                 ajax: "{{route(request()->segment(2).'.'.'index')}}",
                 columns: [
                     {data: 'priority'       , name: 'priority'},
-                    {data: 'title'          , name: 'title'},
-                    {data: 'slug'           , name: 'slug'},
-                    {data: 'submenu'        , name: 'submenu'},
+                    {data: 'matn'           , name: 'matn'},
                     {data: 'status'         , name: 'status'},
                     {data: 'action'         , name: 'action'},
                 ]
