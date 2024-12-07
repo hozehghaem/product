@@ -120,7 +120,7 @@ class FlowtextController extends Controller
     public function edit($id)
     {
         $typeusers          = TypeUser::where('id' , '>=', 2)->get();
-        $menus              = Menu::whereId($id)->first();
+        $menus              = Flowtext::whereId($id)->first();
         $idmenus            = Menu::pluck('priority')->toArray();
         $priorities         = Menu::count();
         $s                  = $priorities + 5;
@@ -135,23 +135,11 @@ class FlowtextController extends Controller
     public function update(Request $request , $id)
     {
 
-        $menu = Menu::findOrfail($id);
-        $menu->title            = $request->input('title');
-        $menu->submenu          = $request->input('submenu');
-        $menu->mega_menu        = $request->input('mega_menu');
-        if ($request->input('userlevel')){
-            $menu->userlevel        = json_encode(explode("،", $request->input('userlevel')));
-        }
-        $menu->priority         = $request->input('priority');
-        $menu->submenu_route    = $request->input('submenu');
-        $menu->level            = $request->input('level');
-        if ($request->input('keyword')) {
-            $menu->keyword = json_encode(explode("،", $request->input('keyword')));
-        }
-        $menu->page_description = $request->input('description');
-        $menu->status           = $request->input('status');
+        $flowtexts = Flowtext::findOrfail($id);
+        $flowtexts->matn             = $request->input('matn');
+        $flowtexts->status           = $request->input('status');
 
-        $result = $menu->update();
+        $result = $flowtexts->update();
         try{
             if ($result == true) {
                 $success = true;
@@ -180,8 +168,8 @@ class FlowtextController extends Controller
     public function deletemenus(Request $request)
     {
         try {
-            $menu = Menu::findOrfail($request->input('id'));
-            $result = $menu->delete();
+            $flowtexts = Flowtext::findOrfail($request->input('id'));
+            $result = $flowtexts->delete();
             if ($result == true) {
                 $success = true;
                 $flag = 'success';
