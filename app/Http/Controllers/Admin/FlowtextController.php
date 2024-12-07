@@ -127,7 +127,7 @@ class FlowtextController extends Controller
         $values             = range(1, $s);
         $menupanels         = Menu_panel::whereStatus(4)->get();
         $submenupanels      = Submenu_panel::whereStatus(4)->get();
-        return view('Admin.menus.edit')
+        return view('Admin.flowtexts.edit')
             ->with(compact(['menupanels' , 'submenupanels', 'menus' , 'typeusers' , 'values' , 'idmenus']));
 
     }
