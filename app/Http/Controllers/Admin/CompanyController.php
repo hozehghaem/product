@@ -84,8 +84,7 @@ class CompanyController extends Controller
 
     public function store(Request $request)
     {
-
-        try{
+//        try{
 
             $companies = new Company();
             $companies->title           = $request->input('title');
@@ -145,14 +144,14 @@ class CompanyController extends Controller
                 $message = 'اطلاعات ثبت نشد، لطفا مجددا تلاش نمایید';
             }
 
-        } catch (Exception $e) {
-
-            $success = false;
-            $flag    = 'error';
-            $subject = 'خطا در ارتباط با سرور';
-            //$message = strchr($e);
-            $message = 'اطلاعات ثبت نشد،لطفا بعدا مجدد تلاش نمایید ';
-        }
+//        } catch (Exception $e) {
+//
+//            $success = false;
+//            $flag    = 'error';
+//            $subject = 'خطا در ارتباط با سرور';
+//            //$message = strchr($e);
+//            $message = 'اطلاعات ثبت نشد،لطفا بعدا مجدد تلاش نمایید ';
+//        }
 
         return response()->json(['success'=>$success , 'subject' => $subject, 'flag' => $flag, 'message' => $message]);
     }
