@@ -32,19 +32,26 @@ class FlowtextController extends Controller
                 ->orderBy('priority')->get();
 
             return Datatables::of($data)
-                ->editColumn('matn', function ($data) {
+                ->addColumn('matn', function ($data) {
                     return ($data->matn);
                 })
-                ->editColumn('priority', function ($data) {
+                ->addColumn('priority', function ($data) {
                     return ($data->priority);
                 })
-                ->editColumn('status', function ($data) {
+                ->addColumn('status', function ($data) {
                     if ($data->status == "0") {
                         return "عدم نمایش";
                     } elseif ($data->status == "4") {
                         return "در حال نمایش";
                     }
                 })
+                ->addColumn('action', function ($data) {
+                    $actionBtn = '<a href="' . route('flowtext-manage.edit', $data->id) . '" class="btn ripple btn-outline-info btn-icon" style="float: right;margin: 0 5px;"><i class="fe fe-edit-2"></i></a>
+                    <button type="button" id="submit" data-toggle="modal" data-target="#myModal'.$data->id.'" class="btn ripple btn-outline-danger btn-icon " style="float: right;"><i class="fe fe-trash-2 "></i></button>';
+
+                    return $actionBtn;
+                })
+                ->rawColumns(['action' , 'file_link'])
                 ->make(true);
         }
 
