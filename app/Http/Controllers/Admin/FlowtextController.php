@@ -120,7 +120,7 @@ class FlowtextController extends Controller
     public function edit($id)
     {
         $typeusers          = TypeUser::where('id' , '>=', 2)->get();
-        $menus              = Flowtext::whereId($id)->first();
+        $flowtexts          = Flowtext::whereId($id)->first();
         $idmenus            = Menu::pluck('priority')->toArray();
         $priorities         = Menu::count();
         $s                  = $priorities + 5;
@@ -128,7 +128,7 @@ class FlowtextController extends Controller
         $menupanels         = Menu_panel::whereStatus(4)->get();
         $submenupanels      = Submenu_panel::whereStatus(4)->get();
         return view('Admin.flowtexts.edit')
-            ->with(compact(['menupanels' , 'submenupanels', 'menus' , 'typeusers' , 'values' , 'idmenus']));
+            ->with(compact(['menupanels' , 'submenupanels', 'flowtexts' , 'typeusers' , 'values' , 'idmenus']));
 
     }
 
