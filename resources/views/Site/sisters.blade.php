@@ -54,6 +54,7 @@
             align-items: center;
             height: 80vh; /* ارتفاع کامل صفحه */
         }
+
         .index-banner::before {
             content: '';
             position: absolute;
@@ -85,7 +86,8 @@
             color: #f0f0f9;
             max-width: 500px;
         }
-        .khat img{
+
+        .khat img {
             max-height: 50px;
         }
 
@@ -111,7 +113,8 @@
                 color: #f0f0f9;
                 max-width: 250px;
             }
-            .khat img{
+
+            .khat img {
                 max-height: 24px;
             }
         }
@@ -123,7 +126,8 @@
         <!-- Indicators -->
         <ol class="carousel-indicators">
             @foreach($slides as $slide)
-                <li data-target="#indexBannerCarousel" data-slide-to="{{$slide->id}}" class="@if($slides->min('id') == $slide->id) active @endif"></li>
+                <li data-target="#indexBannerCarousel" data-slide-to="{{$slide->id}}"
+                    class="@if($slides->min('id') == $slide->id) active @endif"></li>
             @endforeach
         </ol>
 
@@ -131,7 +135,8 @@
         <div class="carousel-inner">
             @foreach($slides as $slide)
                 <div class="carousel-item @if($slides->min('id') == $slide->id) active @endif ">
-                    <section class="index-banner" style="background-color: #f5f5f5; background-image: url('{{ asset('storage/'.$slide->file_link) }}');">
+                    <section class="index-banner"
+                             style="background-color: #f5f5f5; background-image: url('{{ asset('storage/'.$slide->file_link) }}');">
                         <div class="index-banner-content">
                             <h1 style="font-family: 'IranNastaliq', serif;">{{$slide->title1}}</h1>
                             <p>{!! $slide->text !!}</p>
@@ -235,10 +240,11 @@
                             <div class="row m-0">
                                 <div class="col-lg-6 col-md-12 p-0">
                                     <div class="content">
-                                        <h3><a href="{{route('/')}}">{{$post->title}}</a></h3>
-                                        {!! $post->description !!}
-                                        <a href="{{url('حوزه-علمیه-خواهران/معاونت-پژوهش/نشست-ها/'.$post->slug)}}" class="read-more-btn">ادامه مطلب <i
-                                                class='bx bx-left-arrow-alt'></i></a>
+                                        <h3><a href="{{ route('/') }}">{{ $post->title }}</a></h3>
+                                        {!! Str::limit(strip_tags($post->description), 100, '...') !!}
+                                        <a href="{{ url('حوزه-علمیه-خواهران/معاونت-پژوهش/نشست-ها/'.$post->slug) }}" class="read-more-btn">
+                                            ادامه مطلب <i class='bx bx-left-arrow-alt'></i>
+                                        </a>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-12 p-0">
@@ -264,8 +270,11 @@
     <!-- End Services Area -->
 
     <!-- Start Case Studies Area -->
-    <section class="case-studies-area pt-70 pb-20">
-        <div class="container">
+    <section class="case-studies-area">
+        <h2 class="mb-2 text-center" style="color: white;margin: 24px">اخبار</h2>
+
+        <div class="container mt-5">
+
             <div id="case-studies-slides" class="case-studies-slides owl-carousel">
                 @foreach($posts as $post)
                     @if($post->posttype == 5)
@@ -346,10 +355,20 @@
     <!-- Start Partner Area -->
     <section class="partner-area-two ptb-70 bg-f9f9f9">
         <div class="container">
-            <div id="partner-row" class="d-flex justify-content-center row align-items-center">
+{{--            <div id="partner-row" class="d-flex justify-content-center row align-items-center">--}}
+{{--                @foreach($customers as $customer)--}}
+{{--                    <div class="col-lg-2 col-6 col-sm-3 col-md-4 wow fadeInUp">--}}
+{{--                        <div class="single-partner-box">--}}
+{{--                            <img src="{{asset($customer->image)}}" alt="{{$customer->name}}">--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                @endforeach--}}
+{{--                --}}
+{{--            </div>--}}
+            <div id="partner-row" class="case-studies-slides owl-carousel">
                 @foreach($customers as $customer)
-                    <div class="col-lg-2 col-6 col-sm-3 col-md-4 wow fadeInUp">
-                        <div class="single-partner-box">
+                    <div class="col-12 col-md-4 wow d-flex flex-column justify-content-center fadeInUp">
+                        <div class="single-partner-box d-flex justify-content-center">
                             <img src="{{asset($customer->image)}}" alt="{{$customer->name}}">
                         </div>
                     </div>

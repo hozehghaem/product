@@ -2698,7 +2698,11 @@ Partner Area CSS
 }
 
 .single-partner-box {
-    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
     max-width: 100px; /* حداکثر عرض برای جلوگیری از بزرگ شدن */
     margin-top: 8px;
     margin-bottom: 8px;
@@ -3300,6 +3304,7 @@ FunFacts Area CSS
 .btn-primary {
     border-color: #58A399;
     background-color: #58A399;
+    color:wheat;
 }
 
 .btn-primary:hover {
@@ -8579,6 +8584,8 @@ Services Area CSS
 }
 
 .single-services-box {
+    margin: 4px;
+    justify-content: space-between;
     display: flex;
     align-items: center;
     background-color: #f9f9f9;
@@ -8592,6 +8599,7 @@ Services Area CSS
 }
 
 .single-services-box .content {
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
