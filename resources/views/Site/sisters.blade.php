@@ -233,10 +233,10 @@
                 <img src="{{asset('/site/img/logo-without-text.png')}}" class="title-icon" alt="">
                 <h2>سلسله نشست های دوره ای حوزه</h2>
             </div>
-            <div class="row">
+            <div class="row justify-content-between">
                 @foreach($posts as $post)
                     @if($post->posttype == 2)
-                        <div class="single-services-box col-lg-6 col-md-12">
+                        <div class="single-services-box col-lg-5 col-md-12">
                             <div class="row m-0">
                                 <div class="col-lg-6 col-md-12 p-0">
                                     <div class="content">
