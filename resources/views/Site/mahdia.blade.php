@@ -11,20 +11,28 @@
         </div>
     </div>
     <!-- End Page Title Area -->
-    <div class="container my-5 justify-content-center align-items-center about-content-center">
-        <section class="d-flex flex-column flex-lg-row justify-content-center align-items-center about-content-center">
-            <span class="my-5 col-lg-6">
-                                    لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال
-                    استاندارد صنعت بوده است. لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد.
-                    لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است.                    لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال
-                    استاندارد صنعت بوده است. لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد.
-                    لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است.                    لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال
-                    استاندارد صنعت بوده است. لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد.
-                    لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است.
-            </span>
-            <img src="{{asset('/site/img/mahdia-banner.webp')}}" class="col-lg-6">
-        </section>
-    </div>
+    <!-- Start Posts Section -->
+    <div class="container my-5">
+        <h3 class="text-center">آخرین فعالیت‌های مرکز مشاوره</h3>
+        <div class="row">
 
+            @foreach($posts as $post)
+                <div class="col-md-4 py-4 z-3">
+                    <div class="card br-16">
+                        <img src="{{ asset($post->image) }}" class="" alt="{{ $post->title }}"
+                             style="border-top-right-radius: 16px; border-top-left-radius: 16px">
+                        <div class="card-body">
+                            <h4 class="post-title">{{ $post->title }}</h4>
+                            <p class="post-description">{{ Str::limit(strip_tags($post->description), 50, '...') }}
+                            </p>
+                            <a href="{{ url('حوزه-علمیه-خواهران/معاونت-پژوهش/نشست-ها/'.$post->slug) }}"
+                               class="btn btn-primary btn-sm">مشاهده بیشتر</a>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+    <!-- End Posts Section -->
 
 @endsection

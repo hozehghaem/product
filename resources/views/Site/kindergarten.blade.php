@@ -48,7 +48,7 @@
         .post-title {
             font-size: 18px;
             font-weight: bold;
-            color: #ff6f61;
+            color: #1e2e45;
             margin-bottom: 10px;
         }
 
@@ -67,7 +67,7 @@
 
         /* استایل عناوین */
         h3 {
-            color: #ff6f61;
+            color: rgba(25, 40, 60);
             margin-bottom: 20px;
         }
 
@@ -78,33 +78,75 @@
             border-radius: 50%;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+        .sun {
+            position: absolute;
+            top: 50px; /* تنظیم مکان از بالا */
+            left: 50%; /* تنظیم مکان از چپ */
+            transform: translateX(-50%); /* برای مرکز کردن در محور X */
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, #FFD700 50%, #FFA500 100%);
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(255, 165, 0, 0.6);
+            z-index: 10; /* بالاتر از سایر عناصر */
+        }
 
-        .cloud.small {
+        .sun::before,
+        .sun::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 140px;
+            height: 140px;
+            background: radial-gradient(circle, transparent 70%, #FFA500 75%, transparent 85%);
+            border-radius: 50%;
+            transform: translate(-50%, -50%) rotate(0deg);
+            animation: rotateSun 10s linear infinite;
+            z-index: -1;
+        }
+
+        .sun::after {
+            width: 180px;
+            height: 180px;
+            animation-delay: -5s;
+        }
+
+        @keyframes rotateSun {
+            from {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            to {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+
+        .sun.small {
             width: 60px;
             height: 60px;
         }
 
-        .cloud.medium {
+        .sun.medium {
             width: 100px;
             height: 100px;
         }
 
-        .cloud.large {
+        .sun.large {
             width: 150px;
             height: 150px;
         }
 
-        .cloud-1 {
+        .sun-1 {
             top: 150px;
             left: 10%;
         }
 
-        .cloud-2 {
+        .sun-2 {
             top: 200px;
             right: 15%;
         }
 
-        .cloud-3 {
+        .sun-3 {
             top: 300px;
             left: 20%;
         }
@@ -180,9 +222,9 @@
 
 @section('main')
     <!-- Start Decorative Clouds -->
-    <div class="cloud cloud-1 small"></div>
-    <div class="cloud cloud-2 medium"></div>
-    <div class="cloud cloud-3 large"></div>
+    <div class="sun sun-1 small"></div>
+    <div class="sun sun-2 medium"></div>
+    <div class="sun sun-3 large z-0"></div>
     <!-- End Decorative Clouds -->
 
     <!-- Start Page Title Area -->
@@ -206,7 +248,7 @@
     <!-- Start About Section -->
     <div class="d-flex flex-column container my-4 justify-content-center align-items-center about-content-center">
         <section class="d-flex flex-column col-lg-9 justify-content-center align-items-center about-content-center">
-            <span class="my-4 text-center">
+            <span class="my-4 text-center z-3">
                 محیطی شاد و پر از یادگیری برای کوچولوهای دوست‌داشتنی شما!
             </span>
             {{--            <img src="{{ asset('/site/img/kindergarten.jpg') }}" alt="مهدکودک ضحی">--}}
@@ -215,12 +257,12 @@
     <!-- End About Section -->
 
     <!-- Start Posts Section -->
-    <div class="container my-5">
-        <h3 class="text-center">آخرین فعالیت‌های ما</h3>
+    <div class="container my-5 z-3">
+        <h3 class="text-center z-3">آخرین فعالیت‌های ما</h3>
         <div class="row">
 
             @foreach($posts as $post)
-                <div class="col-md-4">
+                <div class="col-md-4 py-4 z-3">
                     <div class="post-card">
                         <img src="{{ asset($post->image) }}" alt="{{ $post->title }}">
                         <div class="post-card-body">

@@ -5006,6 +5006,9 @@ Blog Area CSS
 .single-blog-post .post-image {
     overflow: hidden;
     position: relative;
+    width: 100%; /* عرض تصویر برابر با عرض والد */
+    height: 250px; /* ارتفاع ثابت */
+    border-radius: 10px; /* اختیاری: برای گوشه‌های گرد */
 }
 
 .single-blog-post .post-image a {
@@ -7508,7 +7511,7 @@ Footer Area CSS
     -webkit-mask-size: 100% 101%;
     mask-size: 100% 101%;
     background: #215c54;
-    top: -100px;
+    /*top: -100px;*/
     left: 0;
     z-index: -1;
 }
