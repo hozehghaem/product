@@ -71,14 +71,6 @@
             margin-bottom: 20px;
         }
 
-        /* ابرها */
-        .cloud {
-            position: absolute;
-            background: #fff;
-            border-radius: 50%;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
         .sun {
             position: absolute;
             top: 50px;
@@ -89,7 +81,7 @@
             background: radial-gradient(circle, #FFD700 50%, #FFA500 100%);
             border-radius: 50%;
             box-shadow: 0 4px 10px rgba(255, 165, 0, 0.6);
-            z-index: 10;
+            /*z-index: 10;*/
         }
 
         .sun::before,
@@ -204,22 +196,23 @@
         /* Even smaller screens */
         @media screen and (max-width: 480px) {
             .sun {
-                width: 60px;
-                height: 60px;
+                width: 40px;
+                height: 40px;
             }
 
             .sun::before,
             .sun::after {
-                width: 90px;
-                height: 90px;
+                width: 50px;
+                height: 50px;
             }
 
             .sun::after {
-                width: 120px;
-                height: 120px;
+                width: 60px;
+                height: 60px;
             }
 
             .sun.small {
+                display: none;
                 width: 30px;
                 height: 30px;
             }
@@ -236,17 +229,17 @@
 
             .sun-1 {
                 top: 80px;
-                left: 3%;
+                left: 10%;
             }
 
             .sun-2 {
                 top: 120px;
-                right: 5%;
+                right: 15%;
             }
 
             .sun-3 {
                 top: 160px;
-                left: 10%;
+                left: 15%;
             }
         }
 
@@ -272,6 +265,7 @@
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
             margin: 0;
             padding: 0;
+            z-index: 11;
         }
 
         /* استایل ستاره‌های تزئینی */
@@ -359,7 +353,6 @@
     <div class="container my-5 z-3">
         <h3 class="text-center z-3">آخرین فعالیت‌های ما</h3>
         <div class="row">
-
             @foreach($posts as $post)
                 @if($post->posttype == 4)
                     <div class="col-md-4 py-4 z-3">

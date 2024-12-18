@@ -386,16 +386,17 @@
     <!-- Start Partner Area -->
     <section class="partner-area-two bg-f9f9f9">
         <div class="container">
-            <div id="partner-row" class="d-flex justify-content-center row align-items-center">
+            <div id="partner-row" class="case-studies-slides owl-carousel">
                 @foreach($customers as $customer)
-                    <div class="col-lg-2 col-6 col-sm-3 col-md-4 wow fadeInUp">
-                        <div class="single-partner-box">
+                    <div class="col-12 col-md-4 wow d-flex flex-column justify-content-center fadeInUp">
+                        <div class="single-partner-box d-flex justify-content-center">
                             <img src="{{asset($customer->image)}}" alt="{{$customer->name}}">
                         </div>
                     </div>
                 @endforeach
             </div>
         </div>
+
     </section>
     <!-- End Partner Area -->
 

@@ -4993,6 +4993,8 @@ Our Loving Clients Area CSS
 Blog Area CSS
 =================================================*/
 .single-blog-post {
+    display: flex;
+    flex-direction: column;
     font-family: "Vazirmatn RD FD", sans-serif;
     border-radius: 2px;
     margin-bottom: 30px;
@@ -5004,9 +5006,11 @@ Blog Area CSS
 }
 
 .single-blog-post .post-image {
+    align-self: center;
+    background-size: cover;
     overflow: hidden;
     position: relative;
-    width: 100%; /* عرض تصویر برابر با عرض والد */
+    /*width: 100%; !* عرض تصویر برابر با عرض والد *!*/
     height: 250px; /* ارتفاع ثابت */
     border-radius: 10px; /* اختیاری: برای گوشه‌های گرد */
 }
@@ -8638,7 +8642,7 @@ Services Area CSS
 }
 
 .single-services-box .image {
-    height: 100%;
+    height: 250px;
     clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%);
     background-position: center;
     background-size: cover;
