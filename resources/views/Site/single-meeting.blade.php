@@ -52,15 +52,25 @@
     <div class="service-details">
         <div class="container">
             <div class="container mt-5">
-                <div class="row " style="justify-content: center">
-                    <div class="col-md-8" >
-                        <div class="video-box">
-                            <img src="{{asset('/site/img/blog-image/1.jpg')}}" class="main-image" alt="image">
-                            <a href="{{asset('/site/video/1.mp4')}}" class="video-btn popup-youtube">
-                                <i class="bx bx-play"></i>
-                            </a>
-                        </div>
-                    </div>
+{{--                <div class="row " style="justify-content: center">--}}
+{{--                    <div class="col-md-8" >--}}
+{{--                        <div class="video-box">--}}
+{{--                            <img src="{{asset('/site/img/blog-image/1.jpg')}}" class="main-image" alt="image">--}}
+{{--                            <a href="{{asset('/site/video/1.mp4')}}" class="video-btn popup-youtube">--}}
+{{--                                <i class="bx bx-play"></i>--}}
+{{--                            </a>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+                <div class="card-image m-3">
+                    @if($posts->file)
+                        <video controls preload="metadata" poster="{{asset($posts->image)}}" id="player"
+                               style="width: 100%">
+                            <source src="{{asset($posts->file)}}" type="video/mp4"/>
+                        </video>
+                    @elseif($posts->aparat)
+                        {!! $posts->aparat !!}
+                    @endif
                 </div>
             <div class="service-details-content">
 
