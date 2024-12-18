@@ -78,17 +78,18 @@
             border-radius: 50%;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+
         .sun {
             position: absolute;
-            top: 50px; /* تنظیم مکان از بالا */
-            left: 50%; /* تنظیم مکان از چپ */
-            transform: translateX(-50%); /* برای مرکز کردن در محور X */
+            top: 50px;
+            left: 50%;
+            transform: translateX(-50%);
             width: 100px;
             height: 100px;
             background: radial-gradient(circle, #FFD700 50%, #FFA500 100%);
             border-radius: 50%;
             box-shadow: 0 4px 10px rgba(255, 165, 0, 0.6);
-            z-index: 10; /* بالاتر از سایر عناصر */
+            z-index: 10;
         }
 
         .sun::before,
@@ -149,6 +150,104 @@
         .sun-3 {
             top: 300px;
             left: 20%;
+        }
+
+        /* Mobile Responsiveness */
+        @media screen and (max-width: 768px) {
+            .sun {
+                width: 80px;
+                height: 80px;
+            }
+
+            .sun::before,
+            .sun::after {
+                width: 110px;
+                height: 110px;
+            }
+
+            .sun::after {
+                width: 140px;
+                height: 140px;
+            }
+
+            .sun.small {
+                width: 40px;
+                height: 40px;
+            }
+
+            .sun.medium {
+                width: 80px;
+                height: 80px;
+            }
+
+            .sun.large {
+                width: 120px;
+                height: 120px;
+            }
+
+            .sun-1 {
+                top: 100px;
+                left: 5%;
+            }
+
+            .sun-2 {
+                top: 150px;
+                right: 10%;
+            }
+
+            .sun-3 {
+                top: 200px;
+                left: 15%;
+            }
+        }
+
+        /* Even smaller screens */
+        @media screen and (max-width: 480px) {
+            .sun {
+                width: 60px;
+                height: 60px;
+            }
+
+            .sun::before,
+            .sun::after {
+                width: 90px;
+                height: 90px;
+            }
+
+            .sun::after {
+                width: 120px;
+                height: 120px;
+            }
+
+            .sun.small {
+                width: 30px;
+                height: 30px;
+            }
+
+            .sun.medium {
+                width: 60px;
+                height: 60px;
+            }
+
+            .sun.large {
+                width: 90px;
+                height: 90px;
+            }
+
+            .sun-1 {
+                top: 80px;
+                left: 3%;
+            }
+
+            .sun-2 {
+                top: 120px;
+                right: 5%;
+            }
+
+            .sun-3 {
+                top: 160px;
+                left: 10%;
+            }
         }
 
         /* پس‌زمینه رنگین‌کمان */
@@ -262,18 +361,20 @@
         <div class="row">
 
             @foreach($posts as $post)
-                <div class="col-md-4 py-4 z-3">
-                    <div class="post-card">
-                        <img src="{{ asset($post->image) }}" alt="{{ $post->title }}">
-                        <div class="post-card-body">
-                            <h4 class="post-title">{{ $post->title }}</h4>
-                            <p class="post-description">{{ Str::limit(strip_tags($post->description), 50, '...') }}
-                            </p>
-                            <a href="{{ url('حوزه-علمیه-خواهران/معاونت-پژوهش/نشست-ها/'.$post->slug) }}"
-                               class="btn btn-primary btn-sm">مشاهده بیشتر</a>
+                @if($post->posttype == 4)
+                    <div class="col-md-4 py-4 z-3">
+                        <div class="post-card">
+                            <img src="{{ asset($post->image) }}" alt="{{ $post->title }}">
+                            <div class="post-card-body">
+                                <h4 class="post-title">{{ $post->title }}</h4>
+                                <p class="post-description">{{ Str::limit(strip_tags($post->description), 40, '...') }}
+                                </p>
+                                <a href="{{ url('حوزه-علمیه-خواهران/معاونت-پژوهش/نشست-ها/'.$post->slug) }}"
+                                   class="btn btn-primary btn-sm">مشاهده بیشتر</a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                @endif
             @endforeach
         </div>
     </div>
