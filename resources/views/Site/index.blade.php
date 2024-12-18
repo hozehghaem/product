@@ -274,10 +274,11 @@
                             <div class="row m-0">
                                 <div class="col-lg-6 col-md-12 p-0">
                                     <div class="content">
-                                        <h3><a href="{{route('/')}}">{{$post->title}}</a></h3>
-                                        {!! $post->description !!}
-                                        <a href="{{url('حوزه-علمیه-خواهران/معاونت-پژوهش/نشست-ها/'.$post->slug)}}" class="read-more-btn">ادامه مطلب <i
-                                                class='bx bx-left-arrow-alt'></i></a>
+                                        <h3><a href="{{ route('/') }}">{{ $post->title }}</a></h3>
+                                        {!! Str::limit(strip_tags($post->description), 60, '...') !!}
+                                        <a href="{{ url('حوزه-علمیه-خواهران/معاونت-پژوهش/نشست-ها/'.$post->slug) }}" class="read-more-btn">
+                                            ادامه مطلب <i class='bx bx-left-arrow-alt'></i>
+                                        </a>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-12 p-0">
