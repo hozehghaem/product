@@ -59,7 +59,7 @@
         <h3 class="mb-4">فعالیت‌ها</h3>
 
         <div class="row">
-            <div class="col-md-4">
+{{--            <div class="col-md-4">--}}
                 @foreach($posts as $post)
                     @if($post->posttype == 9)
                         <div class="col-md-4 py-4 z-3">
@@ -85,7 +85,7 @@
 {{--                        <span class="activity-tag">کانون نور الثقلین</span>--}}
 {{--                    </div>--}}
 {{--                </div>--}}
-            </div>
+{{--            </div>--}}
 {{--            <div class="col-md-4">--}}
 {{--                <div class="card shadow-sm mb-4 h-100">--}}
 {{--                    <img src="{{asset('/site/img/conference.jpg')}}" class="img-fluid" alt="">--}}
