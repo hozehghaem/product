@@ -362,7 +362,7 @@
                                 <h4 class="post-title">{{ $post->title }}</h4>
                                 <p class="post-description">{{ Str::limit(strip_tags($post->description), 40, '...') }}
                                 </p>
-                                <a href="{{ url('حوزه-علمیه-خواهران/معاونت-پژوهش/نشست-ها/'.$post->slug) }}"
+                                <a href="{{ url('حوزه-علمیه-خواهران/مهد-کودک'.$post->slug) }}"
                                    class="btn btn-primary btn-sm">مشاهده بیشتر</a>
                             </div>
                         </div>
