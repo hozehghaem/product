@@ -120,7 +120,7 @@ class PagemanageController extends Controller
                 $filename = Str::random(30) . "." . $file->clientExtension();
                 $newImage = Image::make($file);
                 $newImage->fit(480, 320);
-                $pagemanages->image = $imagelink . '/' . $filename;
+                $pagemanages->image2 = $imagelink . '/' . $filename;
                 $newImage->save($imagePath . '/' . $filename);
             }
             if ($request->hasfile('image3')) {
@@ -130,7 +130,7 @@ class PagemanageController extends Controller
                 $filename = Str::random(30) . "." . $file->clientExtension();
                 $newImage = Image::make($file);
                 $newImage->fit(480, 320);
-                $pagemanages->image = $imagelink . '/' . $filename;
+                $pagemanages->image3 = $imagelink . '/' . $filename;
                 $newImage->save($imagePath . '/' . $filename);
             }
             $result = $pagemanages->save();
@@ -211,7 +211,7 @@ class PagemanageController extends Controller
                 $filename = Str::random(30) . "." . $file->clientExtension();
                 $newImage = Image::make($file);
                 $newImage->fit(480, 320);
-                $pagemanages->image = $imagelink . '/' . $filename;
+                $pagemanages->image2 = $imagelink . '/' . $filename;
                 $newImage->save($imagePath . '/' . $filename);
             }
             if ($request->hasfile('image3')) {
@@ -221,7 +221,7 @@ class PagemanageController extends Controller
                 $filename = Str::random(30) . "." . $file->clientExtension();
                 $newImage = Image::make($file);
                 $newImage->fit(480, 320);
-                $pagemanages->image = $imagelink . '/' . $filename;
+                $pagemanages->image3 = $imagelink . '/' . $filename;
                 $newImage->save($imagePath . '/' . $filename);
             }
             $result = $pagemanages->save();
@@ -236,7 +236,7 @@ class PagemanageController extends Controller
         return Redirect::back();
     }
 
-    public function deletepagemanages(Request $request)
+    public function deletepagemanage(Request $request)
     {
         try {
             $pagemanage = Pagemanage::findOrfail($request->input('id'));
