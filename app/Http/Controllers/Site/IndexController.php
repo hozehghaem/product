@@ -8,6 +8,7 @@ use App\Models\Akhbar;
 use App\Models\Company;
 use App\Models\Consultation;
 use App\Models\Dashboard\Customer;
+use App\Models\Dashboard\Pagemanage;
 use App\Models\Dashboard\Questionlist;
 use App\Models\Dashboard\Slide;
 use App\Models\Emploee;
@@ -115,23 +116,21 @@ class IndexController extends Controller
         }
 
         $submenus = Submenu::select('id', 'title', 'slug', 'menu_id','mega_manu' , 'megamenu_id')->whereStatus(4)->get();
-        $pagename = Submenu::select('class')->whereSlug($slug)->first();
+        $pagename = Submenu::select('class' , 'id')->whereSlug($slug)->first();
         $companies      = Company::first();
         $slides         = Slide::select('id' , 'title1' , 'text', 'file_link')->whereStatus(4)->get();
         $customers      = Customer::select('name', 'image')->whereStatus(4)->whereHome_show(1)->get();
         $posts          = Post::whereStatus(4)->whereHome_show(1)->orderBy('id' , 'DESC')->limit(6)->get();
-        $questions          = Questionlist::whereStatus(4)->orderBy('id' , 'DESC')->limit(6)->get();
-        $flowtexts      = Flowtext::whereStatus(4)->limit(6)->get();
+        $contents       = Pagemanage::where('submenu_id' , '=', $pagename->id)->first();
         $akhbars        = Akhbar::leftjoin('users', 'akhbars.user_id', '=', 'users.id')->
         select('akhbars.title', 'akhbars.slug', 'akhbars.image', 'akhbars.description', 'users.name as username', 'akhbars.matn as matn', 'akhbars.updated_at')->where('akhbars.status', 4)->where('akhbars.home_show', 1)->get();
 
-        return view('Site.'.$pagename->class)->with(compact('menus', 'thispage', 'companies', 'slides', 'customers', 'submenus', 'posts', 'akhbars'));
+        return view('Site.'.$pagename->class)->with(compact('menus', 'thispage', 'companies', 'slides','contents', 'customers', 'submenus', 'posts', 'akhbars'));
 
     }
 
     public function singlemeeting(Request $request , $slug)
     {
-
         $url = $request->segments();
 
         $menus = Menu::select('id', 'title', 'slug', 'submenu', 'priority', 'mega_menu')->MenuSite()->orderBy('priority')->get();

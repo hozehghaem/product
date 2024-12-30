@@ -100,6 +100,7 @@ class PagemanageController extends Controller
             $pagemanages->description   = $request->input('description');
             $pagemanages->description2  = $request->input('description2');
             $pagemanages->description3  = $request->input('description3');
+            $pagemanages->submenu_id    = $request->input('submenu_id');
             $pagemanages->status        = $request->input('status');
             $pagemanages->user_id       = Auth::user()->id;
 
@@ -191,6 +192,7 @@ class PagemanageController extends Controller
             $pagemanages->description   = $request->input('description');
             $pagemanages->description2  = $request->input('description2');
             $pagemanages->description3  = $request->input('description3');
+            $pagemanages->submenu_id    = $request->input('submenu_id');
             $pagemanages->status        = $request->input('status');
             $pagemanages->user_id       = Auth::user()->id;
 

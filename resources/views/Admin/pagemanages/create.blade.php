@@ -39,7 +39,7 @@
                                         <div class="col-md-3">
                                             <div class="form-group">
                                                 <p class="mg-b-10">انتخاب صفحه</p>
-                                                <select name="submenus_id" id="submenus_id" class="form-control select-lg select2">
+                                                <select name="submenu_id" id="submenu_id" class="form-control select-lg select2">
                                                     @foreach($submenus as $submenu)
                                                         <option value="{{$submenu->id}}" >{{$submenu->title}}</option>
                                                     @endforeach
