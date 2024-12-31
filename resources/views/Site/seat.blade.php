@@ -7,8 +7,8 @@
     <div class="page-title-area">
         <div class="container">
             <div class="page-title-content">
-                <h2>سلسله نشست ها</h2>
-                <p>اخبار نشست های ما</p>
+                <h2>کرسی های ما</h2>
+                <p>اخبار کرسی های ما</p>
             </div>
         </div>
     </div>

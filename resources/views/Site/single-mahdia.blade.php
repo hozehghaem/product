@@ -82,48 +82,48 @@
 
                     <p>{!! $posts->description !!}</p>
 
-                    <div class="service-details-info" style="margin-bottom: 100px">
-                        <div class="single-info-box">
-                            <h4>سخنران</h4>
-                            <span>دکتر جلالی</span>
-                        </div>
+{{--                    <div class="service-details-info" style="margin-bottom: 100px">--}}
+{{--                        <div class="single-info-box">--}}
+{{--                            <h4>سخنران</h4>--}}
+{{--                            <span>دکتر جلالی</span>--}}
+{{--                        </div>--}}
 
-                        <div class="single-info-box">
-                            <h4>دسته بندی</h4>
-                            <span>خانواده</span>
-                        </div>
+{{--                        <div class="single-info-box">--}}
+{{--                            <h4>دسته بندی</h4>--}}
+{{--                            <span>خانواده</span>--}}
+{{--                        </div>--}}
 
-                        <div class="single-info-box">
-                            <h4>تاریخ</h4>
-                            <span>14 دی 1403</span>
-                        </div>
+{{--                        <div class="single-info-box">--}}
+{{--                            <h4>تاریخ</h4>--}}
+{{--                            <span>14 دی 1403</span>--}}
+{{--                        </div>--}}
 
-                        <div class="single-info-box">
-                            <h4>اشتراک گذاری</h4>
-                            <ul class="social">
-                                <li>
-                                    <a target="_blank" href="#">
-                                        <i class='bx bxl-linkedin'></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a target="_blank" href="#">
-                                        <i class='bx bxl-twitter'></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a target="_blank" href="#">
-                                        <i class='bx bxl-facebook'></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a target="_blank" href="#">
-                                        <i class='bx bxl-instagram'></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+{{--                        <div class="single-info-box">--}}
+{{--                            <h4>اشتراک گذاری</h4>--}}
+{{--                            <ul class="social">--}}
+{{--                                <li>--}}
+{{--                                    <a target="_blank" href="#">--}}
+{{--                                        <i class='bx bxl-linkedin'></i>--}}
+{{--                                    </a>--}}
+{{--                                </li>--}}
+{{--                                <li>--}}
+{{--                                    <a target="_blank" href="#">--}}
+{{--                                        <i class='bx bxl-twitter'></i>--}}
+{{--                                    </a>--}}
+{{--                                </li>--}}
+{{--                                <li>--}}
+{{--                                    <a target="_blank" href="#">--}}
+{{--                                        <i class='bx bxl-facebook'></i>--}}
+{{--                                    </a>--}}
+{{--                                </li>--}}
+{{--                                <li>--}}
+{{--                                    <a target="_blank" href="#">--}}
+{{--                                        <i class='bx bxl-instagram'></i>--}}
+{{--                                    </a>--}}
+{{--                                </li>--}}
+{{--                            </ul>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
                 </div>
             </div>
         </div>
