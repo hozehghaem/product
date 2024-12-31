@@ -161,12 +161,17 @@ img {
 .blt-radius-0 {
     border-radius: 0 30px 30px 30px !important;
 }
+
 .btn {
-    color: #0c5460;!important;
+    color: #0c5460;
+!important;
 }
+
 .btn-link {
-    color: #0c5460;!important;
+    color: #0c5460;
+!important;
 }
+
 p {
     color: #4a6f8a;
     margin-bottom: 12px;
@@ -1848,17 +1853,20 @@ a.nav-link a.nav-link:active {
 }
 
 .br-8 {
-    border-radius: 8px;!important;
+    border-radius: 8px;
+!important;
 
 }
 
 .br-12 {
-    border-radius: 12px;!important;
+    border-radius: 12px;
+!important;
 
 }
 
 .br-16 {
-    border-radius: 16px;!important;
+    border-radius: 16px;
+!important;
 }
 
 /*================================================
@@ -3304,7 +3312,7 @@ FunFacts Area CSS
 .btn-primary {
     border-color: #58A399;
     background-color: #58A399;
-    color:wheat;
+    color: wheat;
 }
 
 .btn-primary:hover {
@@ -9015,13 +9023,63 @@ Let's Talk Area CSS
     max-width: 500px;
     border-radius: 16px;
 }
+
 @media (max-width: 700px) {
     .single-image {
         max-width: 100%;
     }
 }
+
 .single-post {
-    border: 1px solid rgba(69,69,69,0.2)!important;
-    border-radius: 16px!important;
-    box-shadow: 0 4px 32px 0 rgba(0,0,0,0.1)!important;
+    border: 1px solid rgba(69, 69, 69, 0.2) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 4px 32px 0 rgba(0, 0, 0, 0.1) !important;
 }
+
+
+/* استایل پست‌ها */
+.post-card {
+    background: #ffffff;
+    /*border: 1px solid #eabc7f;*/
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+.post-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.post-card-body {
+    padding: 15px;
+    text-align: center;
+}
+
+.post-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #1e2e45;
+    margin-bottom: 10px;
+}
+
+.post-description {
+    font-size: 14px;
+    color: #666;
+}
+
+/* استایل تصویر اصلی */
+.about-content img {
+    max-width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+}
+
