@@ -127,6 +127,5 @@
                 </div>
             </div>
         </div>
-    </div>
-    <!-- End Service details -->
+        <!-- End Service details -->
 @endsection

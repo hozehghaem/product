@@ -19,7 +19,7 @@
             @foreach($posts as $post)
                 @if($post->posttype == 8)
                     <div class="col-md-4 py-4 z-3">
-                        <div class="card br-16">
+                        <div class="card br-16 h-100">
                             <img src="{{ asset($post->image) }}" class="" alt="{{ $post->title }}"
                                  style="border-top-right-radius: 16px; border-top-left-radius: 16px">
                             <div class="card-body">

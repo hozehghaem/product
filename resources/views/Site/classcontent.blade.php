@@ -11,18 +11,18 @@
     </div>
     <div class="container my-5">
         <!-- فیلتر جستجوی درس‌ها -->
-        <div class="mb-5">
-            <div class="row">
-                <div class="col-md-6 offset-md-3">
-                    <form action="#" method="GET">
-                        <div class="input-group">
-                            <input type="text" class="form-control" name="query" placeholder="جستجوی درس یا موضوع..." aria-label="Search">
-                            <button class="btn btn-primary" type="submit">جستجو</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+{{--        <div class="mb-5">--}}
+{{--            <div class="row">--}}
+{{--                <div class="col-md-6 offset-md-3">--}}
+{{--                    <form action="#" method="GET">--}}
+{{--                        <div class="input-group">--}}
+{{--                            <input type="text" class="form-control" name="query" placeholder="جستجوی درس یا موضوع..." aria-label="Search">--}}
+{{--                            <button class="btn btn-primary" type="submit">جستجو</button>--}}
+{{--                        </div>--}}
+{{--                    </form>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
 
         <!-- دسته‌بندی درس‌ها -->
         <div class="row">

@@ -10,6 +10,7 @@
             max-width: 640px;
             margin: 0 auto;
         }
+
         .video-cover {
             position: absolute;
             top: 0;
@@ -23,22 +24,26 @@
             align-items: center;
             justify-content: center;
         }
+
         .video-cover::before {
-            background:url('{{ asset('site/img/blog-image/1.jpg') }}') no-repeat center center;
+            background: url('{{ asset('site/img/blog-image/1.jpg') }}') no-repeat center center;
             content: "▶";
             font-size: 48px;
             color: black;
         }
+
         video {
             display: none;
             width: 100%;
         }
+
         video.playing {
             display: block;
             max-width: 100%;
             object-fit: fill;
         }
     </style>
+
     <!-- Start Page Title Area -->
     <div class="page-title-area">
         <div class="container">
@@ -62,7 +67,8 @@
                 {{--                        </div>--}}
                 {{--                    </div>--}}
                 {{--                </div>--}}
-                <div class="card-image m-3">
+                <div class="card-image m-3 text-center">
+                    <img src="{{asset($posts->image)}}" alt="{{$posts->title}}" class="single-image">
                     @if($posts->file)
                         <video controls preload="metadata" poster="{{asset($posts->image)}}" id="player"
                                style="width: 100%">
