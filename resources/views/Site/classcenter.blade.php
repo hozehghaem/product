@@ -9,6 +9,43 @@
             border-radius: 5px;
             color: #6c757d;
         }
+        /* استایل پست‌ها */
+        .post-card {
+            background: #ffffff;
+            /*border: 1px solid #eabc7f;*/
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .post-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .post-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .post-card-body {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .post-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #1e2e45;
+            margin-bottom: 10px;
+        }
+
+        .post-description {
+            font-size: 14px;
+            color: #666;
+        }
     </style>
 @endsection
 @section('main')
