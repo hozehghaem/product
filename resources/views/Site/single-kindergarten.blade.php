@@ -54,7 +54,7 @@
     <!-- End Page Title Area -->
     <!-- Service details -->
     <div class="service-details">
-        <div class="container">
+        <div class="container single-post">
             <div class="container mt-5">
                 {{--                <div class="row " style="justify-content: center">--}}
                 {{--                    <div class="col-md-8" >--}}

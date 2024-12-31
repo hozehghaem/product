@@ -50,7 +50,7 @@
     <!-- End Page Title Area -->
     <!-- Service details -->
     <div class="service-details">
-        <div class="container" style="border: 1px solid rgba(69,69,69,0.2); border-radius: 16px; box-shadow: 0 4px 32px 0 rgba(0,0,0,0.1);">
+        <div class="container single-post">
             <div class="container mt-5">
 {{--                <div class="row " style="justify-content: center">--}}
 {{--                    <div class="col-md-8" >--}}
@@ -72,7 +72,7 @@
                         {!! $posts->aparat !!}
                     @endif
                 </div>
-                <img src="{{asset($posts->image)}}" alt="{{$posts->title}}">
+                <img src="{{asset($posts->image)}}" class="single-image text-center" alt="{{$posts->title}}">
             <div class="service-details-content">
 
                 <p>{!! $posts->description !!}</p>
