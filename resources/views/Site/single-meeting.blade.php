@@ -10,7 +10,6 @@
             max-width: 640px;
             margin: 0 auto;
         }
-
         .video-cover {
             position: absolute;
             top: 0;
@@ -24,19 +23,16 @@
             align-items: center;
             justify-content: center;
         }
-
         .video-cover::before {
-            background: url('{{ asset('site/img/blog-image/1.jpg') }}') no-repeat center center;
+            background:url('{{ asset('site/img/blog-image/1.jpg') }}') no-repeat center center;
             content: "▶";
             font-size: 48px;
             color: black;
         }
-
         video {
             display: none;
             width: 100%;
         }
-
         video.playing {
             display: block;
             max-width: 100%;
@@ -53,75 +49,79 @@
     </div>
     <!-- End Page Title Area -->
     <!-- Service details -->
-    <div class="container single-post mt-5">
-        {{--                <div class="row " style="justify-content: center">--}}
-        {{--                    <div class="col-md-8" >--}}
-        {{--                        <div class="video-box">--}}
-        {{--                            <img src="{{asset('/site/img/blog-image/1.jpg')}}" class="main-image" alt="image">--}}
-        {{--                            <a href="{{asset('/site/video/1.mp4')}}" class="video-btn popup-youtube">--}}
-        {{--                                <i class="bx bx-play"></i>--}}
-        {{--                            </a>--}}
-        {{--                        </div>--}}
-        {{--                    </div>--}}
-        {{--                </div>--}}
-        <div class="card-image m-3 text-center">
-            <img src="{{asset($posts->image)}}" class="single-image text-center" alt="{{$posts->title}}">
+    <div class="service-details">
+        <div class="container" style="border: 1px solid rgba(69,69,69,0.2); border-radius: 16px; box-shadow: 0 4px 32px 0 rgba(0,0,0,0.1);">
+            <div class="container mt-5">
+{{--                <div class="row " style="justify-content: center">--}}
+{{--                    <div class="col-md-8" >--}}
+{{--                        <div class="video-box">--}}
+{{--                            <img src="{{asset('/site/img/blog-image/1.jpg')}}" class="main-image" alt="image">--}}
+{{--                            <a href="{{asset('/site/video/1.mp4')}}" class="video-btn popup-youtube">--}}
+{{--                                <i class="bx bx-play"></i>--}}
+{{--                            </a>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+                <div class="card-image text-center m-3">
+                    <img src="{{asset($posts->image)}}" alt="{{$posts->title}}">
 
-        @if($posts->file)
-                <video controls preload="metadata" poster="{{asset($posts->image)}}" id="player"
-                       style="width: 100%">
-                    <source src="{{asset($posts->file)}}" type="video/mp4"/>
-                </video>
-            @elseif($posts->aparat)
-                {!! $posts->aparat !!}
-            @endif
-        </div>
-        <div class="service-details-content">
-
-            <p>{!! $posts->description !!}</p>
-
-            <div class="service-details-info" style="margin-bottom: 100px">
-                <div class="single-info-box">
-                    <h4>سخنران</h4>
-                    <span>آیت الله هاشمی اولیا</span>
+                @if($posts->file)
+                        <video controls preload="metadata" poster="{{asset($posts->image)}}" id="player"
+                               style="width: 100%">
+                            <source src="{{asset($posts->file)}}" type="video/mp4"/>
+                        </video>
+                    @elseif($posts->aparat)
+                        {!! $posts->aparat !!}
+                    @endif
                 </div>
+            <div class="service-details-content">
 
-                <div class="single-info-box">
-                    <h4>دسته بندی</h4>
-                    <span>خانواده</span>
-                </div>
+                <p>{!! $posts->description !!}</p>
 
-                <div class="single-info-box">
-                    <h4>تاریخ</h4>
-                    <span>28 دی 1398</span>
-                </div>
+                <div class="service-details-info" style="margin-bottom: 100px">
+                    <div class="single-info-box">
+                        <h4>سخنران</h4>
+                        <span>آیت الله هاشمی اولیا</span>
+                    </div>
 
-                <div class="single-info-box">
-                    <h4>اشتراک گذاری</h4>
-                    <ul class="social">
-                        <li>
-                            <a target="_blank" href="#">
-                                <i class='bx bxl-linkedin'></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a target="_blank" href="#">
-                                <i class='bx bxl-twitter'></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a target="_blank" href="#">
-                                <i class='bx bxl-facebook'></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a target="_blank" href="#">
-                                <i class='bx bxl-instagram'></i>
-                            </a>
-                        </li>
-                    </ul>
+                    <div class="single-info-box">
+                        <h4>دسته بندی</h4>
+                        <span>خانواده</span>
+                    </div>
+
+                    <div class="single-info-box">
+                        <h4>تاریخ</h4>
+                        <span>28 دی 1398</span>
+                    </div>
+
+                    <div class="single-info-box">
+                        <h4>اشتراک گذاری</h4>
+                        <ul class="social">
+                            <li>
+                                <a target="_blank" href="#">
+                                    <i class='bx bxl-linkedin'></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="#">
+                                    <i class='bx bxl-twitter'></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="#">
+                                    <i class='bx bxl-facebook'></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="#">
+                                    <i class='bx bxl-instagram'></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- End Service details -->
+    </div>
+    <!-- End Service details -->
 @endsection
