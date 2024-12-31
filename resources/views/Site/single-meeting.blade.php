@@ -64,8 +64,10 @@
         {{--                        </div>--}}
         {{--                    </div>--}}
         {{--                </div>--}}
-        <div class="card-image m-3">
-            @if($posts->file)
+        <div class="card-image m-3 text-center">
+            <img src="{{asset($posts->image)}}" class="single-image text-center" alt="{{$posts->title}}">
+
+        @if($posts->file)
                 <video controls preload="metadata" poster="{{asset($posts->image)}}" id="player"
                        style="width: 100%">
                     <source src="{{asset($posts->file)}}" type="video/mp4"/>
@@ -74,7 +76,6 @@
                 {!! $posts->aparat !!}
             @endif
         </div>
-        <img src="{{asset($posts->image)}}" class="single-image text-center" alt="{{$posts->title}}">
         <div class="service-details-content">
 
             <p>{!! $posts->description !!}</p>
