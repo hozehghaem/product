@@ -263,39 +263,31 @@
                 const notificationsArea = document.querySelector("#cke_notifications_area_editor");
 
                 if (notificationsArea) {
-                    // پنهان کردن عنصر
                     notificationsArea.style.display = "none";
-                    console.log("عنصر 'cke_notifications_area' پیدا و پنهان شد.");
-                    clearInterval(checkInterval); // تایمر متوقف می‌شود
+                    clearInterval(checkInterval);
                 }
-            }, 500); // هر 500 میلی‌ثانیه بررسی می‌کند
+            }, 500);
         });
-
         window.addEventListener("load", function () {
             const checkInterval = setInterval(function () {
                 const notificationsArea = document.querySelector("#cke_notifications_area_editor2");
 
                 if (notificationsArea) {
-                    // پنهان کردن عنصر
                     notificationsArea.style.display = "none";
-                    console.log("عنصر 'cke_notifications_area' پیدا و پنهان شد.");
-                    clearInterval(checkInterval); // تایمر متوقف می‌شود
+                    clearInterval(checkInterval);
                 }
-            }, 500); // هر 500 میلی‌ثانیه بررسی می‌کند
+            }, 500);
         });
         window.addEventListener("load", function () {
             const checkInterval = setInterval(function () {
                 const notificationsArea = document.querySelector("#cke_notifications_area_editor3");
 
                 if (notificationsArea) {
-                    // پنهان کردن عنصر
                     notificationsArea.style.display = "none";
-                    console.log("عنصر 'cke_notifications_area' پیدا و پنهان شد.");
-                    clearInterval(checkInterval); // تایمر متوقف می‌شود
+                    clearInterval(checkInterval);
                 }
-            }, 500); // هر 500 میلی‌ثانیه بررسی می‌کند
+            }, 500);
         });
-
     </script>
 
 @endsection

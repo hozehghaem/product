@@ -26,26 +26,26 @@
                                 </div>
                             </div>
                             <div class="card-body">
-                                    <form action="{{route(request()->segment(2).'.'.'update', $posts->id)}}" method="post" enctype="multipart/form-data">
+                                    <form action="{{route(request()->segment(2).'.'.'update', $pagemanages->id)}}" method="post" enctype="multipart/form-data">
                                         <div class="row row-sm">
                                             {{csrf_field()}}
                                             {{ method_field('PATCH') }}
                                             <div class="col-md-12">
 {{--                                                @include('error')--}}
                                             </div>
-                                            <input type="hidden" name="post_id" id="post_id" data-required="1" value="{{$posts->id}}" class="form-control" />
+                                            <input type="hidden" name="pagemanage_id" id="pagemanage_id" data-required="1" value="{{$pagemanages->id}}" class="form-control" />
                                             <div class="col-md-3">
                                                 <div class="form-group">
-                                                    <p class="mg-b-10">عنوان </p>
-                                                    <input type="text" name="title" id="title" value="{{$posts->title}}"  class="form-control" />
+                                                    <p class="mg-b-10">عنوان محتوا </p>
+                                                    <input type="text" name="title" id="title" value="{{$pagemanages->title}}" class="form-control" />
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
-                                                    <p class="mg-b-10">نوع پست</p>
-                                                    <select name="posttype" id="posttype" class="form-control select-lg select2">
-                                                        @foreach($posttypes as $posttype)
-                                                            <option value="{{$posttype->id}}" {{$posts->posttype == $posttype->id ? 'selected' : '' }} >{{$posttype->title}}</option>
+                                                    <p class="mg-b-10">انتخاب صفحه</p>
+                                                    <select name="submenu_id" id="submenu_id" class="form-control select-lg select2">
+                                                        @foreach($submenus as $submenu)
+                                                            <option value="{{$submenu->id}}" >{{$submenu->title}}</option>
                                                         @endforeach
                                                     </select>
                                                 </div>
@@ -55,53 +55,107 @@
                                                 <div class="form-group">
                                                     <p class="mg-b-10">نمایش/عدم نمایش</p>
                                                     <select name="status" id="status" class="form-control select-lg select2">
-                                                        <option value="0" {{$posts->status == 0 ? 'selected' : '' }}>غیر فعال</option>
-                                                        <option value="4" {{$posts->status == 4 ? 'selected' : '' }}> فعال</option>
+                                                        <option value="0" {{$pagemanages->status == 0 ? 'selected' : '' }}>غیر فعال</option>
+                                                        <option value="4" {{$pagemanages->status == 4 ? 'selected' : '' }}> فعال</option>
                                                     </select>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <p class="mg-b-10">نمایش در صفحه اصلی</p>
-                                                    <select name="home_show" id="home_show" class="form-control select-lg select2">
-                                                        <option value="0" {{$posts->home_show == 0 ? 'selected' : '' }}>عدم نمایش</option>
-                                                        <option value="1" {{$posts->home_show == 1 ? 'selected' : '' }}>در حال نمایش</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-9">
-                                                <div class="form-group">
-                                                    <p class="mg-b-10">کلمات کلیدی</p>
-                                                    <input type="text" name="keyword" id="keyword" @if($posts->keyword)value="{{implode("،" , json_decode($posts->keyword))}}" @endif class="form-control" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group" style="position: absolute;">
-                                                    <p class="mg-b-10">تصویر </p>
-                                                    <input type="file" id="image" name="image" class="dropify" data-default-file="{{asset($posts->image)}}" data-height="200">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-9">
-                                                <div class="form-group">
-                                                    <p class="mg-b-10">لینک آپارات</p>
-                                                    <input type="text" name="aparat" id="aparat" value="{{$posts->aparat}}" data-required="1" class="form-control" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-9">
                                                 <div class="form-group">
                                                     <p class="mg-b-10">فایل ویدئو</p>
                                                     <input type="file" name="file" id="file" data-required="1" class="form-control" />
                                                 </div>
                                             </div>
 
-                                            <div class="col-md-12" style="margin-top: 20px;">
-                                                <div class="form-group" >
-                                                    <p class="mg-b-10">توضیحات</p>
-                                                    <textarea name="description" id="editor" cols="30" rows="5" class="form-control" >{{$posts->description}}</textarea>
+                                            <br>
+                                            <br>
+
+                                            <div class="col-md-3">
+                                                <div class="form-group" style="position: absolute;">
+                                                    <p class="mg-b-10">تصویر متن بخش اول </p>
+                                                    <input type="file" id="image" name="image" class="dropify" data-default-file="{{asset($pagemanages->image)}}" data-height="200">
                                                 </div>
                                             </div>
 
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+
+                                            <div class="col-md-12" style="margin-top: 20px;">
+                                                <div class="form-group" >
+                                                    <p class="mg-b-10">متن بخش اول</p>
+                                                    <textarea name="text" id="editor" cols="30" rows="5" class="form-control" >{{$pagemanages->description}}</textarea>
+                                                </div>
+                                            </div>
+
+                                            <br>
+                                            <br>
+
+                                            <div class="col-md-3">
+                                                <div class="form-group" style="position: absolute;">
+                                                    <p class="mg-b-10">تصویر متن بخش دوم </p>
+                                                    <input type="file" id="image2" name="image2" class="dropify" data-default-file="{{asset($pagemanages->image2)}}" data-height="200">
+                                                </div>
+                                            </div>
+
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+
+                                            <div class="col-md-12" style="margin-top: 20px;">
+                                                <div class="form-group" >
+                                                    <p class="mg-b-10">متن  بخش دوم</p>
+                                                    <textarea name="text2" id="editor2" cols="30" rows="5" class="form-control" >{{$pagemanages->description2}}</textarea>
+                                                </div>
+                                            </div>
+
+                                            <br>
+                                            <br>
+
+                                            <div class="col-md-3">
+                                                <div class="form-group" style="position: absolute;">
+                                                    <p class="mg-b-10">تصویر متن بخش سوم </p>
+                                                    <input type="file" id="image3" name="image3" class="dropify" data-default-file="{{asset($pagemanages->image3)}}" data-height="200">
+                                                </div>
+                                            </div>
+
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+
+                                            <div class="col-md-12" style="margin-top: 20px;">
+                                                <div class="form-group" >
+                                                    <p class="mg-b-10">متن  بخش سوم</p>
+                                                    <textarea name="text3" id="editor3" cols="30" rows="5" class="form-control" >{{$pagemanages->description3}}</textarea>
+                                                </div>
+                                            </div>
                                             <div  class="col-lg-12 mg-b-10 text-center">
                                                 <div class="form-group">
                                                     <button type="submit"  class="btn btn-info  btn-lg m-r-20">ذخیره اطلاعات</button>
@@ -134,5 +188,42 @@
     <script>
         CKEDITOR.replace( 'editor' );
     </script>
+    <script>
+        CKEDITOR.replace( 'editor2' );
+    </script>
+    <script>
+        CKEDITOR.replace( 'editor3' );
+    </script>
+    <script>
+        window.addEventListener("load", function () {
+            const checkInterval = setInterval(function () {
+                const notificationsArea = document.querySelector("#cke_notifications_area_editor");
 
+                if (notificationsArea) {
+                    notificationsArea.style.display = "none";
+                    clearInterval(checkInterval);
+                }
+            }, 500);
+        });
+        window.addEventListener("load", function () {
+            const checkInterval = setInterval(function () {
+                const notificationsArea = document.querySelector("#cke_notifications_area_editor2");
+
+                if (notificationsArea) {
+                    notificationsArea.style.display = "none";
+                    clearInterval(checkInterval);
+                }
+            }, 500);
+        });
+        window.addEventListener("load", function () {
+            const checkInterval = setInterval(function () {
+                const notificationsArea = document.querySelector("#cke_notifications_area_editor3");
+
+                if (notificationsArea) {
+                    notificationsArea.style.display = "none";
+                    clearInterval(checkInterval);
+                }
+            }, 500);
+        });
+    </script>
 @endsection

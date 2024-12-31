@@ -174,12 +174,14 @@ class PagemanageController extends Controller
             'enter_title' => 'ورود اطلاعات محتوای صفحات سایت',
             'edit_title' => 'ویرایش اطلاعات محتوای صفحات سایت',
         ];
-        $pagemanages = Akhbar::whereId($id)->first();
-        $menupanels = Menu_panel::whereStatus(4)->get();
-        $submenupanels = Submenu_panel::whereStatus(4)->get();
+        $pagemanages    = Pagemanage::whereId($id)->first();
+        $menupanels     = Menu_panel::whereStatus(4)->get();
+        $submenupanels  = Submenu_panel::whereStatus(4)->get();
+        $submenus       = Submenu::where('mega_manu' , '=' , 2)->get();
+
 
         return view('Admin.pagemanages.edit')
-            ->with(compact(['menupanels', 'submenupanels', 'pagemanages', 'thispage']));
+            ->with(compact(['menupanels', 'submenupanels', 'pagemanages', 'thispage' , 'submenus']));
 
     }
 
