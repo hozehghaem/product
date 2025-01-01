@@ -187,13 +187,14 @@ class PagemanageController extends Controller
 
     public function update(Request $request, $id)
     {
+
         try {
             $pagemanage = Pagemanage::whereId($id)->first();
 
             $pagemanage->title         = $request->input('title');
-            $pagemanage->description   = $request->input('description');
-            $pagemanage->description2  = $request->input('description2');
-            $pagemanage->description3  = $request->input('description3');
+            $pagemanage->description   = $request->input('text');
+            $pagemanage->description2  = $request->input('text2');
+            $pagemanage->description3  = $request->input('text3');
             $pagemanage->status        = $request->input('status');
             $pagemanage->user_id       = Auth::user()->id;
 
