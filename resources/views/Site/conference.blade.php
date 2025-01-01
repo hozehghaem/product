@@ -10,9 +10,8 @@
         </div>
     </div>
     <div class="container my-5">
-        <h4 class="mb-4">همایش‌ها و کنگره ها</h4>
+        <h4 class="mb-4 text-center">همایش‌ها و کنگره ها</h4>
         <div class="row">
-            {{-- کارت‌های همایش‌ها --}}
             @foreach($posts as $post)
                 @if($post->posttype == 12)
                     <div class="col-md-4 py-4">
