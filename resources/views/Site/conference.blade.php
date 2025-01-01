@@ -17,8 +17,7 @@
                 @if($post->posttype == 12)
                     <div class="col-md-4 py-4">
                         <div class="card h-100">
-                            <img src="{{ asset($post->image) }}" class="" alt="{{ $post->title }}"
-                                 style="border-top-right-radius: 16px; border-top-left-radius: 16px">
+                            <img src="{{ asset($post->image) }}" class="" alt="{{ $post->title }}">
                             <div class="card-body">
                                 <h4 class="post-title">{{ $post->title }}</h4>
                                 <p class="post-description">{{ Str::limit(strip_tags($post->description), 50, '...') }}
