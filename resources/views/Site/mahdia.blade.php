@@ -32,8 +32,8 @@
                         </div>
                     </div>
                 @endif
-
             @endforeach
+
         </div>
     </div>
     <!-- End Posts Section -->

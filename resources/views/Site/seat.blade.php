@@ -107,7 +107,7 @@
                                         </div>
 
                                         <div class="post-content">
-                                            <h3><a href="{{url('نشست/'.$post->slug)}}">{{$post->title}}</a></h3>
+                                            <h3><a href="{{url('حوزه-علمیه-خواهران/معاونت-پژوهش/کرسی-ها'.$post->slug)}}">{{$post->title}}</a></h3>
 
                                             <div class="post-info">
                                                 <div class="post-by">
@@ -117,7 +117,7 @@
                                                 </div>
 
                                                 <div class="details-btn">
-                                                    <a href="{{url('نشست/'.$post->slug)}}"><i class="bx bx-left-arrow-alt"></i></a>
+                                                    <a href="{{url('حوزه-علمیه-خواهران/معاونت-پژوهش/کرسی-ها'.$post->slug)}}"><i class="bx bx-left-arrow-alt"></i></a>
                                                 </div>
                                             </div>
                                         </div>

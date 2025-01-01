@@ -315,7 +315,7 @@
                             </a>
                             <div class="content">
                                 <h3><a href="#">{{$post->title}}</a></h3>
-                                <a href="#" class="link-btn"><i class='bx bx-left-arrow-alt'></i></a>
+                                <a href="{{url('حوزه-علمیه-خواهران/معاونت-پژوهش/نشست-ها/'.$post->slug)}}"><i class="bx bx-left-arrow-alt"></i></a>
                             </div>
                         </div>
                     @endif
@@ -396,7 +396,6 @@
                 @endforeach
             </div>
         </div>
-
     </section>
     <!-- End Partner Area -->
 
@@ -429,7 +428,6 @@
                         </div>
                     @endif
                 @endforeach
-
             </div>
             <div class="col-lg-12 col-md-12 wow fadeInUp" data-wow-delay=".6s">
                 <div class="services-btn-box text-center">

@@ -259,7 +259,7 @@
             </div>
             <div class="col-lg-12 col-md-12 wow fadeInUp" data-wow-delay=".6s">
                 <div class="services-btn-box text-center">
-                    <a href="{{ url('نشست') }}" class="custom-btn">
+                    <a href="{{ url('حوزه-علمیه-خواهران/معاونت-پژوهش/نشست-ها') }}" class="custom-btn">
                         مشاهده همه
                         <i class="bx bx-chevron-left"></i>
                     </a>
@@ -277,7 +277,7 @@
 
             <div id="case-studies-slides" class="case-studies-slides owl-carousel">
                 @foreach($posts as $post)
-                    @if($post->posttype == 5)
+                    @if($post->posttype == 1)
                         <div class="single-case-studies-item">
                             <a href="#" class="image d-block">
                                 <img src="{{asset($post->image)}}" alt="image">

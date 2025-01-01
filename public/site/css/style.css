@@ -8701,10 +8701,12 @@ Case Studies Area CSS
 }
 
 .single-case-studies-item {
+    height: 350px;
     overflow: hidden;
     margin-bottom: 30px;
     text-align: center;
     border-radius: 8px;
+    background-size: cover;
 }
 
 .single-case-studies-item .image {
