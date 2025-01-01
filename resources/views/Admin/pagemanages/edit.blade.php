@@ -45,7 +45,7 @@
                                                     <p class="mg-b-10">انتخاب صفحه</p>
                                                     <select name="submenu_id" id="submenu_id" class="form-control select-lg select2">
                                                         @foreach($submenus as $submenu)
-                                                            <option value="{{$submenu->id}}" >{{$submenu->title}}</option>
+                                                            <option value="{{$submenu->id == $pagemanages->submenu_id ? 'selected' : '' }}" >{{$submenu->title}}</option>
                                                         @endforeach
                                                     </select>
                                                 </div>

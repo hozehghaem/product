@@ -188,15 +188,15 @@ class PagemanageController extends Controller
     public function update(Request $request, $id)
     {
         try {
-            $pagemanages = Pagemanage::whereId($id)->first();
+            $pagemanage = Pagemanage::whereId($id)->first();
 
-            $pagemanages->title         = $request->input('title');
-            $pagemanages->description   = $request->input('description');
-            $pagemanages->description2  = $request->input('description2');
-            $pagemanages->description3  = $request->input('description3');
-            $pagemanages->submenu_id    = $request->input('submenu_id');
-            $pagemanages->status        = $request->input('status');
-            $pagemanages->user_id       = Auth::user()->id;
+            $pagemanage->title         = $request->input('title');
+            $pagemanage->description   = $request->input('description');
+            $pagemanage->description2  = $request->input('description2');
+            $pagemanage->description3  = $request->input('description3');
+            $pagemanage->submenu_id    = $request->input('submenu_id');
+            $pagemanage->status        = $request->input('status');
+            $pagemanage->user_id       = Auth::user()->id;
 
             if ($request->hasfile('image')) {
                 $file = $request->file('image');
@@ -205,7 +205,7 @@ class PagemanageController extends Controller
                 $filename = Str::random(30) . "." . $file->clientExtension();
                 $newImage = Image::make($file);
                 $newImage->fit(480, 320);
-                $pagemanages->image = $imagelink . '/' . $filename;
+                $pagemanage->image = $imagelink . '/' . $filename;
                 $newImage->save($imagePath . '/' . $filename);
             }
             if ($request->hasfile('image2')) {
@@ -215,7 +215,7 @@ class PagemanageController extends Controller
                 $filename = Str::random(30) . "." . $file->clientExtension();
                 $newImage = Image::make($file);
                 $newImage->fit(480, 320);
-                $pagemanages->image2 = $imagelink . '/' . $filename;
+                $pagemanage->image2 = $imagelink . '/' . $filename;
                 $newImage->save($imagePath . '/' . $filename);
             }
             if ($request->hasfile('image3')) {
@@ -225,10 +225,10 @@ class PagemanageController extends Controller
                 $filename = Str::random(30) . "." . $file->clientExtension();
                 $newImage = Image::make($file);
                 $newImage->fit(480, 320);
-                $pagemanages->image3 = $imagelink . '/' . $filename;
+                $pagemanage->image3 = $imagelink . '/' . $filename;
                 $newImage->save($imagePath . '/' . $filename);
             }
-            $result = $pagemanages->save();
+            $result = $pagemanage->save();
             if ($result == true) {
                 Alert::success('عملیات موفق', 'اطلاعات با موفقیت ثبت شد')->autoclose(3000);
             } else {
