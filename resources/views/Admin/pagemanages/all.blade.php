@@ -47,7 +47,7 @@
                                             <th class="wd-10p"> تصویر </th>
                                             <th class="wd-10p"> توضیحات </th>
                                             <th class="wd-10p"> وضعیت </th>
-                                            <th class="wd-10p">ویرایش / حذف </th>
+                                            <th class="wd-10p">ویرایش </th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -61,27 +61,7 @@
             </div>
         </div>
     </div>
-@foreach($pagemanages as $pagemanage)
-    <div id="myModal{{$pagemanage->id}}" class="modal fade" role="dialog">
-        <div class="modal-dialog">
 
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <p>آیا شما مطمعن از حذف این رکورد هستید؟</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">خیر</button>
-                    <button type="button" id="deletepagemanage{{$pagemanage->id}}" class="btn btn-danger" data-id="{{$pagemanage->id}} " data-dismiss="modal">بله</button>
-                </div>
-            </div>
-
-        </div>
-    </div>
-@endforeach
 @endsection
 
 @section('end')
@@ -107,34 +87,4 @@
 
         });
     </script>
-    @foreach($pagemanages as $pagemanage)
-        <script>
-            jQuery(document).ready(function(){
-                jQuery('#deletepagemanage{{$pagemanage->id}}').click(function(e){
-                    e.preventDefault();
-                    $.ajaxSetup({
-                        headers: {
-                            'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
-                        }
-                    });
-                    jQuery.ajax({
-                        url: "{{ route('deletepagemanage') }}",
-                        method: 'delete',
-                        data: {
-                            "_token": "{{ csrf_token() }}",
-                            id   : jQuery(this).data("id"),
-
-                        },
-                        success: function (data) {
-                            swal(data.subject, data.message, data.flag);
-                            $('.yajra-datatable').DataTable().ajax.reload(null, false);
-                        },
-                        error: function (data) {
-                            swal(data.subject, data.message, data.flag);
-                        }
-                    });
-                });
-            });
-        </script>
-    @endforeach
 @endsection

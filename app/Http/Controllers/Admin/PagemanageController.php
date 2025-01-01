@@ -61,7 +61,7 @@ class PagemanageController extends Controller
                 })
                 ->editColumn('action', function ($data) {
                     $actionBtn = '<a href="' . route('page-manage.edit', $data->id) . '" class="btn ripple btn-outline-info btn-icon" style="float: right;margin: 0 5px;"><i class="fe fe-edit-2"></i></a>
-                    <button type="button" id="submit" data-toggle="modal" data-target="#myModal' . $data->id . '" class="btn ripple btn-outline-danger btn-icon " style="float: right;"><i class="fe fe-trash-2 "></i></button>';
+                    ';
 
                     return $actionBtn;
                 })
