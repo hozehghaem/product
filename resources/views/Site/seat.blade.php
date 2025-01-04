@@ -117,7 +117,7 @@
                                                 </div>
 
                                                 <div class="details-btn">
-                                                    <a href="{{url('حوزه-علمیه-خواهران/معاونت-پژوهش/کرسی-ها'.$post->slug)}}"><i class="bx bx-left-arrow-alt"></i></a>
+                                                    <a href="{{url('حوزه-علمیه-خواهران/معاونت-پژوهش/کرسی-ها/'.$post->slug)}}"><i class="bx bx-left-arrow-alt"></i></a>
                                                 </div>
                                             </div>
                                         </div>

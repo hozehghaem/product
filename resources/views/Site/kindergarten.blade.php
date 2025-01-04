@@ -367,6 +367,8 @@
                             </div>
                         </div>
                     </div>
+                @elseif($posts->isEmpty())
+                    <p>هیچ فعالیتی برای نمایش وجود ندارد.</p>
                 @endif
             @endforeach
         </div>
