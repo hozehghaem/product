@@ -107,7 +107,7 @@
                                         </div>
 
                                         <div class="post-content">
-                                            <h3><a href="{{url('حوزه-علمیه-خواهران/معاونت-پژوهش/کرسی-ها'.$post->slug)}}">{{$post->title}}</a></h3>
+                                            <h3><a href="{{url('حوزه-علمیه-خواهران/معاونت-پژوهش/کرسی-ها/'.$post->slug)}}">{{$post->title}}</a></h3>
 
                                             <div class="post-info">
                                                 <div class="post-by">
