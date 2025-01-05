@@ -5066,6 +5066,7 @@ Blog Area CSS
 
 .single-blog-post .post-content h3 a {
     display: inline-block;
+    font-size: 12px;
 }
 
 .single-blog-post .post-content .post-info {
