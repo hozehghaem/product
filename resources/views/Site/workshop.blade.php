@@ -98,7 +98,7 @@
                     <div class="row">
                         @foreach($posts as $post)
                             @if($post->posttype == 7)
-                                <div class="col-lg-6 col-md-6">
+                                <div class="col-lg-4 col-md-4">
                                     <div class="single-blog-post">
                                         <div class="post-image">
                                             <a href="{{url('حوزه-علمیه-خواهران/معاونت-پژوهش/کارگاه-ها/'.$post->slug)}}"><img src="{{asset($post->image)}}" alt="image"></a>
