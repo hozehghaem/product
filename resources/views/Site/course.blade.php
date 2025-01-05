@@ -21,7 +21,6 @@
 
         <!-- لیست دوره‌ها -->
         <div class="row">
-
             @foreach($posts as $post)
                 @if($post->posttype == 3)
                     <div class="col-md-4 py-4">
@@ -30,7 +29,7 @@
                                  style="border-top-right-radius: 16px; border-top-left-radius: 16px">
                             <div class="card-body">
                                 <h4 class="post-title">{{ $post->title }}</h4>
-                                <p class="post-description">{{ Str::limit(strip_tags($post->description), 30, '...') }}
+                                <p class="post-description">{{ Str::limit(strip_tags($post->description), 20, '...') }}
                                 </p>
                                 <a href="{{ url('حوزه-علمیه-خواهران/معاونت-فرهنگی/دوره-های-آموزشی/'.$post->slug) }}"
                                    class="btn btn-primary btn-sm">مشاهده بیشتر</a>

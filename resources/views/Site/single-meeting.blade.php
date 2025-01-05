@@ -62,7 +62,8 @@
                 {{--                        </div>--}}
                 {{--                    </div>--}}
                 {{--                </div>--}}
-                <div class="card-image single-image text-center m-3">
+                <div class="card-image text-center m-3">
+
                     <img src="{{asset($posts->image)}}" alt="{{$posts->title}}" class="single-image">
 
                     @if($posts->file)

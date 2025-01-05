@@ -113,7 +113,7 @@
                                         <div class="post-by">
                                             <img src="{{asset($post->image)}}" alt="{{$post->title}}">
 
-                                            <h6>فاطمه محمدی</h6>
+{{--                                            <h6>فاطمه محمدی</h6>--}}
                                         </div>
 
                                         <div class="details-btn">

@@ -55,7 +55,8 @@
     <!-- End Page Title Area -->
     <!-- Service details -->
     <div class="service-details">
-        <div class="container">
+        <div class="container my-5"
+             style="border: 1px solid rgba(69,69,69,0.2); border-radius: 16px; box-shadow: 0 4px 32px 0 rgba(0,0,0,0.1);">
             <div class="container mt-5">
                 {{--                <div class="row " style="justify-content: center">--}}
                 {{--                    <div class="col-md-8" >--}}
