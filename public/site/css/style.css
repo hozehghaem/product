@@ -59,6 +59,7 @@ body {
 }
 
 a {
+    font-size: 12px;
     -webkit-transition: 0.5s;
     transition: 0.5s;
     color: #080a3c;
@@ -9021,6 +9022,7 @@ Let's Talk Area CSS
 }
 
 .single-image {
+    justify-content: center;
     /*text-align: center;*/
     max-width: 500px;
     border-radius: 16px;
