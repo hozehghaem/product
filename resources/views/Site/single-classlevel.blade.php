@@ -62,62 +62,62 @@
 {{--                        </div>--}}
 {{--                    </div>--}}
 {{--                </div>--}}
-                <div class="card-image m-3">
-                    @if($posts->file)
-                        <video controls preload="metadata" poster="{{asset($posts->image)}}" id="player"
-                               style="width: 100%">
-                            <source src="{{asset($posts->file)}}" type="video/mp4"/>
-                        </video>
-                    @elseif($posts->aparat)
-                        {!! $posts->aparat !!}
-                    @endif
-                </div>
+{{--                <div class="card-image m-3">--}}
+{{--                    @if($posts->file)--}}
+{{--                        <video controls preload="metadata" poster="{{asset($posts->image)}}" id="player"--}}
+{{--                               style="width: 100%">--}}
+{{--                            <source src="{{asset($posts->file)}}" type="video/mp4"/>--}}
+{{--                        </video>--}}
+{{--                    @elseif($posts->aparat)--}}
+{{--                        {!! $posts->aparat !!}--}}
+{{--                    @endif--}}
+{{--                </div>--}}
                 <div class="service-details-content">
 
                     <p>{!! $posts->description !!}</p>
 
-                    <div class="service-details-info" style="margin-bottom: 100px">
-                        <div class="single-info-box">
-                            <h4>سخنران</h4>
-                            <span>آیت الله هاشمی اولیا</span>
-                        </div>
+{{--                    <div class="service-details-info" style="margin-bottom: 100px">--}}
+{{--                        <div class="single-info-box">--}}
+{{--                            <h4>سخنران</h4>--}}
+{{--                            <span>آیت الله هاشمی اولیا</span>--}}
+{{--                        </div>--}}
 
-                        <div class="single-info-box">
-                            <h4>دسته بندی</h4>
-                            <span>خانواده</span>
-                        </div>
+{{--                        <div class="single-info-box">--}}
+{{--                            <h4>دسته بندی</h4>--}}
+{{--                            <span>خانواده</span>--}}
+{{--                        </div>--}}
 
-                        <div class="single-info-box">
-                            <h4>تاریخ</h4>
-                            <span>28 دی 1398</span>
-                        </div>
+{{--                        <div class="single-info-box">--}}
+{{--                            <h4>تاریخ</h4>--}}
+{{--                            <span>28 دی 1398</span>--}}
+{{--                        </div>--}}
 
-                        <div class="single-info-box">
-                            <h4>اشتراک گذاری</h4>
-                            <ul class="social">
-                                <li>
-                                    <a target="_blank" href="#">
-                                        <i class='bx bxl-linkedin'></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a target="_blank" href="#">
-                                        <i class='bx bxl-twitter'></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a target="_blank" href="#">
-                                        <i class='bx bxl-facebook'></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a target="_blank" href="#">
-                                        <i class='bx bxl-instagram'></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+{{--                        <div class="single-info-box">--}}
+{{--                            <h4>اشتراک گذاری</h4>--}}
+{{--                            <ul class="social">--}}
+{{--                                <li>--}}
+{{--                                    <a target="_blank" href="#">--}}
+{{--                                        <i class='bx bxl-linkedin'></i>--}}
+{{--                                    </a>--}}
+{{--                                </li>--}}
+{{--                                <li>--}}
+{{--                                    <a target="_blank" href="#">--}}
+{{--                                        <i class='bx bxl-twitter'></i>--}}
+{{--                                    </a>--}}
+{{--                                </li>--}}
+{{--                                <li>--}}
+{{--                                    <a target="_blank" href="#">--}}
+{{--                                        <i class='bx bxl-facebook'></i>--}}
+{{--                                    </a>--}}
+{{--                                </li>--}}
+{{--                                <li>--}}
+{{--                                    <a target="_blank" href="#">--}}
+{{--                                        <i class='bx bxl-instagram'></i>--}}
+{{--                                    </a>--}}
+{{--                                </li>--}}
+{{--                            </ul>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
                 </div>
             </div>
         </div>

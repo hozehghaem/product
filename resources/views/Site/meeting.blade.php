@@ -39,7 +39,8 @@
                                 </a>
                                 <div class="info">
                                     <time datetime="2019-06-30">10 دی 1398</time>
-                                    <h4 class="title usmall"><a href="#">لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد.</a></h4>
+                                    <h4 class="title usmall"><a href="#">لورم ایپسوم به سادگی ساختار چاپ و متن را در بر
+                                            می گیرد.</a></h4>
                                 </div>
 
                                 <div class="clear"></div>
@@ -51,7 +52,8 @@
                                 </a>
                                 <div class="info">
                                     <time datetime="2019-06-30">10 دی 1398</time>
-                                    <h4 class="title usmall"><a href="#">لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد.</a></h4>
+                                    <h4 class="title usmall"><a href="#">لورم ایپسوم به سادگی ساختار چاپ و متن را در بر
+                                            می گیرد.</a></h4>
                                 </div>
 
                                 <div class="clear"></div>
@@ -63,7 +65,8 @@
                                 </a>
                                 <div class="info">
                                     <time datetime="2019-06-30">10 دی 1398</time>
-                                    <h4 class="title usmall"><a href="#">لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد.</a></h4>
+                                    <h4 class="title usmall"><a href="#">لورم ایپسوم به سادگی ساختار چاپ و متن را در بر
+                                            می گیرد.</a></h4>
                                 </div>
 
                                 <div class="clear"></div>
@@ -98,41 +101,47 @@
                     <div class="row">
                         @foreach($posts as $post)
                             @if($post->posttype == 2)
-                        <div class="col-lg-6 col-md-6">
-                            <div class="single-blog-post">
-                                <div class="post-image">
-                                    <a href="{{url('حوزه-علمیه-خواهران/معاونت-پژوهش/نشست-ها/'.$post->slug)}}"><img src="{{asset($post->image)}}" alt="image"></a>
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="single-blog-post">
+                                        <div class="post-image">
+                                            <a href="{{url('حوزه-علمیه-خواهران/معاونت-پژوهش/نشست-ها/'.$post->slug)}}"><img
+                                                    src="{{asset($post->image)}}" alt="image"></a>
 
-                                    <div class="date"><i class='bx bx-calendar'></i>{{jdate($post->update_at)->format('y/m/d')}}</div>
-                                </div>
-
-                                <div class="post-content">
-                                    <h3><a href="{{url('حوزه-علمیه-خواهران/معاونت-پژوهش/نشست-ها/'.$post->slug)}}">{{$post->title}}</a></h3>
-
-                                    <div class="post-info">
-                                        <div class="post-by">
-                                            <img src="{{asset($post->image)}}" alt="{{$post->title}}">
-
-{{--                                            <h6>فاطمه محمدی</h6>--}}
+                                            <div class="date"><i
+                                                    class='bx bx-calendar'></i>{{jdate($post->update_at)->format('y/m/d')}}
+                                            </div>
                                         </div>
 
-                                        <div class="details-btn">
-                                            <a href="{{url('حوزه-علمیه-خواهران/معاونت-پژوهش/نشست-ها/'.$post->slug)}}"><i class="bx bx-left-arrow-alt"></i></a>
+                                        <div class="post-content">
+                                            <h3>
+                                                <a href="{{url('حوزه-علمیه-خواهران/معاونت-پژوهش/نشست-ها/'.$post->slug)}}">{{$post->title}}</a>
+                                            </h3>
+
+                                            <div class="post-info">
+                                                <div class="post-by">
+                                                    <img src="{{asset($post->image)}}" alt="{{$post->title}}">
+
+                                                    {{--                                            <h6>فاطمه محمدی</h6>--}}
+                                                </div>
+
+                                                <div class="details-btn">
+                                                    <a href="{{url('حوزه-علمیه-خواهران/معاونت-پژوهش/نشست-ها/'.$post->slug)}}"><i
+                                                            class="bx bx-left-arrow-alt"></i></a>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
                             @endif
                         @endforeach
 
                         <div class="col-lg-12 col-md-12">
                             <div class="pagination-area">
-{{--                                <a href="#" class="prev page-numbers"><i class='bx bxs-arrow-to-right'></i></a>--}}
-{{--                                <a href="#" class="page-numbers">1</a>--}}
-{{--                                <span class="page-numbers current" aria-current="page">2</span>--}}
-{{--                                <a href="#" class="page-numbers">3</a>--}}
-{{--                                <a href="#" class="next page-numbers"><i class='bx bxs-arrow-to-left'></i></a>--}}
+                                {{--                                <a href="#" class="prev page-numbers"><i class='bx bxs-arrow-to-right'></i></a>--}}
+                                {{--                                <a href="#" class="page-numbers">1</a>--}}
+                                {{--                                <span class="page-numbers current" aria-current="page">2</span>--}}
+                                {{--                                <a href="#" class="page-numbers">3</a>--}}
+                                {{--                                <a href="#" class="next page-numbers"><i class='bx bxs-arrow-to-left'></i></a>--}}
                             </div>
                         </div>
                     </div>
@@ -142,8 +151,6 @@
         </div>
     </section>
     <!-- End Blog Area -->
-
-
 
 @endsection
 

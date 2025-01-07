@@ -5192,7 +5192,10 @@ Blog Area CSS
 }
 
 .single-blog-post-item .post-content {
+    display: flex;
     padding: 20px;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .single-blog-post-item .post-content .category {
@@ -5209,7 +5212,6 @@ Blog Area CSS
 }
 
 .single-blog-post-item .post-content h3 {
-    margin-bottom: 12px;
     line-height: 1.4;
     font-size: 22px;
 
@@ -5221,11 +5223,6 @@ Blog Area CSS
 
 .single-blog-post-item .post-content .post-content-footer {
     list-style-type: none;
-    padding-left: 0;
-    margin-bottom: 0;
-    margin-left: -7px;
-    margin-right: -7px;
-    margin-top: 18px;
 }
 
 .single-blog-post-item .post-content .post-content-footer li {
@@ -8703,7 +8700,6 @@ Case Studies Area CSS
 }
 
 .single-case-studies-item {
-    height: 350px;
     overflow: hidden;
     margin-bottom: 30px;
     text-align: center;
@@ -8712,6 +8708,7 @@ Case Studies Area CSS
 }
 
 .single-case-studies-item .image {
+    height: 200px;
     border-radius: 5px 5px 0 0;
 }
 
@@ -8720,11 +8717,12 @@ Case Studies Area CSS
 }
 
 .single-case-studies-item .content {
+    display: flex;
     background-color: #f9f9f9;
-    text-align: left;
-    padding: 24px 8px 12px 8px;
+    padding: 12px 8px;
     border-radius: 0 0 8px 8px;
-    position: relative;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .single-case-studies-item .content h3 {

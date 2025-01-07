@@ -241,8 +241,9 @@
                                 <div class="col-lg-6 col-md-12 p-0">
                                     <div class="content">
                                         <h3><a href="{{ route('/') }}">{{ $post->title }}</a></h3>
-                                        {!! Str::limit(strip_tags($post->description), 100, '...') !!}
-                                        <a href="{{ url('حوزه-علمیه-خواهران/معاونت-پژوهش/نشست-ها/'.$post->slug) }}" class="read-more-btn">
+                                        {!! Str::limit(strip_tags($post->description), 50, '...') !!}
+                                        <a href="{{ url('حوزه-علمیه-خواهران/معاونت-پژوهش/نشست-ها/'.$post->slug) }}"
+                                           class="read-more-btn">
                                             ادامه مطلب <i class='bx bx-left-arrow-alt'></i>
                                         </a>
                                     </div>
@@ -355,16 +356,16 @@
     <!-- Start Partner Area -->
     <section class="partner-area-two ptb-70 bg-f9f9f9">
         <div class="container">
-{{--            <div id="partner-row" class="d-flex justify-content-center row align-items-center">--}}
-{{--                @foreach($customers as $customer)--}}
-{{--                    <div class="col-lg-2 col-6 col-sm-3 col-md-4 wow fadeInUp">--}}
-{{--                        <div class="single-partner-box">--}}
-{{--                            <img src="{{asset($customer->image)}}" alt="{{$customer->name}}">--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                @endforeach--}}
-{{--                --}}
-{{--            </div>--}}
+            {{--            <div id="partner-row" class="d-flex justify-content-center row align-items-center">--}}
+            {{--                @foreach($customers as $customer)--}}
+            {{--                    <div class="col-lg-2 col-6 col-sm-3 col-md-4 wow fadeInUp">--}}
+            {{--                        <div class="single-partner-box">--}}
+            {{--                            <img src="{{asset($customer->image)}}" alt="{{$customer->name}}">--}}
+            {{--                        </div>--}}
+            {{--                    </div>--}}
+            {{--                @endforeach--}}
+            {{--                --}}
+            {{--            </div>--}}
             <div id="partner-row" class="case-studies-slides owl-carousel">
                 @foreach($customers as $customer)
                     <div class="col-12 col-md-4 wow d-flex flex-column justify-content-center fadeInUp">
@@ -381,28 +382,33 @@
     <!-- Start Blog Area -->
     <section class="blog-area pt-70">
         <div class="container pb-5">
+            <h2 class="text-center mb-5" style="color: darkslategray">دوره های آموزشی</h2>
+
             <div id="blog-slides" class="blog-slides owl-carousel">
                 @foreach($posts as $post)
                     @if($post->posttype == 3)
                         <div class="single-blog-post-item">
                             <div class="post-image">
-                                <a href="#" class="d-block">
-                                    <img src="{{asset($post->image)}}" alt="{{$post->title}}">
+                                <a href="{{url('حوزه-علمیه-خواهران/معاونت-فرهنگی/دوره-های-آموزشی/'.$post->slug)}}"
+                                   class="d-block"> <img src="{{asset($post->image)}}" alt="{{$post->title}}">
                                 </a>
                             </div>
                             <div class="post-content">
-                                <a href="#" class="category">خانواده</a>
-                                <h3><a href="#">{{$post->title}}</a></h3>
-                                <ul class="post-content-footer d-flex justify-content-between align-items-center">
-                                    <li>
-                                        <div class="post-author d-flex align-items-center">
-                                            <!-- Author information can be added here -->
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <i class='bx bx-calendar'></i> {{jdate($post->update_at)->format('Y/m/d')}}
-                                    </li>
-                                </ul>
+                                {{--                                <a href="#" class="category">خانواده</a>--}}
+                                <h3><a href="{{url('حوزه-علمیه-خواهران/معاونت-فرهنگی/دوره-های-آموزشی/'.$post->slug)}}">{{$post->title}}</a></h3>
+{{--                                <ul class="post-content-footer d-flex justify-content-between align-items-center">--}}
+{{--                                    <li>--}}
+{{--                                        <div class="post-author d-flex align-items-center">--}}
+{{--                                            <!-- Author information can be added here -->--}}
+{{--                                        </div>--}}
+{{--                                    </li>--}}
+{{--                                    <li>--}}
+{{--                                        <i class='bx bx-calendar'></i> {{jdate($post->update_at)->format('Y/m/d')}}--}}
+{{--                                    </li>--}}
+{{--                                </ul>--}}
+                                <div>
+                                    <i class='bx bx-calendar'></i> {{jdate($post->update_at)->format('Y/m/d')}}
+                                </div>
                             </div>
                         </div>
                     @endif
@@ -411,9 +417,9 @@
             </div>
             <div class="col-lg-12 col-md-12 wow fadeInUp" data-wow-delay=".6s">
                 <div class="services-btn-box text-center">
-                    <a href="{{url('#')}}" class="default-btn">
+                    <a href="{{url('حوزه-علمیه-خواهران/معاونت-فرهنگی/دوره-های-آموزشی/')}}" class="default-btn">
                         مشاهده همه
-                        <i class="bx bx-chevron-right"></i>
+                        <i class="bx bx-chevron-left"></i>
                     </a>
                 </div>
             </div>

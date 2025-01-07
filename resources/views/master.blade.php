@@ -221,7 +221,7 @@
                         </a>
                     @else
                         <a href="{{url('logout')}}" class="btn btn-danger">
-                            <i class="bx bx-log-out"></i> {{Auth::user()->name}}
+                             {{Auth::user()->name}}<i class="bx bx-log-out"></i>
                         </a>
                     @endif
                 </div>

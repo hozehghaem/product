@@ -55,6 +55,7 @@
             align-items: center;
             height: 80vh; /* ارتفاع کامل صفحه */
         }
+
         .index-banner::before {
             content: '';
             position: absolute;
@@ -65,6 +66,7 @@
             background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
             z-index: 1; /* لایه‌بندی زیر متن */
         }
+
         .index-banner-content {
             text-align: center; /* متن‌ها را وسط چین می‌کند */
             display: flex;
@@ -85,7 +87,8 @@
             color: #f0f0f9;
             max-width: 500px;
         }
-        .khat img{
+
+        .khat img {
             max-height: 50px;
         }
 
@@ -111,7 +114,8 @@
                 color: #f0f0f9;
                 max-width: 250px;
             }
-            .khat img{
+
+            .khat img {
                 max-height: 24px;
             }
         }
@@ -274,9 +278,12 @@
                             <div class="row m-0">
                                 <div class="col-lg-6 col-md-12 p-0">
                                     <div class="content">
-                                        <h3><a href="{{ route('/') }}">{{ $post->title }}</a></h3>
+                                        <h3>
+                                            <a href="{{ url('حوزه-علمیه-خواهران/معاونت-پژوهش/نشست-ها/'.$post->slug) }}">{!! Str::limit(strip_tags($post->title), 24, '...') !!}</a>
+                                        </h3>
                                         {!! Str::limit(strip_tags($post->description), 60, '...') !!}
-                                        <a href="{{ url('حوزه-علمیه-خواهران/معاونت-پژوهش/نشست-ها/'.$post->slug) }}" class="read-more-btn">
+                                        <a href="{{ url('حوزه-علمیه-خواهران/معاونت-پژوهش/نشست-ها/'.$post->slug) }}"
+                                           class="read-more-btn">
                                             ادامه مطلب <i class='bx bx-left-arrow-alt'></i>
                                         </a>
                                     </div>
@@ -306,6 +313,7 @@
     <!-- Start Case Studies Area -->
     <section class="case-studies-area pt-70 pb-20">
         <div class="container">
+            <h2 class="text-center mb-5" style="color: aliceblue">سخنرانی های مذهبی</h2>
             <div id="case-studies-slides" class="case-studies-slides owl-carousel">
                 @foreach($posts as $post)
                     @if($post->posttype == 5)
@@ -315,7 +323,8 @@
                             </a>
                             <div class="content">
                                 <h3><a href="#">{{$post->title}}</a></h3>
-                                <a href="{{url('حوزه-علمیه-خواهران/معاونت-پژوهش/نشست-ها/'.$post->slug)}}"><i class="bx bx-left-arrow-alt"></i></a>
+                                <a href="{{url('حوزه-علمیه-خواهران/معاونت-پژوهش/نشست-ها/'.$post->slug)}}"><i
+                                        class="bx bx-left-arrow-alt"></i></a>
                             </div>
                         </div>
                     @endif
@@ -402,28 +411,35 @@
     <!-- Start Blog Area -->
     <section class="blog-area pt-70">
         <div class="container pb-5">
+            <h2 class="text-center mb-5" style="color: darkslategray">دوره های آموزشی</h2>
             <div id="blog-slides" class="blog-slides owl-carousel">
                 @foreach($posts as $post)
                     @if($post->posttype == 3)
                         <div class="single-blog-post-item">
                             <div class="post-image">
-                                <a href="#" class="d-block">
+                                <a href="{{url('حوزه-علمیه-خواهران/معاونت-فرهنگی/دوره-های-آموزشی/'.$post->slug)}}"
+                                   class="d-block">
                                     <img src="{{asset($post->image)}}" alt="{{$post->title}}">
                                 </a>
                             </div>
                             <div class="post-content">
-                                <a href="#" class="category">خانواده</a>
-                                <h3><a href="#">{{$post->title}}</a></h3>
-                                <ul class="post-content-footer d-flex justify-content-between align-items-center">
-                                    <li>
-                                        <div class="post-author d-flex align-items-center">
-                                            <!-- Author information can be added here -->
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <i class='bx bx-calendar'></i> {{jdate($post->update_at)->format('Y/m/d')}}
-                                    </li>
-                                </ul>
+                                {{--                                <a href="#" class="category">خانواده</a>--}}
+                                <h3>
+                                    <a href="{{url('حوزه-علمیه-خواهران/معاونت-فرهنگی/دوره-های-آموزشی/'.$post->slug)}}">{{$post->title}}</a>
+                                </h3>
+                                {{--                                <ul class="post-content-footer d-flex justify-content-between align-items-center">--}}
+                                {{--                                    <li>--}}
+                                {{--                                        <div class="post-author d-flex align-items-center">--}}
+                                {{--                                            <!-- Author information can be added here -->--}}
+                                {{--                                        </div>--}}
+                                {{--                                    </li>--}}
+                                {{--                                    <li>--}}
+                                {{--                                        <i class='bx bx-calendar'></i> {{jdate($post->update_at)->format('Y/m/d')}}--}}
+                                {{--                                    </li>--}}
+                                {{--                                </ul>--}}
+                                <div>
+                                    <i class='bx bx-calendar'></i> {{jdate($post->update_at)->format('Y/m/d')}}
+                                </div>
                             </div>
                         </div>
                     @endif
@@ -431,9 +447,9 @@
             </div>
             <div class="col-lg-12 col-md-12 wow fadeInUp" data-wow-delay=".6s">
                 <div class="services-btn-box text-center">
-                    <a href="{{url('#')}}" class="default-btn">
+                    <a href="{{url('حوزه-علمیه-خواهران/معاونت-فرهنگی/دوره-های-آموزشی/')}}" class="default-btn">
                         مشاهده همه
-                        <i class="bx bx-chevron-right"></i>
+                        <i class="bx bx-chevron-left"></i>
                     </a>
                 </div>
             </div>
@@ -441,11 +457,11 @@
     </section>
     <!-- End Blog Area -->
 
-    <section class="faq-area p-3 bg-f8fbfa">
+    <section class="faq-area p-3 bg-f8fbfa my-5">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-12 col-md-12">
-                    <div class="faq-accordion">
+                    <div class="faq-accordion ">
                         <ul class="accordion">
 
                             @foreach($questions as $question)
