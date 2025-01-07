@@ -5176,6 +5176,7 @@ Blog Area CSS
 }
 
 .single-blog-post-item .post-image {
+    height: 200px;
     border-radius: 5px 5px 0 0;
 }
 
@@ -8708,12 +8709,12 @@ Case Studies Area CSS
 }
 
 .single-case-studies-item .image {
-    height: 200px;
     border-radius: 5px 5px 0 0;
 }
 
 .single-case-studies-item .image img {
     border-radius: 8px 8px 0 0;
+    height: 200px;
 }
 
 .single-case-studies-item .content {
