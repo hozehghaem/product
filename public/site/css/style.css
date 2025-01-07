@@ -5188,6 +5188,8 @@ Blog Area CSS
 .single-blog-post-item .post-image a img {
     border-radius: 5px 5px 0 0;
     -webkit-transition: 0.5s;
+    height: 240px;
+    background-size: cover;
     transition: 0.5s;
     width: 100%;
 }
