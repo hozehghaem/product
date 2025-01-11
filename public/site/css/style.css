@@ -8719,7 +8719,7 @@ Case Studies Area CSS
 .single-case-studies-item .content {
     display: flex;
     background-color: #f9f9f9;
-    padding: 12px 8px;
+    padding: 32px 16px;
     border-radius: 0 0 8px 8px;
     justify-content: space-between;
     align-items: center;
