@@ -65,18 +65,20 @@ class IndexController extends Controller
             $thispage = Menu::select('id', 'title', 'slug', 'tab_title', 'page_title', 'keyword', 'page_description')->MenuSite()->whereSlug('/')->first();
         }
 
-       $submenus = Submenu::select('id', 'title', 'slug', 'menu_id','mega_manu' , 'megamenu_id')->whereStatus(4)->get();
-
+        $submenus       = Submenu::select('id', 'title', 'slug', 'menu_id','mega_manu' , 'megamenu_id')->whereStatus(4)->get();
         $companies      = Company::first();
         $slides         = Slide::select('id' , 'title1' , 'text', 'file_link')->whereMenu_id($thispage->id)->whereStatus(4)->get();
         $customers      = Customer::select('name', 'image')->whereStatus(4)->whereHome_show(1)->get();
-        $posts          = Post::whereStatus(4)->whereHome_show(1)->orderBy('id' , 'DESC')->limit(6)->get();
+        $sessionposts   = Post::whereStatus(4)->whereHome_show(1)->wherePosttype(2)->orderBy('id' , 'DESC')->limit(6)->get();
+        $speechposts    = Post::whereStatus(4)->whereHome_show(1)->wherePosttype(5)->orderBy('id' , 'DESC')->limit(6)->get();
+        $courseposts    = Post::whereStatus(4)->whereHome_show(1)->wherePosttype(3)->orderBy('id' , 'DESC')->limit(6)->get();
         $questions      = Questionlist::whereStatus(4)->orderBy('id' , 'DESC')->limit(6)->get();
         $flowtexts      = Flowtext::whereStatus(4)->limit(6)->get();
         $akhbars        = Akhbar::leftjoin('users', 'akhbars.user_id', '=', 'users.id')->
         select('akhbars.title', 'akhbars.slug', 'akhbars.image', 'akhbars.description', 'users.name as username', 'akhbars.matn as matn', 'akhbars.updated_at')->where('akhbars.status', 4)->where('akhbars.home_show', 1)->get();
 
-        return view('Site.brothers')->with(compact('menus', 'thispage','flowtexts', 'companies', 'slides', 'customers', 'submenus', 'posts', 'akhbars'));
+        return view('Site.brothers')->with(compact('menus','speechposts', 'courseposts','sessionposts','thispage','questions', 'flowtexts', 'companies', 'slides', 'customers', 'submenus', 'akhbars'));
+
     }
 
     public function sisters(Request $request)

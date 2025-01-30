@@ -287,85 +287,36 @@
                 <img src="{{asset('/site/img/logo-without-text.png')}}" class="title-icon" alt="">
                 <h2>سلسله نشست های دوره ای حوزه</h2>
             </div>
-            <div class="row">
-                <div class="single-services-box col-lg-6 col-md-12">
-                    <div class="row m-0">
-                        <div class="col-lg-6 col-md-12 p-0">
-                            <div class="content">
-                                <h3><a href="{{route('/')}}">نشست خانواده و تربیت</a></h3>
-                                <p>لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال
-                                    استاندارد صنعت بوده است.</p>
-                                <a href="{{route('/')}}" class="read-more-btn">ادامه مطلب <i
-                                        class='bx bx-left-arrow-alt'></i></a>
+            <div class="row justify-content-between">
+                @foreach($sessionposts as $post)
+                    <div class="single-services-box col-lg-5 col-md-12">
+                        <div class="row m-0">
+                            <div class="col-lg-6 col-md-12 p-0">
+                                <div class="content">
+                                    <h3>
+                                        <a href="{{ url('حوزه-علمیه-خواهران/معاونت-پژوهش/نشست-ها/'.$post->slug) }}">{!! Str::limit(strip_tags($post->title), 24, '...') !!}</a>
+                                    </h3>
+                                    {!! Str::limit(strip_tags($post->description), 60, '...') !!}
+                                    <a href="{{ url('حوزه-علمیه-خواهران/معاونت-پژوهش/نشست-ها/'.$post->slug) }}"
+                                       class="read-more-btn">
+                                        ادامه مطلب <i class='bx bx-left-arrow-alt'></i>
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-lg-6 col-md-12 p-0">
-                            <div class="image bg-1">
-                                <img src="{{asset("site/img/marketing-agency/services-img1.jpg")}}" alt="image">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="single-services-box col-lg-6 col-md-12">
-                    <div class="row m-0">
-                        <div class="col-lg-6 col-md-12 p-0">
-                            <div class="content">
-                                <h3><a href="{{route('/')}}">نشست خانواده و تربیت</a></h3>
-                                <p>لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال
-                                    استاندارد صنعت بوده است.</p>
-                                <a href="{{route('/')}}" class="read-more-btn">ادامه مطلب <i
-                                        class='bx bx-left-arrow-alt'></i></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-12 p-0">
-                            <div class="image bg-1">
-                                <img src="{{asset("site/img/marketing-agency/services-img1.jpg")}}" alt="image">
+                            <div class="col-lg-6 col-md-12 p-0">
+                                <div class="image bg-1">
+                                    <img src="{{asset($post->image)}}" alt="{{$post->title}}">
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="single-services-box col-lg-6 col-md-12">
-                    <div class="row m-0">
-                        <div class="col-lg-6 col-md-12 p-0">
-                            <div class="content">
-                                <h3><a href="{{route('/')}}">نشست خانواده و تربیت</a></h3>
-                                <p>لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال
-                                    استاندارد صنعت بوده است.</p>
-                                <a href="{{route('/')}}" class="read-more-btn">ادامه مطلب <i
-                                        class='bx bx-left-arrow-alt'></i></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-12 p-0">
-                            <div class="image bg-1">
-                                <img src="{{asset("site/img/marketing-agency/services-img1.jpg")}}" alt="image">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="single-services-box col-lg-6 col-md-12">
-                    <div class="row m-0">
-                        <div class="col-lg-6 col-md-12 p-0">
-                            <div class="content">
-                                <h3><a href="{{route('/')}}">نشست خانواده و تربیت</a></h3>
-                                <p>لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال
-                                    استاندارد صنعت بوده است.</p>
-                                <a href="{{route('/')}}" class="read-more-btn">ادامه مطلب <i
-                                        class='bx bx-left-arrow-alt'></i></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-12 p-0">
-                            <div class="image bg-1">
-                                <img src="{{asset("site/img/marketing-agency/services-img1.jpg")}}" alt="image">
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
-            <div class="col-lg-12 col-md-12 wow fadeInUp" data-wow-delay=".6s">
-                <div class="services-btn-box">
-                    <a href="{{url('/meeting')}}" class="default-btn">
+            <div class="col-lg-12 col-md-12 wow fadeInUp d-flex justify-content-center pt-3" data-wow-delay=".6s">
+                <div>
+                    <a href="{{ url('حوزه-علمیه-خواهران/معاونت-پژوهش/نشست-ها') }}" class="custom-btn">
                         مشاهده همه
-                        <i class="bx bx-chevron-right"></i>
+                        <i class="bx bx-chevron-left"></i>
                     </a>
                 </div>
             </div>
@@ -376,16 +327,20 @@
     <!-- Start Case Studies Area -->
     <section class="case-studies-area pt-70 pb-20">
         <div class="container">
+            <h2 class="text-center mb-5" style="color: aliceblue">سخنرانی های مذهبی</h2>
             <div id="case-studies-slides" class="case-studies-slides owl-carousel">
-                <div class="single-case-studies-item">
-                    <a href="#" class="image d-block">
-                        <img src="{{asset("site/img/case-studies/case-studies-img1.jpg")}}" alt="image">
-                    </a>
-                    <div class="content">
-                        <h3><a href="#">سخنرانی و درس اخلاق آیت الله هاشمی اولیا</a></h3>
-                        <a href="#" class="link-btn"><i class='bx bx-left-arrow-alt'></i></a>
+                @foreach($speechposts as $post)
+                    <div class="single-case-studies-item">
+                        <a href="#" class="image d-block">
+                            <img src="{{asset($post->image)}}" alt="image">
+                        </a>
+                        <div class="content">
+                            <h3><a href="#">{{$post->title}}</a></h3>
+                            <a href="{{url('حوزه-علمیه-خواهران/معاونت-پژوهش/نشست-ها/'.$post->slug)}}"><i
+                                    class="bx bx-left-arrow-alt"></i></a>
+                        </div>
                     </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
@@ -450,34 +405,16 @@
     </section>
 
     <!-- Start Partner Area -->
-    <section class="partner-area-two ptb-70 bg-f9f9f9">
+    <section class="partner-area-two bg-f9f9f9">
         <div class="container">
-            <div id="partner-row" class="d-flex justify-content-center row align-items-center">
-                <div class="col-lg-2 col-6 col-sm-3 col-md-4 wow fadeInUp">
-                    <div class="single-partner-box">
-                        <img src="{{asset('site/img/partner-image/1.png')}}" alt="image">
+            <div id="partner-row" class="case-studies-slides owl-carousel">
+                @foreach($customers as $customer)
+                    <div class="col-12 col-md-4 wow d-flex flex-column justify-content-center fadeInUp">
+                        <div class="single-partner-box d-flex justify-content-center">
+                            <img src="{{asset($customer->image)}}" alt="{{$customer->name}}">
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-2 col-6 col-sm-3 col-md-4 wow fadeInUp">
-                    <div class="single-partner-box">
-                        <img src="{{asset('site/img/partner-image/1.png')}}" alt="image">
-                    </div>
-                </div>
-                <div class="col-lg-2 col-6 col-sm-3 col-md-4 wow fadeInUp">
-                    <div class="single-partner-box">
-                        <img src="{{asset('site/img/partner-image/1.png')}}" alt="image">
-                    </div>
-                </div>
-                <div class="col-lg-2 col-6 col-sm-3 col-md-4 wow fadeInUp">
-                    <div class="single-partner-box">
-                        <img src="{{asset('site/img/partner-image/1.png')}}" alt="image">
-                    </div>
-                </div>
-                <div class="col-lg-2 col-6 col-sm-3 col-md-4 wow fadeInUp">
-                    <div class="single-partner-box">
-                        <img src="{{asset('site/img/partner-image/1.png')}}" alt="image">
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
@@ -486,36 +423,43 @@
     <!-- Start Blog Area -->
     <section class="blog-area pt-70">
         <div class="container pb-5">
+            <h2 class="text-center mb-5" style="color: darkslategray">دوره های آموزشی</h2>
             <div id="blog-slides" class="blog-slides owl-carousel">
-
-                <div class="single-blog-post-item">
-                    <div class="post-image">
-                        <a href="#" class="d-block">
-                            <img src="{{asset('site/img/blog-image/2.jpg')}}" alt="image">
-                        </a>
+                @foreach($courseposts as $post)
+                    <div class="single-blog-post-item">
+                        <div class="post-image">
+                            <a href="{{url('حوزه-علمیه-خواهران/معاونت-فرهنگی/دوره-های-آموزشی/'.$post->slug)}}"
+                               class="d-block">
+                                <img src="{{asset($post->image)}}" alt="{{$post->title}}">
+                            </a>
+                        </div>
+                        <div class="post-content">
+                            {{--                                <a href="#" class="category">خانواده</a>--}}
+                            <h3>
+                                <a href="{{url('حوزه-علمیه-خواهران/معاونت-فرهنگی/دوره-های-آموزشی/'.$post->slug)}}">{{$post->title}}</a>
+                            </h3>
+                            {{--                                <ul class="post-content-footer d-flex justify-content-between align-items-center">--}}
+                            {{--                                    <li>--}}
+                            {{--                                        <div class="post-author d-flex align-items-center">--}}
+                            {{--                                            <!-- Author information can be added here -->--}}
+                            {{--                                        </div>--}}
+                            {{--                                    </li>--}}
+                            {{--                                    <li>--}}
+                            {{--                                        <i class='bx bx-calendar'></i> {{jdate($post->update_at)->format('Y/m/d')}}--}}
+                            {{--                                    </li>--}}
+                            {{--                                </ul>--}}
+                            <div>
+                                <i class='bx bx-calendar'></i> {{jdate($post->update_at)->format('Y/m/d')}}
+                            </div>
+                        </div>
                     </div>
-                    <div class="post-content">
-                        <a href="#" class="category">خانواده</a>
-                        <h3><a href="#">دوره تفسیر قرآن کریم</a></h3>
-                        <ul class="post-content-footer d-flex justify-content-between align-items-center">
-                            <li>
-                                <div class="post-author d-flex align-items-center">
-                                    <!-- Author information can be added here -->
-                                </div>
-                            </li>
-                            <li>
-                                <i class='bx bx-calendar'></i> 18/12/1378
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
+                @endforeach
             </div>
             <div class="col-lg-12 col-md-12 wow fadeInUp" data-wow-delay=".6s">
-                <div class="services-btn-box">
-                    <a href="{{url('#')}}" class="default-btn">
+                <div class="services-btn-box text-center">
+                    <a href="{{url('حوزه-علمیه-خواهران/معاونت-فرهنگی/دوره-های-آموزشی/')}}" class="default-btn">
                         مشاهده همه
-                        <i class="bx bx-chevron-right"></i>
+                        <i class="bx bx-chevron-left"></i>
                     </a>
                 </div>
             </div>
