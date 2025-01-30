@@ -414,7 +414,7 @@
                             <div class="post-image">
                                 <a href="{{url('حوزه-علمیه-خواهران/معاونت-فرهنگی/دوره-های-آموزشی/'.$post->slug)}}"
                                    class="d-block">
-                                    <img src="{{asset($post->image)}}" alt="{{$post->title}}">
+                                    <img src="{{asset($post->image)}}" alt="{{$post->title}}" style="max-height: 430px">
                                 </a>
                             </div>
                             <div class="post-content">
