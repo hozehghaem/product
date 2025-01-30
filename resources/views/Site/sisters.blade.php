@@ -234,8 +234,7 @@
                 <h2>سلسله نشست های دوره ای حوزه</h2>
             </div>
             <div class="row justify-content-between">
-                @foreach($posts as $post)
-                    @if($post->posttype == 2)
+                @foreach($sessionposts as $post)
                         <div class="single-services-box col-lg-5 col-md-12">
                             <div class="row m-0">
                                 <div class="col-lg-6 col-md-12 p-0">
@@ -255,7 +254,6 @@
                                 </div>
                             </div>
                         </div>
-                    @endif
                 @endforeach
             </div>
             <div class="col-lg-12 col-md-12 wow fadeInUp" data-wow-delay=".6s">
@@ -277,8 +275,7 @@
         <div class="container mt-5">
 
             <div id="case-studies-slides" class="case-studies-slides owl-carousel">
-                @foreach($posts as $post)
-                    @if($post->posttype == 1)
+                @foreach($speechposts as $post)
                         <div class="single-case-studies-item">
                             <a href="#" class="image d-block">
                                 <img src="{{asset($post->image)}}" alt="image">
@@ -288,7 +285,6 @@
                                 <a href="#" class="link-btn"><i class='bx bx-left-arrow-alt'></i></a>
                             </div>
                         </div>
-                    @endif
                 @endforeach
             </div>
         </div>
@@ -385,8 +381,7 @@
             <h2 class="text-center mb-5" style="color: darkslategray">دوره های آموزشی</h2>
 
             <div id="blog-slides" class="blog-slides owl-carousel">
-                @foreach($posts as $post)
-                    @if($post->posttype == 3)
+                @foreach($courseposts as $post)
                         <div class="single-blog-post-item">
                             <div class="post-image">
                                 <a href="{{url('حوزه-علمیه-خواهران/معاونت-فرهنگی/دوره-های-آموزشی/'.$post->slug)}}"
@@ -411,7 +406,6 @@
                                 </div>
                             </div>
                         </div>
-                    @endif
                 @endforeach
 
             </div>
