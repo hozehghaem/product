@@ -7,6 +7,7 @@ use App\Mail\sendmail;
 use App\Models\Akhbar;
 use App\Models\Company;
 use App\Models\Consultation;
+use App\Models\Contactusform;
 use App\Models\Dashboard\Customer;
 use App\Models\Dashboard\Pagemanage;
 use App\Models\Dashboard\Questionlist;
@@ -22,6 +23,7 @@ use App\Models\Submenu;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Str;
 
 class IndexController extends Controller
 {
@@ -909,5 +911,39 @@ class IndexController extends Controller
 
     }
 
+public function Contactusform(Request $request)
+{
+    try{
+        $contacts = new Contactusform();
 
+        $contacts->name        = $request->input('name');
+        $contacts->email       = $request->input('email');
+        $contacts->phone_number= $request->input('phone_number');
+        $contacts->msg_subject = $request->input('msg_subject');
+        $contacts->message     = $request->input('message');
+        $result                = $contacts->save();
+
+        if ($result == true) {
+            $success = true;
+            $flag    = 'success';
+            $subject = 'عملیات موفق';
+            $message = 'اطلاعات با موفقیت ثبت شد';
+        }
+        else {
+            $success = false;
+            $flag    = 'error';
+            $subject = 'عملیات نا موفق';
+            $message = 'اطلاعات ثبت نشد، لطفا مجددا تلاش نمایید';
+        }
+
+        } catch (Exception $e) {
+
+            $success = false;
+            $flag    = 'error';
+            $subject = 'خطا در ارتباط با سرور';
+            //$message = strchr($e);
+            $message = 'اطلاعات ثبت نشد،لطفا بعدا مجدد تلاش نمایید ';
+        }
+    return response()->json(['success'=>$success , 'subject' => $subject, 'flag' => $flag, 'message' => $message]);
+    }
 }

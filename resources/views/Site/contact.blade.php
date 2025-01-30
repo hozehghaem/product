@@ -38,8 +38,8 @@
                         <div class="col-lg-6 col-md-12">
                             <div class="contact-form">
                                 <h3> ارسال سوال و نظرات با ما در ارتباط باشد</h3>
-
-                                <form id="contactForm">
+                                 <form action="{{route('contactusform')}}" method="POST" id="form">
+                                        @csrf
                                     <div class="row">
                                         <div class="col-lg-6 col-md-6">
                                             <div class="form-group">
@@ -77,7 +77,7 @@
                                         </div>
 
                                         <div class="col-lg-12 col-md-12">
-                                            <button type="submit" class="default-btn"><i class='bx bxs-paper-plane'></i>ارسال پیام<span></span></button>
+                                            <button type="submit" class="default-btn" id="submit"><i class='bx bxs-paper-plane'></i>ارسال پیام<span></span></button>
                                             <div id="msgSubmit" class="h3 text-center hidden"></div>
                                             <div class="clearfix"></div>
                                         </div>
@@ -111,4 +111,49 @@
         <!-- End Contact Area -->
 @endsection
 @section('script')
+    <script>
+        jQuery(document).ready(function(){
+            jQuery('#submit').click(function(e){
+                e.preventDefault();
+
+                // جلوگیری از ارسال دوباره
+                document.getElementById("submit").disabled = true;
+
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+                    }
+                });
+
+                jQuery.ajax({
+                    url: "{{route('contactusform')}}",
+                    method: 'POST',
+                    data: {
+                        "_token": "{{ csrf_token() }}",
+                        name: jQuery('#name').val(),
+                        email: jQuery('#email').val(),
+                        phone_number: jQuery('#phone_number').val(),
+                        msg_subject: jQuery('#msg_subject').val(),
+                        message: jQuery('#message').val(),
+                    },
+                    success: function(data) {
+                        if(data.success == true) {
+                            $('#form')[0].reset();
+                            // نمایش پیغام موفقیت
+                            alert(data.message);
+                        } else {
+                            // در صورتی که خطا اتفاق بیفتد، دکمه دوباره فعال شود و پیغام خطا نمایش داده شود
+                            document.getElementById("submit").disabled = false;
+                            alert(data.message); // فرض بر این است که پیام خطا در داده‌ها وجود دارد
+                        }
+                    },
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        // در صورت بروز خطا، دکمه دوباره فعال شود و پیغام خطا نمایش داده شود
+                        document.getElementById("submit").disabled = false;
+                        alert('خطا در ارسال اطلاعات. لطفاً دوباره سعی کنید.');
+                    }
+                });
+            });
+        });
+    </script>
 @endsection
