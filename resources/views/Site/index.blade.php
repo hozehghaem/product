@@ -316,7 +316,7 @@
                 @foreach($speechposts as $post)
                         <div class="single-case-studies-item">
                             <a href="#" class="image d-block">
-                                <img src="{{asset($post->image)}}" alt="image">
+                                <img src="{{asset($post->image)}}" alt="{{$post->title}}" style="max-height: 330px">
                             </a>
                             <div class="content">
                                 <h3><a href="#">{{$post->title}}</a></h3>
