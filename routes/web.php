@@ -63,6 +63,8 @@ Route::group(['namespace' => 'App\Http\Controllers' ,'prefix' => '/'] , function
 //            }
 //        }
 //    }
+    Route::post('contactusform'            , 'Site\IndexController@contactusform')        ->name('contactusform');
+
 });
 
 //    Route::group(['namespace' => 'App\Http\Controllers\Site' , 'middleware' => 'checkClint'] , function (){
