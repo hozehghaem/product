@@ -3,20 +3,6 @@
 @section('style')
     <!-- Fancybox CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
-    <style>
-        /* استایل برای دکمه بستن */
-        .fancybox-button--close {
-            display: block !important;
-            background: rgba(0, 0, 0, 0.7) !important; /* پس‌زمینه‌ی مشکی شفاف */
-            color: white !important; /* رنگ سفید برای آیکون ضربدر */
-            width: 40px !important;
-            height: 40px !important;
-            border-radius: 50%;
-            font-size: 20px !important;
-            top: 10px !important;
-            right: 10px !important;
-        }
-    </style>
 @endsection
 
 @section('main')
