@@ -3,6 +3,12 @@
 @endsection
 @section('main')
 
+    <head>
+        <!-- Fancybox CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+        <title></title>
+
+    </head>
     <style>
         .video-container {
             position: relative;
@@ -73,8 +79,14 @@
                 {{--                    @endif--}}
                 {{--                </div>--}}
                 <div class="service-details-content">
+                    <!-- تصویر با قابلیت کلیک برای نمایش بزرگ‌تر -->
+                    <a href="{{ asset($posts->image) }}" data-fancybox="gallery" data-caption="{{ $posts->title }}">
+                        <img src="{{ asset($posts->image) }}" alt="{{ $posts->title }}" class="single-image" style="cursor: pointer;">
+                    </a>
 
+                    <!-- توضیحات -->
                     <p>{!! $posts->description !!}</p>
+                </div>
 
                     {{--                    <div class="service-details-info" style="margin-bottom: 100px">--}}
                     {{--                        <div class="single-info-box">--}}
@@ -118,8 +130,9 @@
                     {{--                            </ul>--}}
                     {{--                        </div>--}}
                     {{--                    </div>--}}
-                </div>
             </div>
         </div>
         <!-- End Service details -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
 @endsection
