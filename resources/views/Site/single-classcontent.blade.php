@@ -22,12 +22,12 @@
              style="border: 1px solid rgba(69,69,69,0.2); border-radius: 16px; box-shadow: 0 4px 32px 0 rgba(0,0,0,0.1);">
             <div class="container mt-5">
                 <div class="service-details-content text-center">
-                    <!-- تصویر با قابلیت کلیک برای نمایش بزرگ‌تر -->
-                    <a href="{{ asset($posts->image) }}" data-fancybox="gallery" data-caption="{{ $posts->title }}">
-                        <img src="{{ asset($posts->image) }}" alt="{{ $posts->title }}" class="single-image"
-                             style="cursor: pointer; max-width: 100%; border-radius: 10px;">
-                    </a>
-
+                    @if($posts->image != null)
+                        <a href="{{ asset($posts->image) }}" data-fancybox="gallery" data-caption="{{ $posts->title }}">
+                            <img src="{{ asset($posts->image) }}" alt="{{ $posts->title }}" class="single-image"
+                                 style="cursor: pointer; max-width: 100%; border-radius: 10px;">
+                        </a>
+                    @endif
                     <!-- توضیحات -->
                     <p>{!! $posts->description !!}</p>
                 </div>
