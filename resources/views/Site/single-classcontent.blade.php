@@ -83,7 +83,7 @@
                 {{--                        {!! $posts->aparat !!}--}}
                 {{--                    @endif--}}
                 {{--                </div>--}}
-                <div class="service-details-content">
+                <div class="service-details-content text-center">
                     <!-- تصویر با قابلیت کلیک برای نمایش بزرگ‌تر -->
                     <a href="{{ asset($posts->image) }}" data-fancybox="gallery" data-caption="{{ $posts->title }}">
                         <img src="{{ asset($posts->image) }}" alt="{{ $posts->title }}" class="single-image"
