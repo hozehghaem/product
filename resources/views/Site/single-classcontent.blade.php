@@ -10,6 +10,14 @@
 
     </head>
     <style>
+        .fancybox-button--close {
+            background: rgba(0, 0, 0, 0.7) !important; /* پس‌زمینه‌ی مشکی شفاف */
+            color: white !important; /* رنگ سفید برای آیکون ضربدر */
+            width: 40px !important;
+            height: 40px !important;
+            border-radius: 50%;
+            font-size: 20px !important;
+        }
         .video-container {
             position: relative;
             width: 100%;
