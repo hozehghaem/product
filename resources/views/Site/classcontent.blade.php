@@ -23,7 +23,7 @@
                     <div class="col-md-4 mb-4">
                         <div class="card h-100">
                             <div class="green-pattern-box text-center">
-                                <a href="{{url('حوزه-علمیه-خواهران/معاونت-آموزش/مقاطع-درسی/'.$post->slug)}}">
+                                <a href="{{url('حوزه-علمیه-خواهران/معاونت-آموزش/محتوای-درسی/'.$post->slug)}}">
                                     <img src="{{asset('site/img/logo-without-text.png')}}" alt="">
 
                                 </a>
