@@ -32,7 +32,7 @@
                                 <a href="{{url('حوزه-علمیه-خواهران/معاونت-آموزش/محتوای-درسی/'.$post->slug)}}"><h5
                                         class="card-title text-center">{{$post->title}}</h5>
                                 </a>
-                                <p class="card-text">{!! Str::limit(strip_tags($post->description), 100, '...') !!}</p>
+{{--                                <p class="card-text">{!! Str::limit(strip_tags($post->description), 100, '...') !!}</p>--}}
                             </div>
                         </div>
                     </div>
