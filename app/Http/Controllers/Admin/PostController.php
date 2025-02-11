@@ -103,6 +103,8 @@ class PostController extends Controller
             $post->aparat      = $request->input('aparat');
             $post->posttype    = $request->input('posttype');
             $post->pdf         = $request->input('pdf');
+            $post->writer      = $request->input('writer');
+            $post->date        = $request->input('date');
             $post->voice       = $request->input('voice');
             $post->status      = $request->input('status');
             $post->home_show   = $request->input('home_show');
@@ -184,6 +186,8 @@ class PostController extends Controller
             $post->aparat      = $request->input('aparat');
             $post->pdf         = $request->input('pdf');
             $post->voice       = $request->input('voice');
+            $post->writer      = $request->input('writer');
+            $post->date        = $request->input('date');
             $post->status      = $request->input('status');
             $post->home_show   = $request->input('home_show');
             $post->user_id     = Auth::user()->id;
