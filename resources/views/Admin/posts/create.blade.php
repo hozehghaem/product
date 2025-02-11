@@ -90,6 +90,18 @@
                                                 <input type="file" name="file" id="file" data-required="1" class="form-control" />
                                             </div>
                                         </div>
+                                        <div class="col-md-9">
+                                            <div class="form-group">
+                                                <p class="mg-b-10">فایل صوتی</p>
+                                                <input type="file" name="voice" id="voice" data-required="1" class="form-control" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div class="form-group">
+                                                <p class="mg-b-10">فایل pdf</p>
+                                                <input type="file" name="pdf" id="pdf" data-required="1" class="form-control" />
+                                            </div>
+                                        </div>
 
                                         <div class="col-md-12" style="margin-top: 20px;">
                                             <div class="form-group" >
@@ -152,6 +164,8 @@
                 let    posttype     = jQuery('#posttype').val();
                 let    status       = jQuery('#status').val();
                 let    aparat       = jQuery('#aparat').val();
+                let    pdf          = jQuery('#pdf').val();
+                let    voice        = jQuery('#voice').val();
                 let    home_show    = jQuery('#home_show').val();
                 let    image        = jQuery('#image')[0].files[0];
                 let    file         = jQuery('#file')[0].files[0];
@@ -161,6 +175,8 @@
                 formData.append('status'        , status);
                 formData.append('description'   , description);
                 formData.append('home_show'     , home_show);
+                formData.append('pdf'           , pdf);
+                formData.append('voice'         , voice);
                 formData.append('aparat'        , aparat);
                 formData.append('posttype'      , posttype);
                 formData.append('image'         , image);

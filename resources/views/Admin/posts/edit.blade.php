@@ -94,7 +94,18 @@
                                                     <input type="file" name="file" id="file" data-required="1" class="form-control" />
                                                 </div>
                                             </div>
-
+                                            <div class="col-md-9">
+                                                <div class="form-group">
+                                                    <p class="mg-b-10">فایل صوتی</p>
+                                                    <input type="file" name="voice" id="voice" data-required="1" class="form-control" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <div class="form-group">
+                                                    <p class="mg-b-10">فایل pdf</p>
+                                                    <input type="file" name="pdf" id="pdf" data-required="1" class="form-control" />
+                                                </div>
+                                            </div>
                                             <div class="col-md-12" style="margin-top: 20px;">
                                                 <div class="form-group" >
                                                     <p class="mg-b-10">توضیحات</p>
