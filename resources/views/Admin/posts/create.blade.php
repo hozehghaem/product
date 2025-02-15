@@ -175,8 +175,8 @@
                 let    posttype     = jQuery('#posttype').val();
                 let    status       = jQuery('#status').val();
                 let    aparat       = jQuery('#aparat').val();
-                let    pdf          = jQuery('#pdf').val();
-                let    voice        = jQuery('#voice').val();
+                let    pdf          = jQuery('#pdf')[0].files[0];
+                let    voice        = jQuery('#voice')[0].files[0];
                 let    writer       = jQuery('#writer').val();
                 let    date         = jQuery('#date').val();
                 let    home_show    = jQuery('#home_show').val();

@@ -94,7 +94,6 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
-
         try{
 
             $post = new Post();
@@ -102,7 +101,6 @@ class PostController extends Controller
             $post->description = $request->input('description');
             $post->aparat      = $request->input('aparat');
             $post->posttype    = $request->input('posttype');
-            $post->pdf         = $request->input('pdf');
             $post->writer      = $request->input('writer');
             $post->date        = $request->input('date');
             $post->voice       = $request->input('voice');
@@ -113,12 +111,24 @@ class PostController extends Controller
                 $post->keyword = json_encode(explode("،", $request->input('keyword')));
             }
 
-
             $id = md5(random_int(10 , 999999));
 
+            if ($request->file('pdf')) {
+                $file       = $request->file('pdf');
+                $imagePath  ="public/posts";
+                $imageName  = Str::random(30).".".$file->clientExtension();
+                $post->file = 'posts/'.$imageName;
+                $file->move($imagePath, $imageName);
+            }
+            if ($request->input('voice')) {
+                $file       = $request->file('voice');
+                $imagePath  ="public/posts";
+                $imageName  = Str::random(30).".".$file->clientExtension();
+                $post->file = 'posts/'.$imageName;
+                $file->move($imagePath, $imageName);
+            }
 
-            if ($request->file('file_link')) {
-
+            if ($request->file('file')) {
                 $file       = $request->file('file');
                 $imagePath  ="public/posts";
                 $imageName  = Str::random(30).".".$file->clientExtension();
