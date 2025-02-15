@@ -116,12 +116,15 @@ class PostController extends Controller
 
             $id = md5(random_int(10 , 999999));
 
-            if ($request->hasFile('file')) {
-                $file              = $request->file('file');
-                $Name              = md5(uniqid(rand(), true)) .'.'. $file->clientExtension();
-                $Path              = "posts/$id";
-                $post->file        = 'posts/'.$id.'/'.$Name;
-                $file->move($Path, $Name);
+
+            if ($request->file('file_link')) {
+
+                $file       = $request->file('file');
+                $imagePath  ="public/posts";
+                $imageName  = Str::random(30).".".$file->clientExtension();
+                $post->file = 'posts/'.$imageName;
+                $file->move($imagePath, $imageName);
+
             }
             if ($request->hasFile('image')) {
                 $cover = $request->file('image');
