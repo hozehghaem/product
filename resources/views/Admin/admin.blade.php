@@ -246,6 +246,38 @@
 <script src="{{asset('admin/assets/plugins/sidemenu/sidemenu-rtl.js')}}"></script>
 <script src="{{asset('admin/assets/js/custom.js')}}"></script>
 <script src="{{asset('admin/assets/js/sticky.js')}}"></script>
+<script>
+    window.addEventListener("load", function () {
+        const checkInterval = setInterval(function () {
+            const notificationsArea = document.querySelector("#cke_notifications_area_editor");
+
+            if (notificationsArea) {
+                notificationsArea.style.display = "none";
+                clearInterval(checkInterval);
+            }
+        }, 500);
+    });
+    window.addEventListener("load", function () {
+        const checkInterval = setInterval(function () {
+            const notificationsArea = document.querySelector("#cke_notifications_area_editor2");
+
+            if (notificationsArea) {
+                notificationsArea.style.display = "none";
+                clearInterval(checkInterval);
+            }
+        }, 500);
+    });
+    window.addEventListener("load", function () {
+        const checkInterval = setInterval(function () {
+            const notificationsArea = document.querySelector("#cke_notifications_area_editor3");
+
+            if (notificationsArea) {
+                notificationsArea.style.display = "none";
+                clearInterval(checkInterval);
+            }
+        }, 500);
+    });
+</script>
 
 
 {{--<script src="{{asset('admin/assets/plugins/perfect-scrollbar/perfect-scrollbar.min-rtl.js')}}"></script>--}}
@@ -255,6 +287,8 @@
 @yield('end')
 </body>
 </html>
+
+
 
 
 
