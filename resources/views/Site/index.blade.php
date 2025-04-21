@@ -44,6 +44,7 @@
         }
 
         .index-banner {
+            border-radius: 16px;
             padding-top: 250px;
             /*padding-bottom: 235px;*/
             background-position: center center;
@@ -54,9 +55,11 @@
             justify-content: center;
             align-items: center;
             height: 80vh; /* ارتفاع کامل صفحه */
+
         }
 
         .index-banner::before {
+            border-radius: 16px;
             content: '';
             position: absolute;
             top: 0;
@@ -68,6 +71,8 @@
         }
 
         .index-banner-content {
+            margin: 32px;
+            border-radius: 16px;
             text-align: center; /* متن‌ها را وسط چین می‌کند */
             display: flex;
             flex-direction: column;
@@ -120,44 +125,73 @@
             }
         }
 
+        .owl-carousel .item img {
+            width: 100%;
+            height: auto;
+        }
+        .carousel-caption {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+        }
+
     </style>
 
-    <!-- Start Digital Agency Banner -->
-    <div id="indexBannerCarousel" class="carousel slide" data-ride="carousel">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            @foreach($slides as $slide)
-                <li data-target="#indexBannerCarousel" data-slide-to="{{$slide->id}}"
-                    class="@if($slides->min('id') == $slide->id) active @endif"></li>
-            @endforeach
-        </ol>
+    <section class="d-flex justify-content-center br-16">
+        <div id="indexBannerCarousel" class="carousel slide col-md-10" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                @foreach($slides as $slide)
+                    <li data-target="#indexBannerCarousel" data-slide-to="{{$slide->id}}"
+                        class="@if($slides->min('id') == $slide->id) active @endif"></li>
+                @endforeach
+            </ol>
 
-        <!-- Carousel items -->
-        <div class="carousel-inner">
-            @foreach($slides as $slide)
-                <div class="carousel-item @if($slides->min('id') == $slide->id) active @endif ">
-                    <section class="index-banner"
-                             style="background-color: #f5f5f5; background-image: url('{{ asset('storage/'.$slide->file_link) }}');">
-                        <div class="index-banner-content">
-                            <h1 style="font-family: 'IranNastaliq', serif;">{{$slide->title1}}</h1>
-                            <p>{!! $slide->text !!}</p>
-                        </div>
-                    </section>
-                </div>
-            @endforeach
+            <!-- Carousel items -->
+            <div class="carousel-inner">
+                @foreach($slides as $slide)
+                    <div class="carousel-item @if($slides->min('id') == $slide->id) active @endif ">
+                        <section class="index-banner"
+                                 style="background-color: #f5f5f5; background-image: url('{{ asset('storage/'.$slide->file_link) }}');">
+                            <div class="index-banner-content">
+                                <h1 style="font-family: 'IranNastaliq', serif;">{{$slide->title1}}</h1>
+                                <p>{!! $slide->text !!}</p>
+                            </div>
+                        </section>
+                    </div>
+                @endforeach
+            </div>
+
+            <!-- Controls -->
+            <a class="carousel-control-prev" href="#indexBannerCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#indexBannerCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
+    </section>
 
-        <!-- Controls -->
-        <a class="carousel-control-prev" href="#indexBannerCarousel" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#indexBannerCarousel" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </div>
-    <!-- End Digital Agency Banner -->
+    <!-- Start Digital Agency Banner -->
+{{--    <div class="owl-carousel" id="simpleCarousel">--}}
+{{--        @foreach($slides as $slide)--}}
+{{--            <div class="item">--}}
+{{--                <img src="{{ asset('storage/'.$slide->file_link) }}" alt="Slide">--}}
+{{--                <div class="carousel-caption">--}}
+{{--                    <h5>{{ $slide->title1 }}</h5>--}}
+{{--                    <p>{!! $slide->text !!}</p>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        @endforeach--}}
+{{--    </div>    <!-- End Digital Agency Banner -->--}}
 
     {{--   Start line   --}}
     <div class="container-fluid py-0 py-lg-2 line-background">
@@ -499,3 +533,5 @@
         </div>
     </section>
 @endsection
+
+
