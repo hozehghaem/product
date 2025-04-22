@@ -94,6 +94,7 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
+
         try{
 
             $post = new Post();
@@ -166,7 +167,7 @@ class PostController extends Controller
             $message = 'اطلاعات ثبت نشد،لطفا بعدا مجدد تلاش نمایید ';
         }
 
-        return response()->json(['success'=>$success , 'subject' => $subject, 'flag' => $flag, 'message' => $message]);
+        return Redirect::back();
     }
 
     public function edit($id)

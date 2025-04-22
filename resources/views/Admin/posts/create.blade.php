@@ -122,7 +122,7 @@
                                         </div>
                                         <div class="col-lg-12 mg-b-10 text-center">
                                             <div class="form-group">
-                                                <button type="button" id="submit" class="btn btn-info  btn-lg m-r-20">ذخیره اطلاعات</button>
+                                                <button type="submit" id="submit" class="btn btn-info  btn-lg m-r-20">ذخیره اطلاعات</button>
                                             </div>
                                         </div>
                                     </div>
@@ -155,74 +155,74 @@
         CKEDITOR.replace( 'editor' );
 
     </script>
-    <script>
-        jQuery(document).ready(function(){
-            jQuery('#submit').click(function(e){
-                e.preventDefault();
-                $.ajaxSetup({
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
-                    },
-                    contentType : false,
-                    processData : false,
-                });
+{{--    <script>--}}
+{{--        jQuery(document).ready(function(){--}}
+{{--            jQuery('#submit').click(function(e){--}}
+{{--                e.preventDefault();--}}
+{{--                $.ajaxSetup({--}}
+{{--                    headers: {--}}
+{{--                        'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')--}}
+{{--                    },--}}
+{{--                    contentType : false,--}}
+{{--                    processData : false,--}}
+{{--                });--}}
 
-                let description = CKEDITOR.instances.editor.getData();
+{{--                let description = CKEDITOR.instances.editor.getData();--}}
 
 
-                let    _token       = jQuery('input[name="_token"]').val();
-                let    title        = jQuery('#title').val();
-                let    posttype     = jQuery('#posttype').val();
-                let    status       = jQuery('#status').val();
-                let    aparat       = jQuery('#aparat').val();
-                let    pdf          = jQuery('#pdf')[0].files[0];
-                let    voice        = jQuery('#voice')[0].files[0];
-                let    writer       = jQuery('#writer').val();
-                let    date         = jQuery('#date').val();
-                let    home_show    = jQuery('#home_show').val();
-                let    image        = jQuery('#image')[0].files[0];
-                let    file         = jQuery('#file')[0].files[0];
+{{--                let    _token       = jQuery('input[name="_token"]').val();--}}
+{{--                let    title        = jQuery('#title').val();--}}
+{{--                let    posttype     = jQuery('#posttype').val();--}}
+{{--                let    status       = jQuery('#status').val();--}}
+{{--                let    aparat       = jQuery('#aparat').val();--}}
+{{--                let    pdf          = jQuery('#pdf')[0].files[0];--}}
+{{--                let    voice        = jQuery('#voice')[0].files[0];--}}
+{{--                let    writer       = jQuery('#writer').val();--}}
+{{--                let    date         = jQuery('#date').val();--}}
+{{--                let    home_show    = jQuery('#home_show').val();--}}
+{{--                let    image        = jQuery('#image')[0].files[0];--}}
+{{--                let    file         = jQuery('#file')[0].files[0];--}}
 
-                let formData = new FormData();
-                formData.append('title'         , title);
-                formData.append('status'        , status);
-                formData.append('description'   , description);
-                formData.append('home_show'     , home_show);
-                formData.append('pdf'           , pdf);
-                formData.append('voice'         , voice);
-                formData.append('aparat'        , aparat);
-                formData.append('writer'        , writer);
-                formData.append('date'          , date);
-                formData.append('posttype'      , posttype);
-                formData.append('image'         , image);
-                formData.append('file'          , file);
-                formData.append('_token'        , _token);
+{{--                let formData = new FormData();--}}
+{{--                formData.append('title'         , title);--}}
+{{--                formData.append('status'        , status);--}}
+{{--                formData.append('description'   , description);--}}
+{{--                formData.append('home_show'     , home_show);--}}
+{{--                formData.append('pdf'           , pdf);--}}
+{{--                formData.append('voice'         , voice);--}}
+{{--                formData.append('aparat'        , aparat);--}}
+{{--                formData.append('writer'        , writer);--}}
+{{--                formData.append('date'          , date);--}}
+{{--                formData.append('posttype'      , posttype);--}}
+{{--                formData.append('image'         , image);--}}
+{{--                formData.append('file'          , file);--}}
+{{--                formData.append('_token'        , _token);--}}
 
-                swal({
-                        title: "Are you sure to delete this  of ?",
-                        text: "Delete Confirmation?",
-                        type: "warning",
-                        showCancelButton: false,
-                        confirmButtonColor: "#DD6B55",
-                        confirmButtonText: "Delete",
-                        closeOnConfirm: false
-                    },
-                    jQuery.ajax({
-                        url: "{{route(request()->segment(2).'.'.'store')}}",
-                        method: 'POST',
-                        data: formData,
+{{--                swal({--}}
+{{--                        title: "Are you sure to delete this  of ?",--}}
+{{--                        text: "Delete Confirmation?",--}}
+{{--                        type: "warning",--}}
+{{--                        showCancelButton: false,--}}
+{{--                        confirmButtonColor: "#DD6B55",--}}
+{{--                        confirmButtonText: "Delete",--}}
+{{--                        closeOnConfirm: false--}}
+{{--                    },--}}
+{{--                    jQuery.ajax({--}}
+{{--                        url: "{{route(request()->segment(2).'.'.'store')}}",--}}
+{{--                        method: 'POST',--}}
+{{--                        data: formData,--}}
 
-                        success: function (data) {
-                            if(data.success == true){
-                                swal(data.subject, data.message, data.flag);
-                                $('#form')[0].reset();
-                            } else {
-                                swal(data.subject, data.message, data.flag);
-                            }
-                        },
-                    }));
-            });
-        });
-    </script>
+{{--                        success: function (data) {--}}
+{{--                            if(data.success == true){--}}
+{{--                                swal(data.subject, data.message, data.flag);--}}
+{{--                                $('#form')[0].reset();--}}
+{{--                            } else {--}}
+{{--                                swal(data.subject, data.message, data.flag);--}}
+{{--                            }--}}
+{{--                        },--}}
+{{--                    }));--}}
+{{--            });--}}
+{{--        });--}}
+{{--    </script>--}}
 
 @endsection
