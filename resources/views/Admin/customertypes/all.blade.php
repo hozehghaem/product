@@ -43,7 +43,8 @@
                                         <thead>
                                         <tr>
                                             <th class="wd-10p"> سریال </th>
-                                            <th class="wd-10p"> نام </th>
+                                            <th class="wd-10p"> عنوان فارسی </th>
+                                            <th class="wd-10p"> عنوان انگلیسی </th>
                                             <th class="wd-10p">ویرایش / حذف </th>
                                         </tr>
                                         </thead>
@@ -94,8 +95,8 @@
                 ajax: "{{route(request()->segment(2).'.'.'index')}}",
                 columns: [
                     {data: 'id'         , name: 'id'},
-                    {data: 'title'       , name: 'title'},
-                    {data: 'title_fa'       , name: 'title_fa'},
+                    {data: 'title'      , name: 'title'},
+                    {data: 'title_fa'   , name: 'title_fa'},
                     {data: 'action'     , name: 'action', orderable: true, searchable: true},
                 ]
             });
