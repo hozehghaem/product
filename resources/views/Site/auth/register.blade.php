@@ -89,7 +89,7 @@
                                         <div class="form-group">
                                             <select name="type_user" class="form-control" required>
                                                 <option value="">نوع کاربری</option>
-                                                @foreach(\App\Models\TypeUser::select('id', 'title_fa')->whereIn('id', [4,5,6,7])->get() as $type)
+                                                @foreach(\App\Models\TypeUser::select('id', 'title_fa')->where('id','>=' , 4)->get() as $type)
                                                     <option value="{{ $type->id }}">{{ $type->title_fa }}</option>
                                                 @endforeach
                                             </select>
