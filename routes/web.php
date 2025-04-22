@@ -117,6 +117,7 @@ Route::get('نشست'                       , [App\Http\Controllers\Site\IndexCo
         Route::get('حوزه-علمیه-خواهران'.'/'.'مرکز-مشاوره-مهدیا'.'/'.'{slug}'    , [App\Http\Controllers\Site\IndexController::class, 'singlemahdia']);
         Route::get('حوزه-علمیه-خواهران'.'/'.'کتابخانه'.'/'.'{slug}'             , [App\Http\Controllers\Site\IndexController::class, 'singlelibrary']);
         Route::get('حوزه-علمیه-خواهران'.'/'.'سخنرانی-مذهبی'.'/'.'{slug}'        , [App\Http\Controllers\Site\IndexController::class, 'singlespeech']);
+        Route::get('حوزه-علمیه-خواهران'.'/'.'اخبار'.'/'.'{slug}'                , [App\Http\Controllers\Site\IndexController::class, 'singlenews']);
     }elseif(substr_count(request()->fullUrl() , '/')-2 == 4){
         Route::get('حوزه-علمیه-خواهران' . '/' . 'معاونت-آموزش' . '/' . '{harchi}' . '/' . '{slug}', [App\Http\Controllers\Site\IndexController::class, 'singlepage']);
         Route::get('حوزه-علمیه-خواهران' . '/' . 'معاونت-پژوهش' . '/' . '{harchi}' . '/' . '{slug}', [App\Http\Controllers\Site\IndexController::class, 'singlepage']);
