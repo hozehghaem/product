@@ -43,10 +43,10 @@ class CustomertypeController extends Controller
                     return ($data->id);
                 })
                 ->addColumn('title', function ($data) {
-                    return ($data->name);
+                    return ($data->title);
                 })
                 ->addColumn('title_fa', function ($data) {
-                    return ($data->name);
+                    return ($data->title_fa);
                 })
                 ->addColumn('action', function ($data) {
                     $actionBtn = '<a href="' . route('customer-type-manage.edit', $data->id) . '" class="btn ripple btn-outline-info btn-icon" style="float: right;margin: 0 5px;"><i class="fe fe-edit-2"></i></a>

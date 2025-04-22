@@ -94,7 +94,8 @@
                 ajax: "{{route(request()->segment(2).'.'.'index')}}",
                 columns: [
                     {data: 'id'         , name: 'id'},
-                    {data: 'name'       , name: 'name'},
+                    {data: 'title'       , name: 'title'},
+                    {data: 'title_fa'       , name: 'title_fa'},
                     {data: 'action'     , name: 'action', orderable: true, searchable: true},
                 ]
             });
