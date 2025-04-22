@@ -6,18 +6,18 @@
     <div class="page-title-area">
         <div class="container">
             <div class="page-title-content">
-                <h2>مرکز مشاوره حوزه قائم</h2>
+                <h2>سخنرانی های مذهبی</h2>
             </div>
         </div>
     </div>
     <!-- End Page Title Area -->
     <!-- Start Posts Section -->
     <div class="container my-5">
-        <h3 class="text-center">آخرین فعالیت‌های مرکز مشاوره</h3>
+        <h3 class="text-center">آخرین سخنرانی های مذهبی حوزه قائم </h3>
         <div class="row">
 
             @foreach($posts as $post)
-                @if($post->posttype == 8)
+                @if($post->posttype == 5)
                     <div class="col-md-4 py-4 z-3">
                         <div class="card br-16 h-100">
                             <img src="{{ asset($post->image) }}" class="" alt="{{ $post->title }}"
