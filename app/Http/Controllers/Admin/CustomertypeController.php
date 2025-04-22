@@ -32,10 +32,10 @@ class CustomertypeController extends Controller
         $submenupanels  =   Submenu_panel::whereStatus(4)->get();
 
         if ($request->ajax()) {
-            $data = DB::table('type_users')
+            $data = DB::table('type_users')->where('id' , '>=' , 4)->get();
                 //->join('menus' , 'slides.menu_id' , '=' , 'menus.id')
                 //->select('menus.title as menu' , 'slides.id', 'slides.title1', 'slides.title2', 'slides.title3', 'slides.status', 'slides.file_link')
-                ->get();
+
 
             return Datatables::of($data)
 
