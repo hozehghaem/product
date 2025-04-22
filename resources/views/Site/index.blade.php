@@ -157,13 +157,14 @@
             <div class="carousel-inner">
                 @foreach($slides as $slide)
                     <div class="carousel-item @if($slides->min('id') == $slide->id) active @endif ">
-                        <section class="index-banner"
-                                 style="background-color: #f5f5f5; background-image: url('{{ asset('storage/'.$slide->file_link) }}');">
+                        @if($slide->link)<a href="{{$slide->link}}">@endif
+                        <section class="index-banner" style="background-color: #f5f5f5; background-image: url('{{ asset('storage/'.$slide->file_link) }}');">
                             <div class="index-banner-content">
                                 <h1 style="font-family: 'IranNastaliq', serif;">{{$slide->title1}}</h1>
                                 <p>{!! $slide->text !!}</p>
                             </div>
                         </section>
+                        @if($slide->link)</a>@endif
                     </div>
                 @endforeach
             </div>

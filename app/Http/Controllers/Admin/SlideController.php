@@ -116,6 +116,7 @@ class SlideController extends Controller
             $slides->title2      = $request->input('title2');
             $slides->title3      = $request->input('title3');
             $slides->menu_id     = $request->input('menu_id');
+            $slides->link        = $request->input('link');
             $slides->text        = $request->input('text');
             if($request->input('word')) {
                 $slides->word = json_encode(explode('،', $request->input('word')));
@@ -187,6 +188,7 @@ class SlideController extends Controller
             $slide->title2      = $request->input('title2');
             $slide->title3      = $request->input('title3');
             $slide->menu_id     = $request->input('menu_id');
+            $slide->link        = $request->input('link');
             $slide->text        = $request->input('text');
             if($request->input('word')) {
                 $slide->word = json_encode(explode('،', $request->input('word')));

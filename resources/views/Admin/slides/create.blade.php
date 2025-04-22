@@ -84,6 +84,12 @@
                                                 <input type="text" name="word" id="word" class="form-control" placeholder="کلمه1 ، کلمه2 ، کلمه3 ..." />
                                             </div>
                                         </div>
+                                        <div  class="col-md-6">
+                                            <div class="form-group">
+                                                <p class="mg-b-10">لینک فرود اسلاید</p>
+                                                <input type="text" name="link" id="link" class="form-control" placeholder="https://hozehghaem.ir/" />
+                                            </div>
+                                        </div>
                                         <div class="col-md-12">
                                             <div class="form-group" style="margin-top: 65px;">
                                                 <p class="mg-b-10">توضیحات</p>

@@ -83,7 +83,12 @@
                                                     <input type="file" name="file_link" id="file_link" class="dropify" data-default-file="{{asset('storage/'.$slides->file_link)}}" data-height="200">
                                                 </div>
                                             </div>
-
+                                            <div  class="col-md-6">
+                                                <div class="form-group">
+                                                    <p class="mg-b-10">لینک فرود اسلاید</p>
+                                                    <input type="text" name="link" id="link" class="form-control" value="{{$slides->link}}" />
+                                                </div>
+                                            </div>
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <p class="mg-b-10"> توضیحات</p>
