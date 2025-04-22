@@ -29,14 +29,14 @@
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <p class="mg-b-10">عنوان کاربر</p>
-                                                <input type="text" name="title" id="title" placeholder="عنوان کاربر فارسی" class="form-control" />
+                                                <p class="mg-b-10">عنوان کاربر فارسی</p>
+                                                <input type="text" name="title_fa" id="title_fa" placeholder="عنوان کاربر فارسی" class="form-control" />
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <p class="mg-b-10">عنوان کاربر</p>
-                                                <input type="text" name="title_fa" id="title_fa" placeholder="عنوان کاربر انگلیسی" class="form-control" />
+                                                <p class="mg-b-10">عنوان کاربر انگلیسی</p>
+                                                <input type="text" name="title" id="title" placeholder="عنوان کاربر انگلیسی" class="form-control" />
                                             </div>
                                         </div>
                                         <div class="col-lg-12 mg-b-10 text-center">

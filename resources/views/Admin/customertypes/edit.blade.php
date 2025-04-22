@@ -33,13 +33,13 @@
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <p class="mg-b-10">نام کاربر فارسی</p>
-                                                    <input type="text" name="title" id="title" value="{{$customertypes->title}}"  class="form-control" />
+                                                    <input type="text" name="title_fa" id="title_fa" value="{{$customertypes->title_fa}}"  class="form-control" />
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <p class="mg-b-10">نام کاربر انگلیسی</p>
-                                                    <input type="text" name="title_fa" id="title_fa" value="{{$customertypes->title_fa}}"  class="form-control" />
+                                                    <input type="text" name="title" id="title" value="{{$customertypes->title}}"  class="form-control" />
                                                 </div>
                                             </div>
                                             <div  class="col-lg-12 mg-b-10 text-center">
