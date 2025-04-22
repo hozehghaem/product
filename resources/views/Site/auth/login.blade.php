@@ -35,7 +35,7 @@
                                     </div>
 
                                     <h3>خوش آمدید</h3>
-                                    <p>اگر ثبت نام نکرده اید جهت ثبت نام : <a href={{url('/login')}}>اینجا کلیک کنید</a></p>
+                                    <p>اگر ثبت نام نکرده اید جهت ثبت نام : <a href={{url('/register')}}>اینجا کلیک کنید</a></p>
 
                                     <form method="POST" action="{{ route('login-user') }}" class="form-account">
                                         @csrf
