@@ -41,7 +41,7 @@ class IndexController extends Controller
 
         $submenus       = Submenu::select('id', 'title', 'slug', 'menu_id','mega_manu' , 'megamenu_id')->whereStatus(4)->get();
         $companies      = Company::first();
-        $slides         = Slide::select('id' , 'title1' , 'text', 'file_link')->whereMenu_id($thispage->id)->whereStatus(4)->get();
+        $slides         = Slide::select('id' , 'title1' , 'text', 'file_link' , 'link')->whereMenu_id($thispage->id)->whereStatus(4)->get();
         $customers      = Customer::select('name', 'image')->whereStatus(4)->whereHome_show(1)->get();
         $sessionposts   = Post::whereStatus(4)->whereHome_show(1)->wherePosttype(2)->orderBy('id' , 'DESC')->limit(6)->get();
         $speechposts    = Post::whereStatus(4)->whereHome_show(1)->wherePosttype(5)->orderBy('id' , 'DESC')->limit(6)->get();
@@ -97,7 +97,7 @@ class IndexController extends Controller
 
         $submenus       = Submenu::select('id', 'title', 'slug', 'menu_id','mega_manu' , 'megamenu_id')->whereStatus(4)->get();
         $companies      = Company::first();
-        $slides         = Slide::select('id' , 'title1' , 'text', 'file_link')->whereMenu_id($thispage->id)->whereStatus(4)->get();
+        $slides         = Slide::select('id' , 'title1' , 'text', 'file_link', 'link')->whereMenu_id($thispage->id)->whereStatus(4)->get();
         $customers      = Customer::select('name', 'image')->whereStatus(4)->whereHome_show(1)->get();
         $sessionposts   = Post::whereStatus(4)->whereHome_show(1)->wherePosttype(2)->orderBy('id' , 'DESC')->limit(6)->get();
         $speechposts    = Post::whereStatus(4)->whereHome_show(1)->wherePosttype(1)->orderBy('id' , 'DESC')->limit(6)->get();
