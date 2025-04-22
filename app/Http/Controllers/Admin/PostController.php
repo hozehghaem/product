@@ -99,7 +99,7 @@ class PostController extends Controller
 
             $post = new Post();
             $post->title       = $request->input('title');
-            $post->description = $request->input('description');
+            $post->description = $request->input('text');
             $post->aparat      = $request->input('aparat');
             $post->posttype    = $request->input('posttype');
             $post->writer      = $request->input('writer');
