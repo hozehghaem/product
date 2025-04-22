@@ -32,8 +32,14 @@
                                             <input type="hidden" name="customer_id" id="customer_id" data-required="1" value="{{$customertypes->id}}" class="form-control" />
                                             <div class="col-md-3">
                                                 <div class="form-group">
-                                                    <p class="mg-b-10">نام برند</p>
-                                                    <input type="text" name="name" id="name" value="{{$customertypes->name}}"  class="form-control" />
+                                                    <p class="mg-b-10">نام کاربر فارسی</p>
+                                                    <input type="text" name="title" id="title" value="{{$customertypes->title}}"  class="form-control" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <p class="mg-b-10">نام کاربر انگلیسی</p>
+                                                    <input type="text" name="title_fa" id="title_fa" value="{{$customertypes->title_fa}}"  class="form-control" />
                                                 </div>
                                             </div>
                                             <div  class="col-lg-12 mg-b-10 text-center">

@@ -29,8 +29,14 @@
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <p class="mg-b-10">عنوان نوع مشتری</p>
-                                                <input type="text" name="name" id="name" placeholder="عنوان نوع مشتری" class="form-control" />
+                                                <p class="mg-b-10">عنوان کاربر</p>
+                                                <input type="text" name="title" id="title" placeholder="عنوان کاربر فارسی" class="form-control" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <p class="mg-b-10">عنوان کاربر</p>
+                                                <input type="text" name="title_fa" id="title_fa" placeholder="عنوان کاربر انگلیسی" class="form-control" />
                                             </div>
                                         </div>
                                         <div class="col-lg-12 mg-b-10 text-center">
@@ -65,11 +71,13 @@
                 });
 
                 let    _token       = jQuery('input[name="_token"]').val();
-                let    name         = jQuery('#name').val();
+                let    title        = jQuery('#title').val();
+                let    title_fa     = jQuery('#title_fa').val();
 
                 let formData = new FormData();
-                formData.append('name'    , name);
-                formData.append('_token'  , _token);
+                formData.append('title'    , title);
+                formData.append('title_fa' , title_fa);
+                formData.append('_token'   , _token);
 
                 swal({
                         title: "Are you sure to delete this  of ?",
