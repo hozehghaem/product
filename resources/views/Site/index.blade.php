@@ -143,7 +143,7 @@
 
     </style>
 
-    <section class="d-flex justify-content-center br-16">
+    <section class="d-flex justify-content-center br-16 mb-3">
         <div id="indexBannerCarousel" class="carousel slide col-md-10" data-ride="carousel">
             <!-- Indicators -->
             <ol class="carousel-indicators">

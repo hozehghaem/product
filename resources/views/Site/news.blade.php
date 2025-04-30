@@ -15,7 +15,6 @@
     <div class="container my-5">
         <h3 class="text-center">آخرین اخبارها</h3>
         <div class="row">
-
             @foreach($posts as $post)
                 @if($post->posttype == 1)
                     <div class="col-md-4 py-4 z-3">
@@ -33,7 +32,6 @@
                     </div>
                 @endif
             @endforeach
-
         </div>
     </div>
     <!-- End Posts Section -->
