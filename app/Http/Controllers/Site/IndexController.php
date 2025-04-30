@@ -316,6 +316,30 @@ class IndexController extends Controller
         return view('Site.single-news')->with(compact('menus', 'thispage', 'companies', 'submenus', 'posts'));
     }
 
+    public function singleseat(Request $request , $slug)
+    {
+        $url = $request->segments();
+        $menus = Menu::select('id', 'title', 'slug', 'submenu', 'priority', 'mega_menu')->MenuSite()->orderBy('priority')->get();
+        if (count($url) == 1) {
+            $thispage = Menu::select('id', 'title', 'slug', 'tab_title', 'page_title', 'keyword', 'page_description')->MenuSite()->whereSlug($url[0])->first();
+        } elseif (count($url) > 1) {
+            $thispage = Submenu::select('id', 'title', 'slug', 'tab_title', 'page_title', 'keyword', 'page_description')->whereSlug($url[1])->first();
+        }elseif (count($url) == 0) {
+            $thispage = Menu::select('id', 'title', 'slug', 'tab_title', 'page_title', 'keyword', 'page_description')->MenuSite()->whereSlug('/')->first();
+        }
+
+        $submenus = Submenu::select('id', 'title', 'slug', 'menu_id','mega_manu' , 'megamenu_id')->whereStatus(4)->get();
+
+        $companies      = Company::first();
+//        $slides         = Slide::select('id' , 'title1' , 'text', 'file_link')->whereStatus(4)->get();
+//        $customers      = Customer::select('name', 'image')->whereStatus(4)->whereHome_show(1)->get();
+        $posts          = Post::whereSlug($slug)->first();
+//        $questions      = Questionlist::whereStatus(4)->orderBy('id' , 'DESC')->limit(6)->get();
+//        $flowtexts      = Flowtext::whereStatus(4)->limit(6)->get();
+
+        return view('Site.single-seat')->with(compact('menus', 'thispage', 'companies', 'submenus', 'posts'));
+    }
+
     public function journal(Request $request)
     {
         $url = $request->segments();
