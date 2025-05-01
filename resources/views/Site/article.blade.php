@@ -41,9 +41,10 @@
                     @if($post->posttype == 15)
                         <tr>
                             <td>{{ $post->title }}</td>
-                            <td>{{ $post->author ?? '---' }}</td>
-                            <td>{{ \Morilog\Jalali\Jalalian::fromDateTime($post->created_at)->format('Y/m/d') }}</td>
-                            <td>{{ Str::limit(strip_tags($post->summary), 100) }}</td>
+                            <td>{{ $post->writer ?? '---' }}</td>
+                            <td>{{ $post->date ?? '---' }}</td>
+{{--                            <td>{{ \Morilog\Jalali\Jalalian::fromDateTime($post->date)->format('Y/m/d') }}</td>--}}
+                            <td>{{ Str::limit(strip_tags($post->description), 100) }}</td>
                         </tr>
                     @endif
                 @endforeach
