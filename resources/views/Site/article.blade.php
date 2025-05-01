@@ -6,11 +6,16 @@
             font-family: 'Vazirmatn RD FD', sans-serif;
             font-size: 16px;
             font-weight: bold;
+            white-space: nowrap;
         }
 
         .table tbody td {
             font-family: 'Vazirmatn RD FD', sans-serif;
             font-size: 14px;
+            white-space: nowrap; /* جلوگیری از رفتن به خط بعد */
+            overflow: hidden;     /* محتوای اضافی رو مخفی کن */
+            text-overflow: ellipsis; /* گذاشتن ... */
+            max-width: 200px;     /* حداقل یک عرض برای کارکرد ellipsis */
         }
     </style>
 @endsection
