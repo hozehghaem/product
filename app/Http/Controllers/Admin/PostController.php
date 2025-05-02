@@ -191,35 +191,48 @@ class PostController extends Controller
     {
         try {
             $post = Post::whereId($id)->first();
+            $post = new Post();
             $post->title       = $request->input('title');
-            $post->description = $request->input('description');
             $post->posttype    = $request->input('posttype');
-            $post->aparat      = $request->input('aparat');
-            $post->pdf         = $request->input('pdf');
-            $post->voice       = $request->input('voice');
-            $post->writer      = $request->input('writer');
-            $post->date        = $request->input('date');
             $post->status      = $request->input('status');
             $post->home_show   = $request->input('home_show');
-            $post->user_id     = Auth::user()->id;
             if($request->input('keyword')) {
                 $post->keyword = json_encode(explode("،", $request->input('keyword')));
             }
+            $post->aparat      = $request->input('aparat');
+            $post->date        = $request->input('date');
+            $post->writer      = $request->input('writer');
+            $post->description = $request->input('text');
+            $post->user_id     = Auth::user()->id;
 
             $id = md5(random_int(10 , 999999));
 
-            if ($request->hasFile('file')) {
-                $file              = $request->file('file');
-                $Name              = md5(uniqid(rand(), true)) .'.'. $file->clientExtension();
-                $Path              = "posts/$id";
-                $post->file        = 'posts/'.$id.'/'.$Name;
-                $file->move($Path, $Name);
+            if ($request->file('file')) {
+                $file           = $request->file('file');
+                $imagePath      = "posts/$id";
+                $imageName      = Str::random(30).".".$file->clientExtension();
+                $post->file     = 'posts/'.$id.'/'.$imageName;
+                $file->move($imagePath, $imageName);
+            }
+            if ($request->file('voice')) {
+                $file           = $request->file('voice');
+                $imagePath      = "posts/$id";
+                $imageName      = Str::random(30).".".$file->clientExtension();
+                $post->voice    = 'posts/'.$id.'/'.$imageName;
+                $file->move($imagePath, $imageName);
+            }
+            if ($request->file('pdf')) {
+                $file           = $request->file('pdf');
+                $imagePath      = "posts/$id";
+                $imageName      = Str::random(30).".".$file->clientExtension();
+                $post->pdf      = 'posts/'.$id.'/'.$imageName;
+                $file->move($imagePath, $imageName);
             }
             if ($request->hasFile('image')) {
-                $cover = $request->file('image');
-                $imagePath ="posts/$id";
-                $imageName = md5(uniqid(rand(), true)) .'.'. $cover->clientExtension();
-                $post->image = 'posts/'.$id.'/'.$imageName;
+                $cover          = $request->file('image');
+                $imagePath      = "posts/$id";
+                $imageName      = md5(uniqid(rand(), true)) .'.'. $cover->clientExtension();
+                $post->image    = 'posts/'.$id.'/'.$imageName;
                 $cover->move($imagePath, $imageName);
             }
             $result = $post->save();

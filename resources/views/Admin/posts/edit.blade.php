@@ -121,7 +121,7 @@
                                             <div class="col-md-12" style="margin-top: 20px;">
                                                 <div class="form-group" >
                                                     <p class="mg-b-10">توضیحات</p>
-                                                    <textarea name="description" id="editor" cols="30" rows="5" class="form-control" >{{$posts->description}}</textarea>
+                                                    <textarea name="text" id="editor" cols="30" rows="5" class="form-control" >{{$posts->description}}</textarea>
                                                 </div>
                                             </div>
 
