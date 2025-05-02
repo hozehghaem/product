@@ -78,6 +78,15 @@
                         {!! $posts->aparat !!}
                     @endif
                 </div>
+                @if($posts->file && file_exists(public_path($posts->file)))
+                    <video width="320" height="240" controls>
+                        <source src="{{ asset($posts->file) }}" type="video/mp4">
+                        مرورگر شما از ویدئو پشتیبانی نمی‌کند.
+                    </video>
+                @else
+                    <p>ویدئو یافت نشد.</p>
+                @endif
+
                 <div class="service-details-content">
 
                     <p>{!! $posts->description !!}</p>

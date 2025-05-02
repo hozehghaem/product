@@ -24,8 +24,6 @@
                                  style="border-top-right-radius: 16px; border-top-left-radius: 16px">
                             <div class="card-body">
                                 <h4 class="post-title">{{ $post->title }}</h4>
-                                <p class="post-description">{{ Str::limit(strip_tags($post->description), 50, '...') }}
-                                </p>
                                 <a href="{{url('حوزه-علمیه-خواهران/سخنرانی-مذهبی/'.$post->slug)}}"
                                    class="btn btn-primary btn-sm">مشاهده بیشتر</a>
                             </div>
