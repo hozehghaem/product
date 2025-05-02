@@ -153,7 +153,6 @@
     <script src="{{asset('admin/assets/plugins/ckeditor/ckeditor.js')}}"></script>
     <script>
         CKEDITOR.replace( 'editor' );
-
     </script>
 {{--    <script>--}}
 {{--        jQuery(document).ready(function(){--}}
