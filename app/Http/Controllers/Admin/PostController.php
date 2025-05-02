@@ -191,7 +191,6 @@ class PostController extends Controller
     {
         try {
             $post = Post::whereId($id)->first();
-            $post = new Post();
             $post->title       = $request->input('title');
             $post->posttype    = $request->input('posttype');
             $post->status      = $request->input('status');
