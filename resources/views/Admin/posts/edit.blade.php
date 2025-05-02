@@ -103,7 +103,7 @@
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <p class="mg-b-10">تاریخ </p>
-                                                    <input type="text" name="date" id="date" placeholder="تاریخ " class="form-control" />
+                                                    <input type="text" name="date" id="date" value="{{$posts->date}}" placeholder="تاریخ " class="form-control" />
                                                 </div>
                                             </div>
                                             <div class="col-md-9">
@@ -115,7 +115,7 @@
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <p class="mg-b-10">سخنران/ نویسنده </p>
-                                                    <input type="text" name="writer" id="writer" placeholder="سخنران/ نویسنده " class="form-control" />
+                                                    <input type="text" name="writer" id="writer" value="{{$posts->writer}}" placeholder="سخنران/ نویسنده " class="form-control" />
                                                 </div>
                                             </div>
                                             <div class="col-md-12" style="margin-top: 20px;">
